@@ -9,14 +9,14 @@
 
 | Priority | Count |
 |----------|-------|
-| Very High | 7 |
-| High | 16 |
-| Medium | 20 |
-| Low | 8 |
-| Very Low | 2 |
+| Very High | 9 |
+| High | 15 |
+| Medium | 15 |
+| Low | 10 |
+| Very Low | 4 |
 
 
-## Priority Summary
+## Summary
 
 | ID | Epic | Stakeholder | Priority | Depends On |
 |----|------|-------------|----------|------------|
@@ -32,41 +32,41 @@
 | US-10 | 2. Standardised Digital Record Logging | Compliance Liaison | High | US-04, US-08 |
 | US-11 | 2. Standardised Digital Record Logging | Financial Partner | Medium | US-06, US-08 |
 | US-12 | 3. Self-Service Payments | Customer | Very High | US-01, US-19 |
-| US-13 | 3. Self-Service Payments | Customer | High | US-12 |
-| US-14 | 3. Self-Service Payments | Customer | High | US-12 |
-| US-15 | 3. Self-Service Payments | Collections Representative | Very High | US-08, US-12 |
+| US-13 | 3. Self-Service Payments | Customer | Medium | US-12 |
+| US-14 | 3. Self-Service Payments | Customer | Very High | US-12 |
+| US-15 | 3. Self-Service Payments | Collections Representative | High | US-08, US-12 |
 | US-16 | 3. Self-Service Payments | Financial Partner | High | US-06, US-12, US-15 |
 | US-17 | 3. Self-Service Payments | Compliance Liaison | High | US-04, US-12 |
 | US-18 | 3. Self-Service Payments | Collections Team Leader | Medium | US-12, US-15 |
 | US-19 | 4. Automated Identity Verification | Customer | Very High | US-01, US-02 |
-| US-20 | 4. Automated Identity Verification | Customer | Medium | US-19 |
-| US-21 | 4. Automated Identity Verification | Collections Representative | Medium | US-03, US-19 |
+| US-20 | 4. Automated Identity Verification | Customer | Very High | US-19 |
+| US-21 | 4. Automated Identity Verification | Collections Representative | Very High | US-03, US-19 |
 | US-22 | 4. Automated Identity Verification | Compliance Liaison | High | US-04, US-19 |
 | US-23 | 4. Automated Identity Verification | IT Team Member | High | US-19 |
 | US-24 | 5. Automated Payment Fulfillment Check | Collections Representative | High | US-08, US-15 |
 | US-25 | 5. Automated Payment Fulfillment Check | Collections Representative | High | US-24 |
 | US-26 | 5. Automated Payment Fulfillment Check | Collections Team Leader | Medium | US-24, US-25 |
-| US-27 | 5. Automated Payment Fulfillment Check | Financial Partner | Medium | US-06, US-24 |
+| US-27 | 5. Automated Payment Fulfillment Check | Financial Partner | Very Low | US-06, US-24 |
 | US-28 | 5. Automated Payment Fulfillment Check | Customer | Medium | US-24 |
-| US-29 | 5. Automated Payment Fulfillment Check | IT Team Member | Medium | US-24 |
+| US-29 | 5. Automated Payment Fulfillment Check | IT Team Member | Low | US-24 |
 | US-30 | 6. Automated Follow Up Scheduling | Collections Representative | High | US-08 |
 | US-31 | 6. Automated Follow Up Scheduling | Collections Representative | High | US-30 |
-| US-32 | 6. Automated Follow Up Scheduling | Collections Team Leader | Medium | US-30 |
-| US-33 | 6. Automated Follow Up Scheduling | Compliance Liaison | High | US-04, US-30 |
-| US-34 | 6. Automated Follow Up Scheduling | Customer | Medium | US-30 |
+| US-32 | 6. Automated Follow Up Scheduling | Collections Team Leader | Low | US-30 |
+| US-33 | 6. Automated Follow Up Scheduling | Compliance Liaison | Medium | US-04, US-30 |
+| US-34 | 6. Automated Follow Up Scheduling | Customer | Low | US-30 |
 | US-35 | 7. Self-Service Promise To Pay | Customer | High | US-01, US-19 |
 | US-36 | 7. Self-Service Promise To Pay | Customer | Medium | US-35 |
 | US-37 | 7. Self-Service Promise To Pay | Collections Representative | High | US-08, US-30, US-35 |
-| US-38 | 7. Self-Service Promise To Pay | Financial Partner | Medium | US-06, US-35 |
-| US-39 | 7. Self-Service Promise To Pay | Compliance Liaison | Medium | US-04, US-19, US-35 |
+| US-38 | 7. Self-Service Promise To Pay | Financial Partner | Very Low | US-06, US-35 |
+| US-39 | 7. Self-Service Promise To Pay | Compliance Liaison | High | US-04, US-19, US-35 |
 | US-40 | 8. Self-Service Account Information | IT Team Member | Medium | US-01, US-02 |
 | US-41 | 8. Self-Service Account Information | Customer | Medium | US-19, US-40 |
-| US-42 | 8. Self-Service Account Information | Compliance Liaison | Low | US-04, US-41 |
+| US-42 | 8. Self-Service Account Information | Compliance Liaison | Very Low | US-04, US-41 |
 | US-43 | 9. Self-Service Updating Details | IT Team Member | Low | US-01 |
 | US-44 | 9. Self-Service Updating Details | Customer | Low | US-19, US-43 |
 | US-45 | 9. Self-Service Updating Details | Customer | Low | US-44 |
-| US-46 | 9. Self-Service Updating Details | Collections Representative | Very Low | US-03, US-44 |
-| US-47 | 9. Self-Service Updating Details | Compliance Liaison | Low | US-04, US-44 |
+| US-46 | 9. Self-Service Updating Details | Collections Representative | Low | US-03, US-44 |
+| US-47 | 9. Self-Service Updating Details | Compliance Liaison | Medium | US-04, US-44 |
 | US-48 | 10. Automated Payment Reminders | Customer | Medium | US-01 |
 | US-49 | 10. Automated Payment Reminders | Customer | Medium | US-48 |
 | US-50 | 10. Automated Payment Reminders | Collections Representative | Low | US-08, US-48 |
@@ -87,9 +87,8 @@
 **Acceptance Criteria**
 - All legacy customer records are migrated or listed in an exception report.
 - Duplicate customer records are merged or flagged.
-
 - Data types match across all records.
- 
+
 **Business Value**
 - Cost reduction: removes maintenance of multiple workaround systems.
 - Operational efficiency: single source for all downstream automation.
@@ -126,7 +125,7 @@
 - Hosting platform supports encryption and scheduled backups.
 - A recovery time objective is agreed.
 
-**Dependencies:** US-01 (database must exist)
+**Dependencies:** US-01 (storage)
 
 **Priority:** Very High - security is required before any customer data is exposed.
 
@@ -151,7 +150,7 @@
 - Reps are trained on the new interface.
 - Search by account number is the primary lookup.
 
-**Dependencies:** US-01 (data), US-02 (access control)
+**Dependencies:** US-01 (storage), US-02 (security)
 
 **Priority:** Very High - the core rep workflow depends on it.
 
@@ -176,7 +175,7 @@
 - Retention period is confirmed by compliance.
 - All system changes go through the central database.
 
-**Dependencies:** US-01
+**Dependencies:** US-01 (storage)
 
 **Priority:** High - needed to pass audits and referenced by many compliance stories.
 
@@ -199,7 +198,7 @@
 - Team leaders have read access to the full history.
 - Legacy history is migrated.
 
-**Dependencies:** US-03
+**Dependencies:** US-03 (customer record)
 
 **Priority:** Medium - improves exception handling but does not block other stories.
 
@@ -224,7 +223,7 @@
 - Reporting requirements are agreed with the Financial Partner.
 - A reporting tool or read-only data view is available.
 
-**Dependencies:** US-01
+**Dependencies:** US-01 (storage)
 
 **Priority:** High - needed to prove cost savings and revenue uplift.
 
@@ -246,7 +245,7 @@
 **Assumptions**
 - Customer data is accurate after migration.
 
-**Dependencies:** US-03
+**Dependencies:** US-03 (customer record)
 
 **Priority:** Low - benefit follows from US-03 rather than adding new capability.
 
@@ -297,7 +296,7 @@
 **Assumptions**
 - Team membership is maintained in the system.
 
-**Dependencies:** US-08
+**Dependencies:** US-08 (case logs)
 
 **Priority:** Medium - supports management but does not block other work.
 
@@ -320,7 +319,7 @@
 **Assumptions**
 - Auditors accept the exported formats.
 
-**Dependencies:** US-04 (audit trail), US-08 (logs)
+**Dependencies:** US-04 (audit trail), US-08 (case logs)
 
 **Priority:** High - directly addresses current audit failures.
 
@@ -342,7 +341,7 @@
 **Assumptions**
 - Outcome codes map to financial reporting categories.
 
-**Dependencies:** US-06 (reporting access), US-08 (logs)
+**Dependencies:** US-06 (reporting access), US-08 (case logs)
 
 **Priority:** Medium - improves insight but is not foundational.
 
@@ -359,7 +358,7 @@
 **Acceptance Criteria**
 - A verified customer can pay the full balance or a partial amount.
 - Payment amount cannot exceed the outstanding balance.
-- A successful payment updates the account balance within n minutes (n TBD).
+- A successful payment updates the account balance immediately.
 - Card details are never stored on company systems.
 
 **Business Value**
@@ -372,7 +371,7 @@
 - Customers have a card and internet access.
 - Payment refund and error policies are defined.
 
-**Dependencies:** US-01 (customer data), US-19 (identity verification)
+**Dependencies:** US-01 (storage), US-19 (identity verification)
 
 **Priority:** Very High - core objective of the project and largest ROI.
 
@@ -384,20 +383,20 @@
 
 **Acceptance Criteria**
 - A confirmation page shows amount, date and reference.
-- A confirmation email is sent within n minutes (n TBD).
+- A confirmation email is sent immediately.
 - The confirmation matches the amount recorded on the account.
 
 **Business Value**
 - Customer satisfaction: reassurance of payment.
-- Cost reduction: fewer "did my payment go through" calls.
+- Cost reduction: fewer incoming payment confirmation calls.
 
 **Assumptions**
 - A valid customer email address is on record.
-- An email service is available.
+- An email service is integrated.
 
-**Dependencies:** US-12
+**Dependencies:** US-12 (payments)
 
-**Priority:** High - essential to trust in the payment feature.
+**Priority:** Medium - not essential to core process but builds customer trust.
 
 ### US-14: Recover from a failed payment
 
@@ -420,32 +419,32 @@
 - The payment provider returns failure reason codes.
 - Duplicate protection is supported by the provider.
 
-**Dependencies:** US-12
+**Dependencies:** US-12 (payments)
 
-**Priority:** High - high risk area where errors cause legal and revenue issues.
+**Priority:** Very High - high risk area in core process where errors cause legal and revenue issues.
 
-### US-15: Post portal payments automatically
+### US-15: Log portal payments automatically
 
 **Stakeholder:** Collections Representative
 
 **Story:** As a Collections Representative, I want portal payments recorded automatically on the account, so that I do not have to enter them manually.
 
 **Acceptance Criteria**
-- A successful payment appears in the case log within n minutes (n TBD).
+- A successful payment appears in the case log immediately.
 - The log entry includes amount, date, reference and channel.
 - No manual entry is needed for portal payments.
 
 **Business Value**
 - Cost reduction: removes manual payment recording.
 - Operational efficiency: accurate balances for reps.
-- Revenue uplift: prevents chasing customers who have paid.
+- Revenue uplift: allows focusing on clients who haven't paid.
 
 **Assumptions**
 - The payment provider sends confirmation callbacks reliably.
 
-**Dependencies:** US-08 (log format), US-12 (payments)
+**Dependencies:** US-08 (case logs), US-12 (payments)
 
-**Priority:** Very High - without it, the portal does not reduce rep workload.
+**Priority:** High - automates a key part of the process saving rep time.
 
 ### US-16: Reconcile portal payments
 
@@ -456,7 +455,6 @@
 **Acceptance Criteria**
 - A report, generated at an agreed frequency (TBD), lists payments in the system versus provider settlement.
 - Unmatched items are listed separately.
-- Report is available by an agreed time (TBD) after each run.
 
 **Business Value**
 - Revenue uplift: unmatched payments are identified and recovered.
@@ -466,7 +464,7 @@
 **Assumptions**
 - The provider supplies a settlement file or API.
 
-**Dependencies:** US-06 (reporting), US-12 (payments), US-15 (posting)
+**Dependencies:** US-06 (reporting access), US-12 (payments), US-15 (payment posting)
 
 **Priority:** High - protects revenue on the highest-risk feature.
 
@@ -502,7 +500,7 @@
 **Acceptance Criteria**
 - Only team leaders can approve reversals.
 - A reversal requires a reason code and is logged on the account.
-- The balance is corrected within n minutes (n TBD) of approval.
+- The balance is corrected within a reasonable timeframe.
 - The customer is notified of the reversal.
 
 **Business Value**
@@ -514,9 +512,9 @@
 - A refund and error policy is agreed.
 - The payment provider supports refunds via API.
 
-**Dependencies:** US-12, US-15
+**Dependencies:** US-12 (payments), US-15 (payment posting)
 
-**Priority:** Medium - required for error handling but used less frequently.
+**Priority:** Medium - required for error handling but manual path does exist.
 
 ---
 
@@ -530,8 +528,7 @@
 
 **Acceptance Criteria**
 - Access to account actions requires successful verification.
-- Verification checks at least n data points held on record (n TBD).
-- A successful verification completes within n minutes (n TBD).
+- A successful verification completes quickly.
 - Unverified users cannot view or change any account data.
 
 **Business Value**
@@ -544,7 +541,7 @@
 - The level of check stringency is agreed with compliance.
 - A verification method is chosen (e.g. one-time code or knowledge-based check).
 
-**Dependencies:** US-01 (customer data), US-02 (security controls)
+**Dependencies:** US-01 (storage), US-02 (security)
 
 **Priority:** Very High - prerequisite for every self-service feature.
 
@@ -567,31 +564,37 @@
 **Assumptions**
 - Rep contact channels remain available.
 
-**Dependencies:** US-19
+**Dependencies:** US-19 (identity verification)
 
-**Priority:** Medium - protects inclusion but does not block other features.
+**Priority:** Very High - new process cannot leave customer at a dead end.
 
-### US-21: Assist customers who fail verification
+### US-21: Verify customers over the phone
 
 **Stakeholder:** Collections Representative
 
-**Story:** As a Collections Representative, I want to see when a customer has failed verification, so that I can verify them manually and help them.
+**Story:** As a Collections Representative, I want to enter a caller's details into the verification process, so that I can verify their identity over the phone before discussing the account.
 
 **Acceptance Criteria**
-- Failed verification attempts appear on the customer record.
-- A rep can complete a manual verification using the standard script and log it.
-- Manual verification is recorded with rep ID and timestamp.
+- The rep can enter the caller's verification details from the customer record screen.
+- The system returns a Verified or Not verified result immediately after submission.
+- Account details are not displayed to the rep for discussion until the result is Verified.
+- The result is shown without revealing which detail was incorrect.
+- Each phone verification attempt is logged with rep ID, customer ID, time and outcome.
 
 **Business Value**
-- Customer satisfaction: faster help for locked-out customers.
-- Risk reduction: manual checks follow a controlled process.
+- Risk reduction: prevents disclosure of account details to unverified callers.
+- Regulatory compliance: consistent identity checks across portal and phone channels.
+- Customer satisfaction: customers who fail or avoid the portal still have a secure route.
+- Operational efficiency: replaces ad hoc manual questioning with one standard check.
 
 **Assumptions**
-- A manual verification procedure is defined.
+- Verification details held for each customer are accurate after migration.
+- Phone verification uses the same rules as portal verification, as agreed with compliance.
+- Reps have been trained and permitted to run verification.
 
-**Dependencies:** US-03, US-19
+**Dependencies:** US-03 (customer record), US-19 (identity verification)
 
-**Priority:** Medium - supports edge cases.
+**Priority:** Very High - the main fallback when portal verification fails and a prerequisite for safe phone contact.
 
 ### US-22: Record every verification attempt
 
@@ -611,7 +614,7 @@
 **Assumptions**
 - Retention period is confirmed by compliance.
 
-**Dependencies:** US-04, US-19
+**Dependencies:** US-04 (audit trail), US-19 (identity verification)
 
 **Priority:** High - high-risk feature requires traceability.
 
@@ -622,7 +625,7 @@
 **Story:** As an IT Team Member, I want accounts locked after repeated failed verification and alerts raised on unusual activity, so that brute-force and fraud attempts are stopped.
 
 **Acceptance Criteria**
-- An account is locked after n consecutive failed attempts (n TBD).
+- An account is locked after a number (TBD) of consecutive failed attempts.
 - A locked account can only be unlocked by a rep after manual verification.
 - An alert is raised if failed attempts exceed an agreed threshold within a defined time window (TBD).
 
@@ -634,7 +637,7 @@
 - The lockout limit and alert thresholds are agreed with compliance.
 - An alerting channel for IT exists.
 
-**Dependencies:** US-19
+**Dependencies:** US-19 (identity verification)
 
 **Priority:** High - limits the liability identified for verification errors.
 
@@ -652,7 +655,7 @@
 - Each promised payment is checked on its due date.
 - Results are set as Fulfilled, Partially fulfilled or Not fulfilled.
 - The result is written to the case log automatically.
-- Checks complete for all due promises within an agreed time of the due date (TBD).
+- Checks complete for all due promises within the due date.
 
 **Business Value**
 - Cost reduction: removes manual payment checking.
@@ -663,7 +666,7 @@
 - Payments from all channels are recorded in the central database.
 - Promised payments are stored as structured data (amount and date).
 
-**Dependencies:** US-08, US-15
+**Dependencies:** US-08 (case logs), US-15 (payment posting)
 
 **Priority:** High - highly relevant, low complexity and captures lost revenue.
 
@@ -674,7 +677,7 @@
 **Story:** As a Collections Representative, I want unfulfilled promises flagged on the account, so that I can act on them straight away.
 
 **Acceptance Criteria**
-- A Not fulfilled result flags the account within n minutes (n TBD) of the check.
+- A not fulfilled result flags the account.
 - The flag shows promised amount, due date and shortfall.
 - The flag clears automatically once the payment is received.
 
@@ -685,7 +688,7 @@
 **Assumptions**
 - Reps view flags in the standard case view.
 
-**Dependencies:** US-24
+**Dependencies:** US-24 (promise check)
 
 **Priority:** High - turns check results into action.
 
@@ -697,19 +700,18 @@
 
 **Acceptance Criteria**
 - The report is generated at an agreed frequency and available by an agreed time (both TBD).
-- It lists customer, rep, amount, due date and days overdue.
-- It can be filtered by rep.
+- It lists customer, amount, due date and days overdue.
 
 **Business Value**
 - Revenue uplift: fewer missed follow ups.
 - Operational efficiency: quick workload oversight.
 
 **Assumptions**
-- Customers are assigned to a rep or team.
+- None
 
-**Dependencies:** US-24, US-25
+**Dependencies:** US-24 (promise check), US-25 (unfulfilled flag)
 
-**Priority:** Medium - improves management oversight.
+**Priority:** Medium - ensures follow ups are not missed.
 
 ### US-27: Report on failed payment value
 
@@ -720,18 +722,16 @@
 **Acceptance Criteria**
 - Report shows count and value of each fulfilment result per reporting period (period TBD).
 - Totals reconcile to underlying payments.
-- Trend is shown over at least n reporting periods (n TBD).
 
 **Business Value**
 - Revenue uplift: evidences recovered collections.
-- Cost reduction: supports the business case.
 
 **Assumptions**
-- A baseline for missed payments before automation is available.
+- Failed payments are accessible from the payment provider.
 
-**Dependencies:** US-06, US-24
+**Dependencies:** US-06 (reporting access), US-24 (promise check)
 
-**Priority:** Medium - proves value but does not block delivery.
+**Priority:** Very Low - nice to have but does not impact delivery.
 
 ### US-28: Be told about a missing payment
 
@@ -740,7 +740,7 @@
 **Story:** As a Customer, I want to be notified if my promised payment is not found, so that I can correct it before being treated as delinquent.
 
 **Acceptance Criteria**
-- A notification is sent within n hours (n TBD) of a Not fulfilled result.
+- A notification is sent immediately upon a not fulfilled result.
 - It states the amount and date expected and how to contact a rep.
 - A customer can raise a query that suspends delinquent categorisation until reviewed.
 
@@ -753,7 +753,7 @@
 - Valid contact details are on record.
 - An email service is available.
 
-**Dependencies:** US-24
+**Dependencies:** US-24 (promise check)
 
 **Priority:** Medium - mitigates the risk of wrongly categorised customers.
 
@@ -765,7 +765,7 @@
 
 **Acceptance Criteria**
 - Each run logs start, end and records processed.
-- A failed run is retried automatically up to n times (n TBD).
+- A failed run is retried automatically up to (TBD) times.
 - An alert is sent if the job has not completed successfully by an agreed time (TBD).
 
 **Business Value**
@@ -773,11 +773,11 @@
 - Operational efficiency: less manual checking of jobs.
 
 **Assumptions**
-- A monitoring and alerting tool is available.
+- There is an agreed on time for an automatic check to run before manually retrying.
 
-**Dependencies:** US-24
+**Dependencies:** US-24 (promise check)
 
-**Priority:** Medium - protects reliability of a medium-risk feature.
+**Priority:** Low - protects reliability but a manual check is possible with good logging.
 
 ---
 
@@ -802,7 +802,7 @@
 **Assumptions**
 - Follow-up intervals per outcome are agreed with team leaders.
 
-**Dependencies:** US-08
+**Dependencies:** US-08 (case logs)
 
 **Priority:** High - high ROI and removes a manual source of error.
 
@@ -822,9 +822,9 @@
 - Revenue uplift: overdue items are visible.
 
 **Assumptions**
-- Reps use the system as their main workflow tool.
+- Reps use the system as intended.
 
-**Dependencies:** US-30
+**Dependencies:** US-30 (follow-ups)
 
 **Priority:** High - makes scheduling usable.
 
@@ -846,9 +846,9 @@
 **Assumptions**
 - Team leaders have authority to reassign work.
 
-**Dependencies:** US-30
+**Dependencies:** US-30 (follow-ups)
 
-**Priority:** Medium - improves oversight.
+**Priority:** Low - nice to have but does not impact delivery.
 
 ### US-33: Limit and evidence contact frequency
 
@@ -868,9 +868,9 @@
 **Assumptions**
 - Applicable contact frequency rules are confirmed by compliance.
 
-**Dependencies:** US-04, US-30
+**Dependencies:** US-04 (audit trail), US-30 (follow-ups)
 
-**Priority:** High - prevents regulatory breaches caused by incorrect scheduling.
+**Priority:** Medium - prevents regulatory breaches caused by incorrect scheduling.
 
 ### US-34: Be contacted at a preferred time
 
@@ -890,9 +890,9 @@
 **Assumptions**
 - Preferences are captured by reps during logging.
 
-**Dependencies:** US-30
+**Dependencies:** US-30 (follow-ups)
 
-**Priority:** Medium - improves experience but not essential.
+**Priority:** Low - improves experience but not essential.
 
 ---
 
@@ -908,7 +908,7 @@
 - A verified customer can select an amount and a date within the permitted window.
 - Dates outside the permitted window cannot be selected.
 - The promise is saved to the account on submission.
-- No more than n active promises exist per account (n TBD).
+- No more than 1 active promise exists per account.
 
 **Business Value**
 - Cost reduction: removes rep time on promise calls.
@@ -918,8 +918,9 @@
 **Assumptions**
 - Policy for permitted amounts and date window is agreed.
 - No money is taken at the time of promise.
+- Customer can only choose permitted plans.
 
-**Dependencies:** US-01, US-19
+**Dependencies:** US-01 (storage), US-19 (identity verification)
 
 **Priority:** High - a key manual pain point with low complexity.
 
@@ -931,7 +932,7 @@
 
 **Acceptance Criteria**
 - A confirmation page shows amount, date and reference.
-- A confirmation email is sent within n minutes (n TBD).
+- A confirmation email is sent immediately.
 - The customer can view the active promise in the portal.
 
 **Business Value**
@@ -940,8 +941,9 @@
 
 **Assumptions**
 - A valid email address is on record.
+- Email service is active.
 
-**Dependencies:** US-35
+**Dependencies:** US-35 (promise to pay)
 
 **Priority:** Medium - improves clarity but not essential for functionality.
 
@@ -952,7 +954,7 @@
 **Story:** As a Collections Representative, I want customer promises recorded on the case and follow-ups paused until the due date, so that I do not chase customers who have committed to pay.
 
 **Acceptance Criteria**
-- A promise appears in the case log within n minutes (n TBD) of submission.
+- A promise appears in the case log immediately.
 - Scheduled follow-ups are paused until the promise due date.
 - Follow-ups resume automatically if the promise is unfulfilled.
 
@@ -962,9 +964,9 @@
 - Operational efficiency: reps focus on uncommitted cases.
 
 **Assumptions**
-- Policy on pausing follow-ups is agreed.
+- None
 
-**Dependencies:** US-08, US-30, US-35
+**Dependencies:** US-08 (case logs), US-30 (follow-ups), US-35 (promise to pay)
 
 **Priority:** High - gives the feature its rep time saving.
 
@@ -975,9 +977,10 @@
 **Story:** As a Financial Partner, I want a report of promised amounts by date, so that I can forecast expected collections.
 
 **Acceptance Criteria**
-- Report shows total promised amount per day for the next n days (n TBD).
+- Report shows total promised amount over any period chosen.
 - Report compares past promised amounts with amounts actually received.
-- Report is refreshed at an agreed frequency (TBD).
+- Report is refreshed when needed.
+- Report is filterable by time period.
 
 **Business Value**
 - Revenue uplift: better cash flow planning.
@@ -986,9 +989,9 @@
 **Assumptions**
 - Payment fulfilment data is available.
 
-**Dependencies:** US-06, US-35
+**Dependencies:** US-06 (reporting access), US-35 (promise to pay)
 
-**Priority:** Medium - useful insight but not foundational.
+**Priority:** Very Low - useful insight but not foundational and possible to do manually.
 
 ### US-39: Evidence promises for audit
 
@@ -1008,9 +1011,9 @@
 **Assumptions**
 - Retention period is confirmed by compliance.
 
-**Dependencies:** US-04, US-19, US-35
+**Dependencies:** US-04 (audit trail), US-19 (identity verification), US-35 (promise to pay)
 
-**Priority:** Medium - supports compliance on a low-risk feature.
+**Priority:** High - supports compliance on a low-risk feature.
 
 ---
 
@@ -1034,7 +1037,7 @@
 **Assumptions**
 - The portal and database are hosted in an environment that allows an access layer.
 
-**Dependencies:** US-01, US-02
+**Dependencies:** US-01 (storage), US-02 (security)
 
 **Priority:** Medium - technical foundation for the account information feature.
 
@@ -1045,9 +1048,9 @@
 **Story:** As a Customer, I want to view my balance, due dates and payment history, so that I know what I owe without calling a rep.
 
 **Acceptance Criteria**
-- Page shows current balance, due date, payments for the last n months (n TBD) and active promise.
+- Page shows current balance, due date, payments and active promise.
 - Data shown matches the central record at time of load.
-- The page loads within n seconds (n TBD).
+- The page loads quickly.
 - Only a verified customer can view the page.
 
 **Business Value**
@@ -1058,7 +1061,7 @@
 - Customers have internet access.
 - Historical payment data is migrated.
 
-**Dependencies:** US-19, US-40
+**Dependencies:** US-19 (identity verification), US-40 (data interface)
 
 **Priority:** Medium - eases portal use but is not required for payments.
 
@@ -1080,9 +1083,9 @@
 **Assumptions**
 - Sampling procedure is agreed with compliance.
 
-**Dependencies:** US-04, US-41
+**Dependencies:** US-04 (audit trail), US-41 (account info)
 
-**Priority:** Low - protects against a risk that is resolvable through human support.
+**Priority:** Very Low - protects against a risk that is resolvable through human support.
 
 ---
 
@@ -1106,7 +1109,7 @@
 **Assumptions**
 - Validation rules are agreed per field.
 
-**Dependencies:** US-01
+**Dependencies:** US-01 (storage)
 
 **Priority:** Low - protects data quality for an optional feature.
 
@@ -1118,9 +1121,9 @@
 
 **Acceptance Criteria**
 - A verified customer can edit phone, email and address.
-- Changes save to the central record within n minutes (n TBD).
+- Changes save to the central record immediately.
 - The customer sees a confirmation of the saved change.
-- Customers cannot edit the account number or balance.
+- Customers can edit only allowed fields.
 
 **Business Value**
 - Cost reduction: reduces rep time on detail changes.
@@ -1130,7 +1133,7 @@
 **Assumptions**
 - Policy on which fields customers may edit is agreed.
 
-**Dependencies:** US-19, US-43
+**Dependencies:** US-19 (identity verification), US-43 (input validation)
 
 **Priority:** Low - low ROI, eases a rep pain point.
 
@@ -1141,7 +1144,7 @@
 **Story:** As a Customer, I want to be notified at my previous contact method when details change, so that I can spot unauthorised changes.
 
 **Acceptance Criteria**
-- A notification is sent to the previous email or phone within n minutes (n TBD) of a change.
+- A notification is sent to the previous email or phone immediately.
 - The notification includes how to report an unauthorised change.
 
 **Business Value**
@@ -1151,7 +1154,7 @@
 **Assumptions**
 - Previous contact details were valid.
 
-**Dependencies:** US-44
+**Dependencies:** US-44 (detail updates)
 
 **Priority:** Low - security enhancement on an optional feature.
 
@@ -1162,7 +1165,7 @@
 **Story:** As a Collections Representative, I want customer-made changes visible on the record straight away, so that I do not update details manually.
 
 **Acceptance Criteria**
-- Portal changes appear on the customer record within n minutes (n TBD).
+- Portal changes appear on the customer record immediately.
 - The record marks the change as customer-made with a timestamp.
 - No manual re-entry is required.
 
@@ -1173,9 +1176,9 @@
 **Assumptions**
 - The central database is the only data store reps use.
 
-**Dependencies:** US-03, US-44
+**Dependencies:** US-03 (customer record), US-44 (detail updates)
 
-**Priority:** Very Low - largely delivered by the central record.
+**Priority:** Low - largely delivered by the central record.
 
 ### US-47: Audit customer-made changes
 
@@ -1194,7 +1197,7 @@
 **Assumptions**
 - Audit trail supports channel identification.
 
-**Dependencies:** US-04, US-44
+**Dependencies:** US-04 (audit trail), US-44 (detail updates)
 
 **Priority:** Low - extends the existing audit trail to the portal.
 
@@ -1209,10 +1212,10 @@
 **Story:** As a Customer, I want a reminder before my payment is due, so that I do not miss it.
 
 **Acceptance Criteria**
-- A reminder is sent n days before the due date (n TBD).
+- A reminder is sent (TBD) days before the due date.
 - It includes amount, due date and a link to pay or contact a rep.
 - Customers with no payment due do not receive a reminder.
-- Reminders are sent to the email address on record.
+- Reminders are sent to the correct customer.
 
 **Business Value**
 - Revenue uplift: fewer missed payments.
@@ -1224,7 +1227,7 @@
 - Valid email addresses are on record.
 - Reminder timing is agreed.
 
-**Dependencies:** US-01
+**Dependencies:** US-01 (storage)
 
 **Priority:** Medium - modest ROI, low complexity.
 
@@ -1246,7 +1249,7 @@
 **Assumptions**
 - Opt-out for reminders is permitted by policy.
 
-**Dependencies:** US-48
+**Dependencies:** US-48 (reminders)
 
 **Priority:** Medium - consent requirement for sending reminders.
 
@@ -1268,7 +1271,7 @@
 **Assumptions**
 - Reminder and case logs use the same customer ID.
 
-**Dependencies:** US-08, US-48
+**Dependencies:** US-08 (case logs), US-48 (reminders)
 
 **Priority:** Low - convenience for reps.
 
@@ -1290,7 +1293,7 @@
 **Assumptions**
 - Team leaders are authorised to change reminder settings.
 
-**Dependencies:** US-48
+**Dependencies:** US-48 (reminders)
 
 **Priority:** Very Low - the default timing is sufficient at launch.
 
@@ -1312,7 +1315,7 @@
 **Assumptions**
 - Compliance has approved the initial templates.
 
-**Dependencies:** US-33, US-48
+**Dependencies:** US-33 (contact limits), US-48 (reminders)
 
 **Priority:** Medium - controls the risk of confusing or non-compliant reminders.
 
@@ -1334,24 +1337,8 @@
 **Assumptions**
 - The email provider returns delivery status.
 
-**Dependencies:** US-48
+**Dependencies:** US-48 (reminders)
 
 **Priority:** Low - supports reliability of an optional feature.
 
----
 
-## Review
-
-Checked against the skill specification:
-
-- All 10 in-scope features are epics with at least 3 stories each.
-- All 6 ADKAR stakeholders appear in multiple stories. Within an epic, stakeholders are only covered where they plausibly interact with or are affected by the feature.
-- All 53 stories have a story statement, acceptance criteria, business value, assumptions, dependencies and priority.
-- Dependencies reference existing story IDs, contain no circular references, and each dependency has an equal or higher priority than its dependants.
-- Priority reflects how foundational a story is: central storage, security, logging, identity verification and payments are Very High; optional portal conveniences are Low or Very Low.
-
-**Points to validate with stakeholders**
-- Numeric targets (response times, attempt limits, intervals, failure thresholds, reporting frequencies) are placeholders (n, m or TBD) to be agreed.
-- Payment provider, email service and PCI DSS certification are assumed available.
-- Contact frequency, retention periods and refund policies need confirmation from compliance and finance.
-- Out-of-scope items (case assignment, case classification, case prioritisation, specialist case handling, case escalation) are not covered; stories only route customers to a rep where verification or payment fails.
