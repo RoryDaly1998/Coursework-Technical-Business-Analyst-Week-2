@@ -131,6 +131,10 @@
       <bpmn:text>This represents a hand off to a manager process which is out of scope for this project. Due to the new database structure when cases are handed off they will include all relevant customer information.</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_1ll1dqb" associationDirection="None" sourceRef="Event_1wigldx" targetRef="TextAnnotation_0w3bf5d" />
+    <bpmn:textAnnotation id="TextAnnotation_171fi73">
+      <bpmn:text>Automated payment reminder increases use of self-service portal and reduces human case load.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_08h9ky1" associationDirection="None" sourceRef="Activity_1fzqbmo" targetRef="TextAnnotation_171fi73" />
   </bpmn:collaboration>
   <bpmn:process id="Process_0f4lm29" isExecutable="false">
     <bpmn:laneSet id="LaneSet_01p08qx">
@@ -1212,6 +1216,10 @@
         <di:waypoint x="4096" y="831" />
         <di:waypoint x="4190" y="778" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_08h9ky1_di" bpmnElement="Association_08h9ky1">
+        <di:waypoint x="2540" y="2281" />
+        <di:waypoint x="2650" y="2239" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0wvkh3t_di" bpmnElement="TextAnnotation_0wvkh3t" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
         <dc:Bounds x="210" y="2020" width="104.63850174216027" height="100" />
         <bpmndi:BPMNLabel />
@@ -1349,6 +1357,10 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0w3bf5d_di" bpmnElement="TextAnnotation_0w3bf5d" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
         <dc:Bounds x="4190" y="730" width="250" height="86" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_171fi73_di" bpmnElement="TextAnnotation_171fi73" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
+        <dc:Bounds x="2650" y="2200" width="143" height="86" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>

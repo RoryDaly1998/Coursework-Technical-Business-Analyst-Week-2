@@ -76,11 +76,74 @@ This is a MoSCoW breakdown of automation opportunities identified in the discove
 
 | Stakeholder | Awareness | Desire | Knowledge | Ability | Reinforcement |
 |-------------|-----------|--------|-----------|---------|---------------|
-| Customer | **Medium** - Aware of inefficiencies in current process but not with specifics of where the process breaks down. | **Medium** - Some customers will want an easier experience, some would rather deal with a human rep. | **Medium** - Most customers should be able to use an online portal but there will be some who won't. | **High** - A well designed service will be usable to anyone. | **High** - Once their services are moved online they will expect the service to continue. |
-| Collections Representative | **High** - Deals with pain points in the process every day. | **Medium** - Some reps will welcome the improved workflow but others will see it as a threat to job security. | **Medium** - Processes will be new but a well deisgned interface should be easy to use. | **High** - Can work with complicated workaround processes so new interface should prove easier to use. | **Medium** - Will support the new process only if it proves a net benefit to their workflow. |
-| Collections Team Leader | **High** - See the effect of current workflow issues on their team every day. | **Medium** - Will want a better workflow for their team but will be cautious that any new processes don't create new issues. | **Low** - New centralised processes will need signifcant adaptation from current situation of every team having their own workaround. | **High** - Experienced professionals should be able to adapt to new process. | **Medium** - The new process will continue to be supported only if it successfully improves their team's workflow. |
-| Financial Partner | **Medium** - Aware of financial losses but not parts of the process that cause inefficiencies. | **High** - Strong desire to increase revenue and reduce costs. | **Low** - Not expected to know how to interact with new processes. | **Medium** - Need not necessarily have strong technical skills in their role but will have had to deal with the current complicated processes and so should be able to handle a new simplified one. | **High** - Will continue to support cost savings from automation. |
-| Compliance Liaison | **High** - Very aware of need for better recording of data for audit trails. | **High** - Current process makes audits easy to fail through poor data organisation. Strong desire for change. | **High** - Need to be technical to follow audit trails and so will be able to easily handle the new process. | **High** - Professionals in this field will have strong technical ability. | **High** - Will support the centralisation of data and digitalisation of processes since it will make compliance easier. |
+| Customer | **Medium** - Aware of inefficiencies in current process but not with specifics of where the process breaks down. | **Medium** - Some customers will want an easier experience, some would rather stick to the process they're used to. | **Medium** - Self service will be a brand new system but old method of contacting rep directly will still be an option. | **Medium** - Customers with technical ability will find the change easy while those without may struggle. | **Medium** - Will support the service if it provides a good service. Won't support if there are issues or if it confusing to use. |
+| Collections Representative | **High** - Deals with pain points in the process every day. | **Medium** - Some reps will welcome the improved workflow but others will see it as a threat to job security. | **High** - Reps already use database and process for self service does not affect their workflow. | **High** - No new technologies to learn as the rep process does not change very much. | **Medium** - Will support the new process only if it proves a net benefit to their workload. |
+| Collections Team Leader | **High** - See the effect of current workflow issues on their team every day. | **Medium** - Will want a better workflow for their team but will be cautious that any new processes don't create new issues. | **Medium** - Manager process does not change but underlying technologies do which the managers may need to interact with for complex cases. | **Medium** - Reconciling complex cases may involve direct interaction with new technologies such as the database. | **Medium** - The new process will continue to be supported only if it successfully improves their team's workflow. |
+| Financial Partner | **Medium** - Aware of financial losses but not parts of the process that cause inefficiencies. | **Medium** - Strong desire to increase revenue and reduce costs but will be cautious to make sure new process is actually effective. | **Low** - Will have to interact with new database in order to create financial reports. | **Medium** - Processes for financial reporting will be new but they have dealt with the previous database system and so skills will transfer to dealing with the new one. | **Medium** - Will continue to support only if there are proven cost savings and revenue uplift from automation. |
+| Compliance Liaison | **High** - Very aware of need for better recording of data for audit trails. | **Medium** - Current process makes audits easy to fail through poor data organisation. However a new process could create new risks. | **Low** - New self service portal will create completely new process for data audits. | **Medium** - Dealing with legacy system means they have the ability to deal with databases but self service portal will require new auditing processes. | **Medium** - Will support the new process only if it makes the auditing process easier and more accurate. |
+| IT Team Member | **Medium** - Some awareness of change due to having to maintain many different workaround systems. Low awareness of business need for change. | **Medium** - Desire to simplify the current system and create less maintenance work but only if the new system does not create new issues. | **Low** - New process will introduce many new processes they would need to learn. | **Medium** - Already know how to build and maintain current legacy database which will translate to ability to build and maintain new database but some processes like automatic verification will be completely new. | **Medium** - Will support new process only if it is easy to maintain and does not cause new issues. |
+
+## ADKAR Risk Mitigation Strategy
+
+### Customer
+
+**Risk** - Customers are only partially aware of where the current process breaks down and some prefer dealing with a human rep, leading to low portal uptake. Customers with limited technical ability may struggle, and a confusing or unreliable portal will remove their support.
+
+**Mitigation Actions** -
+- Communicate the benefits of self-service (faster resolution, 24/7 access) through the existing contact channels such as email and rep calls.
+- Keep the rep contact route available so no customer is forced onto the portal.
+- Provide in-portal guidance and a short how-to guide for first-time users.
+- Usability test the portal with a sample of customers, including less technical ones, before launch.
+- Monitor portal error rates and customer feedback after launch and fix issues quickly.
+
+### Collections Representative
+
+**Risk** - Some reps may see automation as a threat to job security, reducing desire and leading to resistance. Support depends on the new process proving a net benefit to their workload.
+
+**Mitigation Actions** -
+- Communicate early that automation is intended to remove repetitive work so reps can focus on complex and specialist cases.
+- Involve reps in testing the prototype and gather their feedback to shape the process.
+- Share workload measures (e.g. cases handled per rep, time spent on admin) before and after rollout to show the benefit.
+- Agree with management how any freed capacity will be used and communicate this to reps.
+
+### Collections Team Leader
+
+**Risk** - Team leaders will need to interact with new underlying technologies, such as the database, when reconciling complex cases, and may be cautious that the new process creates new issues. Support depends on it improving their team's workflow.
+
+**Mitigation Actions** -
+- Provide hands-on training on the new database and case reconciliation steps before go-live.
+- Provide a quick reference guide for common complex case scenarios.
+- Name an IT contact for escalating issues during the early rollout period.
+- Review team workflow measures with team leaders regularly after launch and act on their feedback.
+
+### Financial Partner
+
+**Risk** - Financial partners will need to create reports from the new database, which they do not yet know how to use. Their support depends on proven cost savings and revenue uplift.
+
+**Mitigation Actions** -
+- Provide standard financial report templates and training on the new database before go-live.
+- Agree baseline measures with the Financial Partner (e.g. collection rate, rep time per case) before launch.
+- Report against those measures at agreed intervals after launch to evidence savings and uplift.
+
+### Compliance Liaison
+
+**Risk** - The self-service portal creates a new process for data audits, which the Compliance Liaison is not yet familiar with, and the new process could introduce new compliance risks. Support depends on auditing becoming easier and more accurate.
+
+**Mitigation Actions** -
+- Involve the Compliance Liaison in requirements and design so audit trail needs are built in from the start.
+- Confirm that standardised record logging captures all data required for audits.
+- Walk through the new audit process and train the Compliance Liaison before go-live.
+- Run a trial audit on prototype data to check the new process works before full rollout.
+
+### IT Team Member
+
+**Risk** - IT team members have low awareness of the business need and low knowledge of some new processes, such as automated identity verification. Their support depends on the system being easy to maintain and not creating new issues.
+
+**Mitigation Actions** -
+- Brief the IT team on the business case and the pain points the project addresses.
+- Involve the IT team in design and build so they understand the system before handover.
+- Provide training and documentation on new components such as identity verification and the payment service.
+- Define a maintenance and support plan before go-live, including monitoring and incident handling.
 
 ## Deliverable Timeline
 
