@@ -1,0 +1,1152 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Labels,Labels,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Custom field (Development),Custom field (Issue color),Custom field (Rank),Custom field (Start date),Custom field (Team),Parent,Parent key,Parent summary,Status category,Status category changed
+Centralised Customer Detail Storage,LTBSR-1,10216,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,08/Oct/26 12:03 PM,,,0,,,"Epic 1 of 10. Contains 7 user stories: US-01 to US-07.
+
+*Priority:* High - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0002n:,,,,,,To Do,08/Oct/26 11:32 AM
+Standardised Digital Record Logging,LTBSR-2,10217,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 2 of 10. Contains 4 user stories: US-08 to US-11.
+
+*Priority:* High - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00032:,,,,,,To Do,08/Oct/26 11:32 AM
+Self-Service Payments,LTBSR-3,10218,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 3 of 10. Contains 7 user stories: US-12 to US-18.
+
+*Priority:* High - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00039:,,,,,,To Do,08/Oct/26 11:32 AM
+Automated Identity Verification,LTBSR-4,10219,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 4 of 10. Contains 5 user stories: US-19 to US-23.
+
+*Priority:* Highest - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0003n:,,,,,,To Do,08/Oct/26 11:32 AM
+Automated Payment Fulfillment Check,LTBSR-5,10220,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 5 of 10. Contains 6 user stories: US-24 to US-29.
+
+*Priority:* Medium - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0003t:,,,,,,To Do,08/Oct/26 11:32 AM
+Automated Follow Up Scheduling,LTBSR-6,10221,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 6 of 10. Contains 5 user stories: US-30 to US-34.
+
+*Priority:* Medium - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00046:,,,,,,To Do,08/Oct/26 11:32 AM
+Self-Service Promise To Pay,LTBSR-7,10222,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 7 of 10. Contains 5 user stories: US-35 to US-39.
+
+*Priority:* Medium - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0004b:,,,,,,To Do,08/Oct/26 11:32 AM
+Self-Service Account Information,LTBSR-8,10223,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 8 of 10. Contains 3 user stories: US-40 to US-42.
+
+*Priority:* Low - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0004n:,,,,,,To Do,08/Oct/26 11:32 AM
+Self-Service Updating Details,LTBSR-9,10224,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 9 of 10. Contains 5 user stories: US-43 to US-47.
+
+*Priority:* Low - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0004r:,,,,,,To Do,08/Oct/26 11:32 AM
+Automated Payment Reminders,LTBSR-10,10225,Epic,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,,,"Epic 10 of 10. Contains 6 user stories: US-48 to US-53.
+
+*Priority:* Low - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00052:,,,,,,To Do,08/Oct/26 11:32 AM
+US-01: Migrate legacy customer data,LTBSR-11,10226,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,08/Oct/26 12:03 PM,,,0,IT-Team-Member,US-01,"*Story ID:* US-01
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want existing customer data migrated into one central database, so that every process reads from a single source of truth.
+
+h3. Acceptance Criteria
+* All legacy customer records are migrated or listed in an exception report.
+* Duplicate customer records are merged or flagged.
+* Data types match across all records.
+
+h3. Business Value
+* Cost reduction: removes maintenance of multiple workaround systems.
+* Operational efficiency: single source for all downstream automation.
+* Regulatory compliance: consistent data for audits.
+
+h3. Assumptions
+* Legacy data sources are accessible.
+* Data owners agree a data quality and de-duplication rule set.
+* A cutover window is available.
+
+*Dependencies:* None
+
+*Priority:* Very High - foundation for every other feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00055:,,,10216,LTBSR-1,Centralised Customer Detail Storage,To Do,08/Oct/26 11:32 AM
+US-02: Secure and back up the central database,LTBSR-12,10227,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,IT-Team-Member,US-02,"*Story ID:* US-02
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want role-based access, encryption and automated backups on the central database, so that customer data is protected and recoverable.
+
+h3. Acceptance Criteria
+* Each role can access only its permitted data, verified by access tests.
+* Data is encrypted at rest and in transit.
+* A backup completes at the agreed frequency (TBD) and a test restore succeeds within the agreed recovery time.
+* Unauthorised access attempts are logged.
+
+h3. Business Value
+* Risk reduction: limits data loss and breach exposure.
+* Regulatory compliance: meets data protection obligations.
+* Customer satisfaction: protects customer trust.
+
+h3. Assumptions
+* Roles and permissions are defined with team leaders and compliance.
+* Hosting platform supports encryption and scheduled backups.
+* A recovery time objective is agreed.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* Very High - security is required before any customer data is exposed.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0005d:,,,10216,LTBSR-1,Centralised Customer Detail Storage,To Do,08/Oct/26 11:32 AM
+US-03: View a single customer record,LTBSR-13,10228,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-03,"*Story ID:* US-03
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want to see all of a customer's details in one record, so that I can handle their case without searching multiple systems.
+
+h3. Acceptance Criteria
+* A customer record opens within n seconds (n TBD) when searched by account number.
+* The record shows contact details, balance, case history and open follow-ups.
+* Reps see only the fields permitted for their role.
+* No second system is needed to complete a standard case.
+
+h3. Business Value
+* Cost reduction: less rep time spent searching.
+* Operational efficiency: faster case handling.
+* Customer satisfaction: fewer repeated questions.
+
+h3. Assumptions
+* Reps are trained on the new interface.
+* Search by account number is the primary lookup.
+
+*Dependencies:* US-01 (storage), US-02 (security)
+
+*Priority:* Very High - the core rep workflow depends on it.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0005f:,,,10216,LTBSR-1,Centralised Customer Detail Storage,To Do,08/Oct/26 11:32 AM
+US-04: Audit trail of record changes,LTBSR-14,10229,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-04,"*Story ID:* US-04
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every change to a customer record logged with who, what and when, so that I can evidence data handling during audits.
+
+h3. Acceptance Criteria
+* Every create, update and delete is logged with user, timestamp, and before/after values.
+* Audit entries cannot be edited or deleted by regular users.
+* Audit entries can be searched by customer, user and date range.
+* Entries are retained for the required retention period.
+
+h3. Business Value
+* Regulatory compliance: supports audit trail requirements.
+* Risk reduction: deters and detects improper changes.
+* Cost reduction: shortens audit preparation.
+
+h3. Assumptions
+* Retention period is confirmed by compliance.
+* All system changes go through the central database.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* High - needed to pass audits and referenced by many compliance stories.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0005o:,,,10216,LTBSR-1,Centralised Customer Detail Storage,To Do,08/Oct/26 11:32 AM
+US-05: Review account history for complex cases,LTBSR-15,10230,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Team-Leader,US-05,"*Story ID:* US-05
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to view a customer's full account history, so that I can reconcile complex cases quickly.
+
+h3. Acceptance Criteria
+* History shows all payments, contacts and record changes in date order.
+* History loads within n seconds (n TBD) for accounts with up to m years of data (m TBD).
+* History can be filtered by event type and date range.
+
+h3. Business Value
+* Operational efficiency: faster resolution of complex cases.
+* Customer satisfaction: fewer unresolved cases.
+
+h3. Assumptions
+* Team leaders have read access to the full history.
+* Legacy history is migrated.
+
+*Dependencies:* US-03 (customer record)
+
+*Priority:* Medium - improves exception handling but does not block other stories.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0005p:,,,10216,LTBSR-1,Centralised Customer Detail Storage,To Do,08/Oct/26 11:32 AM
+US-06: Query data for financial reporting,LTBSR-16,10231,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Financial-Partner,US-06,"*Story ID:* US-06
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want to query customer and payment data from the central database, so that I can produce financial reports without manual data gathering.
+
+h3. Acceptance Criteria
+* Standard reports for balances, collections and arrears run on demand.
+* Report totals match source ledger totals.
+* Reports run without affecting rep system performance.
+* Report access is limited to the Financial Partner role.
+
+h3. Business Value
+* Cost reduction: removes manual report compilation.
+* Revenue uplift: better visibility of collection performance.
+* Regulatory compliance: consistent financial figures.
+
+h3. Assumptions
+* Reporting requirements are agreed with the Financial Partner.
+* A reporting tool or read-only data view is available.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* High - needed to prove cost savings and revenue uplift.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0005x:,,,10216,LTBSR-1,Centralised Customer Detail Storage,To Do,08/Oct/26 11:32 AM
+US-07: Provide details only once,LTBSR-17,10232,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-07,"*Story ID:* US-07
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want my details held once and shared across all reps, so that I do not have to repeat them each time I make contact.
+
+h3. Acceptance Criteria
+* Any rep can see my details at the start of contact.
+* Reps are not required to ask for details already on record.
+* Detail corrections made by one rep are visible to all reps immediately.
+
+h3. Business Value
+* Customer satisfaction: reduces repeated questions.
+* Operational efficiency: shorter calls.
+
+h3. Assumptions
+* Customer data is accurate after migration.
+
+*Dependencies:* US-03 (customer record)
+
+*Priority:* Low - benefit follows from US-03 rather than adding new capability.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0006c:,,,10216,LTBSR-1,Centralised Customer Detail Storage,To Do,08/Oct/26 11:32 AM
+US-08: Log case interactions with a standard form,LTBSR-18,10233,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-08,"*Story ID:* US-08
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want to log each customer interaction in one standard digital form, so that records are complete and consistent.
+
+h3. Acceptance Criteria
+* The form captures date, contact method, outcome code, promise details and next action.
+* Mandatory fields must be completed before the form can be saved.
+* Outcome codes are chosen from a fixed list.
+* A log saves within n seconds (n TBD) and is linked to the customer record.
+
+h3. Business Value
+* Cost reduction: removes manual and duplicate record keeping.
+* Revenue uplift: fewer mishandled accounts.
+* Regulatory compliance: consistent evidence of contact.
+
+h3. Assumptions
+* Outcome codes and mandatory fields are agreed across all teams.
+* Teams stop using their own workaround logs after go-live.
+
+*Dependencies:* US-01 (storage), US-03 (customer record)
+
+*Priority:* Very High - automates several steps and enables follow-ups, payments and reporting.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0006j:,,,10217,LTBSR-2,Standardised Digital Record Logging,To Do,08/Oct/26 11:32 AM
+US-09: Review team logs,LTBSR-19,10234,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Team-Leader,US-09,"*Story ID:* US-09
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to view and filter my team's logs, so that I can monitor case handling and quality.
+
+h3. Acceptance Criteria
+* Logs can be filtered by rep, outcome code and date range.
+* Results return within n seconds (n TBD) for a date range of up to m days (m TBD).
+* Team leaders see only their own team's logs.
+
+h3. Business Value
+* Operational efficiency: quicker oversight of workload.
+* Customer satisfaction: consistent handling across teams.
+
+h3. Assumptions
+* Team membership is maintained in the system.
+
+*Dependencies:* US-08 (case logs)
+
+*Priority:* Medium - supports management but does not block other work.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0006x:,,,10217,LTBSR-2,Standardised Digital Record Logging,To Do,08/Oct/26 11:32 AM
+US-10: Export logs for audits,LTBSR-20,10235,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-10,"*Story ID:* US-10
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want to export case logs for a given customer or period, so that I can respond to audit requests quickly.
+
+h3. Acceptance Criteria
+* Logs export to CSV or PDF filtered by customer or date range.
+* Exports include all form fields and the audit trail for each entry.
+* A standard export of up to n records (n TBD) completes within m minutes (m TBD).
+
+h3. Business Value
+* Regulatory compliance: faster, more complete audit responses.
+* Cost reduction: less manual audit preparation.
+* Risk reduction: lower risk of failing audits through missing data.
+
+h3. Assumptions
+* Auditors accept the exported formats.
+
+*Dependencies:* US-04 (audit trail), US-08 (case logs)
+
+*Priority:* High - directly addresses current audit failures.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00075:,,,10217,LTBSR-2,Standardised Digital Record Logging,To Do,08/Oct/26 11:32 AM
+US-11: Report on contact outcomes,LTBSR-21,10236,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Financial-Partner,US-11,"*Story ID:* US-11
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want logged outcomes available as structured data, so that I can report on collection results by outcome.
+
+h3. Acceptance Criteria
+* Outcome codes are stored as discrete values, not free text.
+* A report shows the count and value of cases by outcome code.
+* Report totals reconcile to logged cases.
+
+h3. Business Value
+* Revenue uplift: identifies which outcomes lead to collections.
+* Cost reduction: removes manual outcome tracking.
+
+h3. Assumptions
+* Outcome codes map to financial reporting categories.
+
+*Dependencies:* US-06 (reporting access), US-08 (case logs)
+
+*Priority:* Medium - improves insight but is not foundational.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0007i:,,,10217,LTBSR-2,Standardised Digital Record Logging,To Do,08/Oct/26 11:32 AM
+US-12: Pay an outstanding balance online,LTBSR-22,10237,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-12,"*Story ID:* US-12
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to pay my outstanding balance by card in the portal, so that I can settle my account without calling a rep.
+
+h3. Acceptance Criteria
+* A verified customer can pay the full balance or a partial amount.
+* Payment amount cannot exceed the outstanding balance.
+* A successful payment updates the account balance immediately.
+* Card details are never stored on company systems.
+
+h3. Business Value
+* Cost reduction: removes rep time on payment calls.
+* Revenue uplift: easier payment increases collections.
+* Customer satisfaction: payment access outside working hours.
+
+h3. Assumptions
+* A third-party payment provider is contracted and integrated.
+* Customers have a card and internet access.
+* Payment refund and error policies are defined.
+
+*Dependencies:* US-01 (storage), US-19 (identity verification)
+
+*Priority:* Very High - core objective of the project and largest ROI.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0007n:,,,10218,LTBSR-3,Self-Service Payments,To Do,08/Oct/26 11:32 AM
+US-13: Receive payment confirmation,LTBSR-23,10238,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-13,"*Story ID:* US-13
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want an immediate confirmation of my payment, so that I know it succeeded.
+
+h3. Acceptance Criteria
+* A confirmation page shows amount, date and reference.
+* A confirmation email is sent immediately.
+* The confirmation matches the amount recorded on the account.
+
+h3. Business Value
+* Customer satisfaction: reassurance of payment.
+* Cost reduction: fewer incoming payment confirmation calls.
+
+h3. Assumptions
+* A valid customer email address is on record.
+* An email service is integrated.
+
+*Dependencies:* US-12 (payments)
+
+*Priority:* Medium - not essential to core process but builds customer trust.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0007v:,,,10218,LTBSR-3,Self-Service Payments,To Do,08/Oct/26 11:32 AM
+US-14: Recover from a failed payment,LTBSR-24,10239,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-14,"*Story ID:* US-14
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want a clear message and a safe retry if my payment fails, so that I am not charged twice or left unsure of the outcome.
+
+h3. Acceptance Criteria
+* A failed payment shows a message stating the reason category (e.g. declined, timeout).
+* Retrying does not create a duplicate charge.
+* The failed attempt is recorded on the account.
+* The customer is shown the rep contact route.
+
+h3. Business Value
+* Customer satisfaction: reduces frustration at failure.
+* Risk reduction: avoids double charges and disputes.
+* Revenue uplift: more failed payments are completed on retry.
+
+h3. Assumptions
+* The payment provider returns failure reason codes.
+* Duplicate protection is supported by the provider.
+
+*Dependencies:* US-12 (payments)
+
+*Priority:* Very High - high risk area in core process where errors cause legal and revenue issues.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00083:,,,10218,LTBSR-3,Self-Service Payments,To Do,08/Oct/26 11:32 AM
+US-15: Log portal payments automatically,LTBSR-25,10240,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-15,"*Story ID:* US-15
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want portal payments recorded automatically on the account, so that I do not have to enter them manually.
+
+h3. Acceptance Criteria
+* A successful payment appears in the case log immediately.
+* The log entry includes amount, date, reference and channel.
+* No manual entry is needed for portal payments.
+
+h3. Business Value
+* Cost reduction: removes manual payment recording.
+* Operational efficiency: accurate balances for reps.
+* Revenue uplift: allows focusing on clients who haven't paid.
+
+h3. Assumptions
+* The payment provider sends confirmation callbacks reliably.
+
+*Dependencies:* US-08 (case logs), US-12 (payments)
+
+*Priority:* High - automates a key part of the process saving rep time.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0008e:,,,10218,LTBSR-3,Self-Service Payments,To Do,08/Oct/26 11:32 AM
+US-16: Reconcile portal payments,LTBSR-26,10241,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Financial-Partner,US-16,"*Story ID:* US-16
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want a regular reconciliation of portal payments against provider settlements, so that I can confirm all money collected is accounted for.
+
+h3. Acceptance Criteria
+* A report, generated at an agreed frequency (TBD), lists payments in the system versus provider settlement.
+* Unmatched items are listed separately.
+
+h3. Business Value
+* Revenue uplift: unmatched payments are identified and recovered.
+* Regulatory compliance: accurate financial records.
+* Risk reduction: early detection of payment errors.
+
+h3. Assumptions
+* The provider supplies a settlement file or API.
+
+*Dependencies:* US-06 (reporting access), US-12 (payments), US-15 (payment posting)
+
+*Priority:* High - protects revenue on the highest-risk feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0008h:,,,10218,LTBSR-3,Self-Service Payments,To Do,08/Oct/26 11:32 AM
+US-17: Secure and log payment transactions,LTBSR-27,10242,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-17,"*Story ID:* US-17
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every payment transaction secured to card industry standards and logged, so that the company meets its legal obligations.
+
+h3. Acceptance Criteria
+* Card data is handled only by the certified payment provider.
+* Each transaction has an audit entry with customer, amount, time and result.
+* A compliance review confirms no card data is stored or logged.
+
+h3. Business Value
+* Regulatory compliance: meets payment security standards.
+* Risk reduction: reduces fraud and liability.
+
+h3. Assumptions
+* The payment provider is certified to PCI DSS.
+* Required standards are confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-12 (payments)
+
+*Priority:* High - legal exposure on the highest-risk feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0008r:,,,10218,LTBSR-3,Self-Service Payments,To Do,08/Oct/26 11:32 AM
+US-18: Reverse an erroneous payment,LTBSR-28,10243,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Team-Leader,US-18,"*Story ID:* US-18
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to approve a refund or reversal of an incorrect payment, so that errors are corrected quickly and controlled.
+
+h3. Acceptance Criteria
+* Only team leaders can approve reversals.
+* A reversal requires a reason code and is logged on the account.
+* The balance is corrected within a reasonable timeframe.
+* The customer is notified of the reversal.
+
+h3. Business Value
+* Customer satisfaction: errors are fixed fast.
+* Risk reduction: reduces legal exposure from payment errors.
+* Regulatory compliance: controlled and auditable refunds.
+
+h3. Assumptions
+* A refund and error policy is agreed.
+* The payment provider supports refunds via API.
+
+*Dependencies:* US-12 (payments), US-15 (payment posting)
+
+*Priority:* Medium - required for error handling but manual path does exist.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0008t:,,,10218,LTBSR-3,Self-Service Payments,To Do,08/Oct/26 11:32 AM
+US-19: Verify identity to access the portal,LTBSR-29,10244,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-19,"*Story ID:* US-19
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to verify my identity securely, so that only I can access my account and make payments.
+
+h3. Acceptance Criteria
+* Access to account actions requires successful verification.
+* A successful verification completes quickly.
+* Unverified users cannot view or change any account data.
+
+h3. Business Value
+* Risk reduction: prevents fraud and unauthorised access.
+* Regulatory compliance: protects personal data.
+* Customer satisfaction: secure access to account.
+
+h3. Assumptions
+* Customer data used for verification is accurate after migration.
+* The level of check stringency is agreed with compliance.
+* A verification method is chosen (e.g. one-time code or knowledge-based check).
+
+*Dependencies:* US-01 (storage), US-02 (security)
+
+*Priority:* Very High - prerequisite for every self-service feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00092:,,,10219,LTBSR-4,Automated Identity Verification,To Do,08/Oct/26 11:32 AM
+US-20: Use an alternative route when verification fails,LTBSR-30,10245,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-20,"*Story ID:* US-20
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to be directed to a rep if verification fails, so that I can still resolve my account.
+
+h3. Acceptance Criteria
+* A failed verification shows the rep contact route.
+* The failure message does not reveal which data was incorrect.
+* The customer is not locked out of rep-assisted contact.
+
+h3. Business Value
+* Customer satisfaction: no dead-end for legitimate customers.
+* Revenue uplift: customers still reach a payment route.
+* Risk reduction: avoids information leakage.
+
+h3. Assumptions
+* Rep contact channels remain available.
+
+*Dependencies:* US-19 (identity verification)
+
+*Priority:* Very High - new process cannot leave customer at a dead end.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i00093:,,,10219,LTBSR-4,Automated Identity Verification,To Do,08/Oct/26 11:32 AM
+US-21: Verify customers over the phone,LTBSR-31,10246,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Highest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-21,"*Story ID:* US-21
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want to enter a caller's details into the verification process, so that I can verify their identity over the phone before discussing the account.
+
+h3. Acceptance Criteria
+* The rep can enter the caller's verification details from the customer record screen.
+* The system returns a Verified or Not verified result immediately after submission.
+* Account details are not displayed to the rep for discussion until the result is Verified.
+* The result is shown without revealing which detail was incorrect.
+* Each phone verification attempt is logged with rep ID, customer ID, time and outcome.
+
+h3. Business Value
+* Risk reduction: prevents disclosure of account details to unverified callers.
+* Regulatory compliance: consistent identity checks across portal and phone channels.
+* Customer satisfaction: customers who fail or avoid the portal still have a secure route.
+* Operational efficiency: replaces ad hoc manual questioning with one standard check.
+
+h3. Assumptions
+* Verification details held for each customer are accurate after migration.
+* Phone verification uses the same rules as portal verification, as agreed with compliance.
+* Reps have been trained and permitted to run verification.
+
+*Dependencies:* US-03 (customer record), US-19 (identity verification)
+
+*Priority:* Very High - the main fallback when portal verification fails and a prerequisite for safe phone contact.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0009b:,,,10219,LTBSR-4,Automated Identity Verification,To Do,08/Oct/26 11:32 AM
+US-22: Record every verification attempt,LTBSR-32,10247,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-22,"*Story ID:* US-22
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every verification attempt logged with its outcome, so that I can evidence access controls to auditors.
+
+h3. Acceptance Criteria
+* Each attempt logs customer ID, time, method and outcome.
+* Logs contain no full verification secrets.
+* Logs are retained for the required period and searchable by customer and date.
+
+h3. Business Value
+* Regulatory compliance: evidence of access control.
+* Risk reduction: supports fraud investigation.
+
+h3. Assumptions
+* Retention period is confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-19 (identity verification)
+
+*Priority:* High - high-risk feature requires traceability.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0009q:,,,10219,LTBSR-4,Automated Identity Verification,To Do,08/Oct/26 11:32 AM
+US-23: Lock out repeated failed attempts,LTBSR-33,10248,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,IT-Team-Member,US-23,"*Story ID:* US-23
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want accounts locked after repeated failed verification and alerts raised on unusual activity, so that brute-force and fraud attempts are stopped.
+
+h3. Acceptance Criteria
+* An account is locked after a number (TBD) of consecutive failed attempts.
+* A locked account can only be unlocked by a rep after manual verification.
+* An alert is raised if failed attempts exceed an agreed threshold within a defined time window (TBD).
+
+h3. Business Value
+* Risk reduction: reduces fraud and liability.
+* Regulatory compliance: demonstrates security controls.
+
+h3. Assumptions
+* The lockout limit and alert thresholds are agreed with compliance.
+* An alerting channel for IT exists.
+
+*Dependencies:* US-19 (identity verification)
+
+*Priority:* High - limits the liability identified for verification errors.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i0009x:,,,10219,LTBSR-4,Automated Identity Verification,To Do,08/Oct/26 11:32 AM
+US-24: Check promised payments automatically,LTBSR-34,10249,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-24,"*Story ID:* US-24
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want the system to check whether each promised payment was received by its due date, so that I do not have to check manually.
+
+h3. Acceptance Criteria
+* Each promised payment is checked on its due date.
+* Results are set as Fulfilled, Partially fulfilled or Not fulfilled.
+* The result is written to the case log automatically.
+* Checks complete for all due promises within the due date.
+
+h3. Business Value
+* Cost reduction: removes manual payment checking.
+* Revenue uplift: failed payments are captured rather than missed.
+* Operational efficiency: reps focus on non-fulfilled cases.
+
+h3. Assumptions
+* Payments from all channels are recorded in the central database.
+* Promised payments are stored as structured data (amount and date).
+
+*Dependencies:* US-08 (case logs), US-15 (payment posting)
+
+*Priority:* High - highly relevant, low complexity and captures lost revenue.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000ab:,,,10220,LTBSR-5,Automated Payment Fulfillment Check,To Do,08/Oct/26 11:32 AM
+US-25: Flag unfulfilled promises on the account,LTBSR-35,10250,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-25,"*Story ID:* US-25
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want unfulfilled promises flagged on the account, so that I can act on them straight away.
+
+h3. Acceptance Criteria
+* A not fulfilled result flags the account.
+* The flag shows promised amount, due date and shortfall.
+* The flag clears automatically once the payment is received.
+
+h3. Business Value
+* Revenue uplift: faster follow up on missed payments.
+* Operational efficiency: clear prioritisation for reps.
+
+h3. Assumptions
+* Reps view flags in the standard case view.
+
+*Dependencies:* US-24 (promise check)
+
+*Priority:* High - turns check results into action.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000ah:,,,10220,LTBSR-5,Automated Payment Fulfillment Check,To Do,08/Oct/26 11:32 AM
+US-26: Report of unfulfilled promises,LTBSR-36,10251,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Team-Leader,US-26,"*Story ID:* US-26
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want a regular list of unfulfilled promises for my team, so that I can make sure each is followed up.
+
+h3. Acceptance Criteria
+* The report is generated at an agreed frequency and available by an agreed time (both TBD).
+* It lists customer, amount, due date and days overdue.
+
+h3. Business Value
+* Revenue uplift: fewer missed follow ups.
+* Operational efficiency: quick workload oversight.
+
+h3. Assumptions
+* None
+
+*Dependencies:* US-24 (promise check), US-25 (unfulfilled flag)
+
+*Priority:* Medium - ensures follow ups are not missed.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000au:,,,10220,LTBSR-5,Automated Payment Fulfillment Check,To Do,08/Oct/26 11:32 AM
+US-27: Report on failed payment value,LTBSR-37,10252,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Lowest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Financial-Partner,US-27,"*Story ID:* US-27
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want to see the count and value of failed and unfulfilled payments, so that I can quantify revenue recovered by the automated check.
+
+h3. Acceptance Criteria
+* Report shows count and value of each fulfilment result per reporting period (period TBD).
+* Totals reconcile to underlying payments.
+
+h3. Business Value
+* Revenue uplift: evidences recovered collections.
+
+h3. Assumptions
+* Failed payments are accessible from the payment provider.
+
+*Dependencies:* US-06 (reporting access), US-24 (promise check)
+
+*Priority:* Very Low - nice to have but does not impact delivery.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000az:,,,10220,LTBSR-5,Automated Payment Fulfillment Check,To Do,08/Oct/26 11:32 AM
+US-28: Be told about a missing payment,LTBSR-38,10253,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-28,"*Story ID:* US-28
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to be notified if my promised payment is not found, so that I can correct it before being treated as delinquent.
+
+h3. Acceptance Criteria
+* A notification is sent immediately upon a not fulfilled result.
+* It states the amount and date expected and how to contact a rep.
+* A customer can raise a query that suspends delinquent categorisation until reviewed.
+
+h3. Business Value
+* Customer satisfaction: avoids wrongful delinquency.
+* Revenue uplift: prompts payment.
+* Risk reduction: reduces disputes from wrong categorisation.
+
+h3. Assumptions
+* Valid contact details are on record.
+* An email service is available.
+
+*Dependencies:* US-24 (promise check)
+
+*Priority:* Medium - mitigates the risk of wrongly categorised customers.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000b7:,,,10220,LTBSR-5,Automated Payment Fulfillment Check,To Do,08/Oct/26 11:32 AM
+US-29: Monitor and retry the check,LTBSR-39,10254,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,IT-Team-Member,US-29,"*Story ID:* US-29
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want the check job monitored and retried on failure, so that missed runs do not cause missed revenue.
+
+h3. Acceptance Criteria
+* Each run logs start, end and records processed.
+* A failed run is retried automatically up to (TBD) times.
+* An alert is sent if the job has not completed successfully by an agreed time (TBD).
+
+h3. Business Value
+* Risk reduction: prevents silent failures.
+* Operational efficiency: less manual checking of jobs.
+
+h3. Assumptions
+* There is an agreed on time for an automatic check to run before manually retrying.
+
+*Dependencies:* US-24 (promise check)
+
+*Priority:* Low - protects reliability but a manual check is possible with good logging.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000bb:,,,10220,LTBSR-5,Automated Payment Fulfillment Check,To Do,08/Oct/26 11:32 AM
+US-30: Schedule follow-ups automatically,LTBSR-40,10255,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-30,"*Story ID:* US-30
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want a follow-up scheduled automatically from my logged outcome, so that I never forget to follow up.
+
+h3. Acceptance Criteria
+* Saving a log with a follow-up outcome creates a follow-up with date and owner.
+* Default follow-up intervals are set per outcome code.
+* A rep can override the date, with the reason logged.
+
+h3. Business Value
+* Revenue uplift: fewer missed collections.
+* Cost reduction: removes manual diary management.
+* Operational efficiency: consistent follow-up timing.
+
+h3. Assumptions
+* Follow-up intervals per outcome are agreed with team leaders.
+
+*Dependencies:* US-08 (case logs)
+
+*Priority:* High - high ROI and removes a manual source of error.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000bm:,,,10221,LTBSR-6,Automated Follow Up Scheduling,To Do,08/Oct/26 11:32 AM
+US-31: See today's follow-ups,LTBSR-41,10256,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-31,"*Story ID:* US-31
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want a list of my due follow-ups, so that I can work through them in order.
+
+h3. Acceptance Criteria
+* List shows all follow-ups due today and overdue, sorted by due date.
+* Each item links to the customer record.
+* Completing a follow-up removes it from the list.
+
+h3. Business Value
+* Operational efficiency: clear workload.
+* Revenue uplift: overdue items are visible.
+
+h3. Assumptions
+* Reps use the system as intended.
+
+*Dependencies:* US-30 (follow-ups)
+
+*Priority:* High - makes scheduling usable.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000bp:,,,10221,LTBSR-6,Automated Follow Up Scheduling,To Do,08/Oct/26 11:32 AM
+US-32: Monitor overdue follow-ups,LTBSR-42,10257,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Team-Leader,US-32,"*Story ID:* US-32
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to see overdue follow-ups across my team, so that I can reassign or escalate them.
+
+h3. Acceptance Criteria
+* Overdue follow-ups list rep, customer and days overdue.
+* Team leader can reassign a follow-up to another rep.
+* Reassignment is logged.
+
+h3. Business Value
+* Revenue uplift: fewer missed collections.
+* Operational efficiency: workload balancing.
+
+h3. Assumptions
+* Team leaders have authority to reassign work.
+
+*Dependencies:* US-30 (follow-ups)
+
+*Priority:* Low - nice to have but does not impact delivery.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000bz:,,,10221,LTBSR-6,Automated Follow Up Scheduling,To Do,08/Oct/26 11:32 AM
+US-33: Limit and evidence contact frequency,LTBSR-43,10258,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-33,"*Story ID:* US-33
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want follow-up contact frequency limited and its history kept, so that the company can demonstrate compliant collection practices.
+
+h3. Acceptance Criteria
+* The system warns when scheduling would exceed the agreed contact limit.
+* A rep cannot exceed the limit without a logged override reason.
+* The full follow-up history can be exported per customer.
+
+h3. Business Value
+* Regulatory compliance: avoids breaching contact rules.
+* Risk reduction: reduces complaints and penalties.
+
+h3. Assumptions
+* Applicable contact frequency rules are confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-30 (follow-ups)
+
+*Priority:* Medium - prevents regulatory breaches caused by incorrect scheduling.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000c1:,,,10221,LTBSR-6,Automated Follow Up Scheduling,To Do,08/Oct/26 11:32 AM
+US-34: Be contacted at a preferred time,LTBSR-44,10259,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-34,"*Story ID:* US-34
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want follow-up contact at my preferred time and channel, so that I can respond when convenient.
+
+h3. Acceptance Criteria
+* The preferred time and channel can be recorded on the customer record.
+* Scheduled follow-ups default to the recorded preference.
+* Follow-ups outside the preferred window require a logged override.
+
+h3. Business Value
+* Customer satisfaction: respects availability.
+* Revenue uplift: higher contact success rate.
+
+h3. Assumptions
+* Preferences are captured by reps during logging.
+
+*Dependencies:* US-30 (follow-ups)
+
+*Priority:* Low - improves experience but not essential.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000ca:,,,10221,LTBSR-6,Automated Follow Up Scheduling,To Do,08/Oct/26 11:32 AM
+US-35: Submit a promise to pay,LTBSR-45,10260,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-35,"*Story ID:* US-35
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to promise a payment amount and date in the portal, so that I can arrange payment without calling a rep.
+
+h3. Acceptance Criteria
+* A verified customer can select an amount and a date within the permitted window.
+* Dates outside the permitted window cannot be selected.
+* The promise is saved to the account on submission.
+* No more than 1 active promise exists per account.
+
+h3. Business Value
+* Cost reduction: removes rep time on promise calls.
+* Revenue uplift: earlier commitment to pay.
+* Customer satisfaction: arranges payment at their convenience.
+
+h3. Assumptions
+* Policy for permitted amounts and date window is agreed.
+* No money is taken at the time of promise.
+* Customer can only choose permitted plans.
+
+*Dependencies:* US-01 (storage), US-19 (identity verification)
+
+*Priority:* High - a key manual pain point with low complexity.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000cb:,,,10222,LTBSR-7,Self-Service Promise To Pay,To Do,08/Oct/26 11:32 AM
+US-36: Confirm the promise,LTBSR-46,10261,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-36,"*Story ID:* US-36
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want confirmation of my promise to pay, so that I know the arrangement is recorded.
+
+h3. Acceptance Criteria
+* A confirmation page shows amount, date and reference.
+* A confirmation email is sent immediately.
+* The customer can view the active promise in the portal.
+
+h3. Business Value
+* Customer satisfaction: clarity of commitment.
+* Cost reduction: fewer queries on promise status.
+
+h3. Assumptions
+* A valid email address is on record.
+* Email service is active.
+
+*Dependencies:* US-35 (promise to pay)
+
+*Priority:* Medium - improves clarity but not essential for functionality.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000cj:,,,10222,LTBSR-7,Self-Service Promise To Pay,To Do,08/Oct/26 11:32 AM
+US-37: Record promises automatically,LTBSR-47,10262,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-37,"*Story ID:* US-37
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want customer promises recorded on the case and follow-ups paused until the due date, so that I do not chase customers who have committed to pay.
+
+h3. Acceptance Criteria
+* A promise appears in the case log immediately.
+* Scheduled follow-ups are paused until the promise due date.
+* Follow-ups resume automatically if the promise is unfulfilled.
+
+h3. Business Value
+* Cost reduction: fewer unnecessary contacts.
+* Customer satisfaction: avoids chasing committed customers.
+* Operational efficiency: reps focus on uncommitted cases.
+
+h3. Assumptions
+* None
+
+*Dependencies:* US-08 (case logs), US-30 (follow-ups), US-35 (promise to pay)
+
+*Priority:* High - gives the feature its rep time saving.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000cy:,,,10222,LTBSR-7,Self-Service Promise To Pay,To Do,08/Oct/26 11:32 AM
+US-38: Forecast cash from promises,LTBSR-48,10263,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Lowest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Financial-Partner,US-38,"*Story ID:* US-38
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want a report of promised amounts by date, so that I can forecast expected collections.
+
+h3. Acceptance Criteria
+* Report shows total promised amount over any period chosen.
+* Report compares past promised amounts with amounts actually received.
+* Report is refreshed when needed.
+* Report is filterable by time period.
+
+h3. Business Value
+* Revenue uplift: better cash flow planning.
+* Cost reduction: replaces manual forecasting.
+
+h3. Assumptions
+* Payment fulfilment data is available.
+
+*Dependencies:* US-06 (reporting access), US-35 (promise to pay)
+
+*Priority:* Very Low - useful insight but not foundational and possible to do manually.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000d5:,,,10222,LTBSR-7,Self-Service Promise To Pay,To Do,08/Oct/26 11:32 AM
+US-39: Evidence promises for audit,LTBSR-49,10264,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,High,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-39,"*Story ID:* US-39
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every promise stored with the verified identity and timestamp, so that arrangements can be evidenced in audits and disputes.
+
+h3. Acceptance Criteria
+* Each promise stores customer ID, verification result, timestamp, amount and date.
+* Promise records cannot be edited, only superseded with a new record.
+* Promises can be exported with the audit trail.
+
+h3. Business Value
+* Regulatory compliance: proof of customer agreement.
+* Risk reduction: supports dispute resolution.
+
+h3. Assumptions
+* Retention period is confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-19 (identity verification), US-35 (promise to pay)
+
+*Priority:* High - supports compliance on a low-risk feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000dj:,,,10222,LTBSR-7,Self-Service Promise To Pay,To Do,08/Oct/26 11:32 AM
+US-40: Provide a read-only data interface for the portal,LTBSR-50,10265,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,IT-Team-Member,US-40,"*Story ID:* US-40
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want the portal to read account data through a read-only interface, so that viewing information cannot alter or expose other records.
+
+h3. Acceptance Criteria
+* The interface exposes read-only access to the verified customer's own data.
+* Requests for another customer's data are rejected and logged.
+* Write operations through this interface return an error.
+
+h3. Business Value
+* Risk reduction: prevents accidental changes and data leakage.
+* Regulatory compliance: enforces data access limits.
+
+h3. Assumptions
+* The portal and database are hosted in an environment that allows an access layer.
+
+*Dependencies:* US-01 (storage), US-02 (security)
+
+*Priority:* Medium - technical foundation for the account information feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000dp:,,,10223,LTBSR-8,Self-Service Account Information,To Do,08/Oct/26 11:32 AM
+US-41: View account information,LTBSR-51,10266,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-41,"*Story ID:* US-41
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to view my balance, due dates and payment history, so that I know what I owe without calling a rep.
+
+h3. Acceptance Criteria
+* Page shows current balance, due date, payments and active promise.
+* Data shown matches the central record at time of load.
+* The page loads quickly.
+* Only a verified customer can view the page.
+
+h3. Business Value
+* Cost reduction: fewer balance enquiry calls.
+* Customer satisfaction: transparency and self-sufficiency.
+
+h3. Assumptions
+* Customers have internet access.
+* Historical payment data is migrated.
+
+*Dependencies:* US-19 (identity verification), US-40 (data interface)
+
+*Priority:* Medium - eases portal use but is not required for payments.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000e2:,,,10223,LTBSR-8,Self-Service Account Information,To Do,08/Oct/26 11:32 AM
+US-42: Verify displayed information and log access,LTBSR-52,10267,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Lowest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-42,"*Story ID:* US-42
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want portal views of account data logged and checked for accuracy, so that incorrect displays can be detected and corrected.
+
+h3. Acceptance Criteria
+* Each account view is logged with customer ID and time.
+* A sample check, run at an agreed frequency (TBD), confirms displayed values match the database.
+* Discrepancies are reported to IT for correction.
+
+h3. Business Value
+* Regulatory compliance: limits legal risk from incorrect information.
+* Risk reduction: early detection of display errors.
+
+h3. Assumptions
+* Sampling procedure is agreed with compliance.
+
+*Dependencies:* US-04 (audit trail), US-41 (account info)
+
+*Priority:* Very Low - protects against a risk that is resolvable through human support.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000e7:,,,10223,LTBSR-8,Self-Service Account Information,To Do,08/Oct/26 11:32 AM
+US-43: Validate customer detail inputs,LTBSR-53,10268,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,IT-Team-Member,US-43,"*Story ID:* US-43
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want submitted details validated before saving, so that the database holds only well-formed data.
+
+h3. Acceptance Criteria
+* Email, phone number and postcode formats are validated.
+* Invalid inputs are rejected with a field-level error message.
+* Validation rules are applied to both portal and rep entry.
+
+h3. Business Value
+* Cost reduction: fewer failed contacts caused by bad data.
+* Regulatory compliance: improved data accuracy.
+
+h3. Assumptions
+* Validation rules are agreed per field.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* Low - protects data quality for an optional feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000ej:,,,10224,LTBSR-9,Self-Service Updating Details,To Do,08/Oct/26 11:32 AM
+US-44: Update my contact details,LTBSR-54,10269,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-44,"*Story ID:* US-44
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to update my contact details in the portal, so that the company can reach me without a call to a rep.
+
+h3. Acceptance Criteria
+* A verified customer can edit phone, email and address.
+* Changes save to the central record immediately.
+* The customer sees a confirmation of the saved change.
+* Customers can edit only allowed fields.
+
+h3. Business Value
+* Cost reduction: reduces rep time on detail changes.
+* Customer satisfaction: self-service convenience.
+* Revenue uplift: accurate details improve contact success.
+
+h3. Assumptions
+* Policy on which fields customers may edit is agreed.
+
+*Dependencies:* US-19 (identity verification), US-43 (input validation)
+
+*Priority:* Low - low ROI, eases a rep pain point.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000en:,,,10224,LTBSR-9,Self-Service Updating Details,To Do,08/Oct/26 11:32 AM
+US-45: Be alerted to changes in my details,LTBSR-55,10270,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-45,"*Story ID:* US-45
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to be notified at my previous contact method when details change, so that I can spot unauthorised changes.
+
+h3. Acceptance Criteria
+* A notification is sent to the previous email or phone immediately.
+* The notification includes how to report an unauthorised change.
+
+h3. Business Value
+* Risk reduction: detects account takeover.
+* Customer satisfaction: increases trust in the portal.
+
+h3. Assumptions
+* Previous contact details were valid.
+
+*Dependencies:* US-44 (detail updates)
+
+*Priority:* Low - security enhancement on an optional feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000ey:,,,10224,LTBSR-9,Self-Service Updating Details,To Do,08/Oct/26 11:32 AM
+US-46: See updated details without re-entry,LTBSR-56,10271,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-46,"*Story ID:* US-46
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want customer-made changes visible on the record straight away, so that I do not update details manually.
+
+h3. Acceptance Criteria
+* Portal changes appear on the customer record immediately.
+* The record marks the change as customer-made with a timestamp.
+* No manual re-entry is required.
+
+h3. Business Value
+* Cost reduction: removes manual detail updates.
+* Operational efficiency: reps work from current details.
+
+h3. Assumptions
+* The central database is the only data store reps use.
+
+*Dependencies:* US-03 (customer record), US-44 (detail updates)
+
+*Priority:* Low - largely delivered by the central record.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000f6:,,,10224,LTBSR-9,Self-Service Updating Details,To Do,08/Oct/26 11:32 AM
+US-47: Audit customer-made changes,LTBSR-57,10272,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-47,"*Story ID:* US-47
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want customer-made changes to show before and after values, so that I can trace the source of any incorrect details.
+
+h3. Acceptance Criteria
+* Each change logs previous value, new value, time and channel.
+* Logs can be searched by customer and date.
+
+h3. Business Value
+* Regulatory compliance: traceability of data changes.
+* Risk reduction: supports investigation of incorrect details.
+
+h3. Assumptions
+* Audit trail supports channel identification.
+
+*Dependencies:* US-04 (audit trail), US-44 (detail updates)
+
+*Priority:* Low - extends the existing audit trail to the portal.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000fg:,,,10224,LTBSR-9,Self-Service Updating Details,To Do,08/Oct/26 11:32 AM
+US-48: Receive a reminder before payment is due,LTBSR-58,10273,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-48,"*Story ID:* US-48
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want a reminder before my payment is due, so that I do not miss it.
+
+h3. Acceptance Criteria
+* A reminder is sent (TBD) days before the due date.
+* It includes amount, due date and a link to pay or contact a rep.
+* Customers with no payment due do not receive a reminder.
+* Reminders are sent to the correct customer.
+
+h3. Business Value
+* Revenue uplift: fewer missed payments.
+* Cost reduction: replaces manual reminder contact.
+* Customer satisfaction: helpful prompt.
+
+h3. Assumptions
+* An email service is contracted.
+* Valid email addresses are on record.
+* Reminder timing is agreed.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* Medium - modest ROI, low complexity.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000fi:,,,10225,LTBSR-10,Automated Payment Reminders,To Do,08/Oct/26 11:32 AM
+US-49: Manage reminder preferences,LTBSR-59,10274,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Customer,US-49,"*Story ID:* US-49
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to opt out of reminders or change how I receive them, so that I only get messages I want.
+
+h3. Acceptance Criteria
+* Every reminder has an unsubscribe or preferences link.
+* An opt-out takes effect within n hours (n TBD).
+* The preference is shown on the customer record.
+
+h3. Business Value
+* Customer satisfaction: control over communications.
+* Regulatory compliance: honours consent preferences.
+
+h3. Assumptions
+* Opt-out for reminders is permitted by policy.
+
+*Dependencies:* US-48 (reminders)
+
+*Priority:* Medium - consent requirement for sending reminders.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000fr:,,,10225,LTBSR-10,Automated Payment Reminders,To Do,08/Oct/26 11:32 AM
+US-50: Log reminders automatically,LTBSR-60,10275,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Representative,US-50,"*Story ID:* US-50
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want each reminder logged on the account, so that I know what the customer has been sent.
+
+h3. Acceptance Criteria
+* Each sent reminder creates a log entry with date, channel and template.
+* Reminders show on the account history.
+* No manual logging is required.
+
+h3. Business Value
+* Operational efficiency: reps see contact history.
+* Customer satisfaction: avoids duplicate contact.
+
+h3. Assumptions
+* Reminder and case logs use the same customer ID.
+
+*Dependencies:* US-08 (case logs), US-48 (reminders)
+
+*Priority:* Low - convenience for reps.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000fs:,,,10225,LTBSR-10,Automated Payment Reminders,To Do,08/Oct/26 11:32 AM
+US-51: Configure reminder timing,LTBSR-61,10276,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Lowest,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Collections-Team-Leader,US-51,"*Story ID:* US-51
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to adjust when reminders are sent, so that timing can be tuned to improve payments.
+
+h3. Acceptance Criteria
+* Team leaders can set days before due date within an allowed range.
+* Changes apply to reminders scheduled after the change.
+* Changes are logged with user and time.
+
+h3. Business Value
+* Revenue uplift: allows tuning for higher payment rates.
+* Operational efficiency: no IT request needed.
+
+h3. Assumptions
+* Team leaders are authorised to change reminder settings.
+
+*Dependencies:* US-48 (reminders)
+
+*Priority:* Very Low - the default timing is sufficient at launch.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000g0:,,,10225,LTBSR-10,Automated Payment Reminders,To Do,08/Oct/26 11:32 AM
+US-52: Use approved reminder templates,LTBSR-62,10277,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Medium,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,Compliance-Liaison,US-52,"*Story ID:* US-52
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want reminders to use approved templates and respect contact limits, so that messages are compliant.
+
+h3. Acceptance Criteria
+* Only approved templates can be sent.
+* Template changes require compliance approval and are version controlled.
+* Reminders count towards the contact frequency limit.
+
+h3. Business Value
+* Regulatory compliance: consistent, approved wording.
+* Risk reduction: avoids incorrect or non-compliant messages.
+
+h3. Assumptions
+* Compliance has approved the initial templates.
+
+*Dependencies:* US-33 (contact limits), US-48 (reminders)
+
+*Priority:* Medium - controls the risk of confusing or non-compliant reminders.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000gf:,,,10225,LTBSR-10,Automated Payment Reminders,To Do,08/Oct/26 11:32 AM
+US-53: Monitor reminder delivery,LTBSR-63,10278,Feature,To Do,LTBSR,Legacy Trust Bank - Smart Recovery,software,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,Low,,,,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,08/Oct/26 11:32 AM,08/Oct/26 11:32 AM,,,,0,IT-Team-Member,US-53,"*Story ID:* US-53
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want reminder delivery monitored, so that failures and bounced emails are identified and fixed.
+
+h3. Acceptance Criteria
+* Each reminder records a delivery status (sent, delivered, bounced, failed).
+* An alert is raised if the failure rate exceeds an agreed threshold within a defined period (TBD).
+* Bounced addresses are flagged on the customer record.
+
+h3. Business Value
+* Revenue uplift: reminders actually reach customers.
+* Operational efficiency: problems are detected early.
+
+h3. Assumptions
+* The email provider returns delivery status.
+
+*Dependencies:* US-48 (reminders)
+
+*Priority:* Low - supports reliability of an optional feature.",,Rory Daly,712020:4f96ede5-6814-4f17-bb25-1430a17d9fa5,,,,,,,,,{},,0|i000gm:,,,10225,LTBSR-10,Automated Payment Reminders,To Do,08/Oct/26 11:32 AM
