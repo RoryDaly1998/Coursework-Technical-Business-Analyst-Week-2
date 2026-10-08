@@ -1,0 +1,1152 @@
+"Issue Type","Issue ID","Parent","Summary","Description","Priority","Labels","Labels"
+"Epic","1","","Centralised Customer Detail Storage","Epic 1 of 10. Contains 7 user stories: US-01 to US-07.
+
+*Priority:* High - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","High","",""
+"Epic","2","","Standardised Digital Record Logging","Epic 2 of 10. Contains 4 user stories: US-08 to US-11.
+
+*Priority:* High - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","High","",""
+"Epic","3","","Self-Service Payments","Epic 3 of 10. Contains 7 user stories: US-12 to US-18.
+
+*Priority:* High - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","High","",""
+"Epic","4","","Automated Identity Verification","Epic 4 of 10. Contains 5 user stories: US-19 to US-23.
+
+*Priority:* Highest - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","Highest","",""
+"Epic","5","","Automated Payment Fulfillment Check","Epic 5 of 10. Contains 6 user stories: US-24 to US-29.
+
+*Priority:* Medium - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","Medium","",""
+"Epic","6","","Automated Follow Up Scheduling","Epic 6 of 10. Contains 5 user stories: US-30 to US-34.
+
+*Priority:* Medium - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","Medium","",""
+"Epic","7","","Self-Service Promise To Pay","Epic 7 of 10. Contains 5 user stories: US-35 to US-39.
+
+*Priority:* Medium - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","Medium","",""
+"Epic","8","","Self-Service Account Information","Epic 8 of 10. Contains 3 user stories: US-40 to US-42.
+
+*Priority:* Low - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","Low","",""
+"Epic","9","","Self-Service Updating Details","Epic 9 of 10. Contains 5 user stories: US-43 to US-47.
+
+*Priority:* Low - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","Low","",""
+"Epic","10","","Automated Payment Reminders","Epic 10 of 10. Contains 6 user stories: US-48 to US-53.
+
+*Priority:* Low - average of its stories priorities (Very Low = 1 to Very High = 5, exact halves rounded up).","Low","",""
+"Feature","11","1","US-01: Migrate legacy customer data","*Story ID:* US-01
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want existing customer data migrated into one central database, so that every process reads from a single source of truth.
+
+h3. Acceptance Criteria
+* All legacy customer records are migrated or listed in an exception report.
+* Duplicate customer records are merged or flagged.
+* Data types match across all records.
+
+h3. Business Value
+* Cost reduction: removes maintenance of multiple workaround systems.
+* Operational efficiency: single source for all downstream automation.
+* Regulatory compliance: consistent data for audits.
+
+h3. Assumptions
+* Legacy data sources are accessible.
+* Data owners agree a data quality and de-duplication rule set.
+* A cutover window is available.
+
+*Dependencies:* None
+
+*Priority:* Very High - foundation for every other feature.","Highest","US-01","IT-Team-Member"
+"Feature","12","1","US-02: Secure and back up the central database","*Story ID:* US-02
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want role-based access, encryption and automated backups on the central database, so that customer data is protected and recoverable.
+
+h3. Acceptance Criteria
+* Each role can access only its permitted data, verified by access tests.
+* Data is encrypted at rest and in transit.
+* A backup completes at the agreed frequency (TBD) and a test restore succeeds within the agreed recovery time.
+* Unauthorised access attempts are logged.
+
+h3. Business Value
+* Risk reduction: limits data loss and breach exposure.
+* Regulatory compliance: meets data protection obligations.
+* Customer satisfaction: protects customer trust.
+
+h3. Assumptions
+* Roles and permissions are defined with team leaders and compliance.
+* Hosting platform supports encryption and scheduled backups.
+* A recovery time objective is agreed.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* Very High - security is required before any customer data is exposed.","Highest","US-02","IT-Team-Member"
+"Feature","13","1","US-03: View a single customer record","*Story ID:* US-03
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want to see all of a customer's details in one record, so that I can handle their case without searching multiple systems.
+
+h3. Acceptance Criteria
+* A customer record opens within n seconds (n TBD) when searched by account number.
+* The record shows contact details, balance, case history and open follow-ups.
+* Reps see only the fields permitted for their role.
+* No second system is needed to complete a standard case.
+
+h3. Business Value
+* Cost reduction: less rep time spent searching.
+* Operational efficiency: faster case handling.
+* Customer satisfaction: fewer repeated questions.
+
+h3. Assumptions
+* Reps are trained on the new interface.
+* Search by account number is the primary lookup.
+
+*Dependencies:* US-01 (storage), US-02 (security)
+
+*Priority:* Very High - the core rep workflow depends on it.","Highest","US-03","Collections-Representative"
+"Feature","14","1","US-04: Audit trail of record changes","*Story ID:* US-04
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every change to a customer record logged with who, what and when, so that I can evidence data handling during audits.
+
+h3. Acceptance Criteria
+* Every create, update and delete is logged with user, timestamp, and before/after values.
+* Audit entries cannot be edited or deleted by regular users.
+* Audit entries can be searched by customer, user and date range.
+* Entries are retained for the required retention period.
+
+h3. Business Value
+* Regulatory compliance: supports audit trail requirements.
+* Risk reduction: deters and detects improper changes.
+* Cost reduction: shortens audit preparation.
+
+h3. Assumptions
+* Retention period is confirmed by compliance.
+* All system changes go through the central database.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* High - needed to pass audits and referenced by many compliance stories.","High","US-04","Compliance-Liaison"
+"Feature","15","1","US-05: Review account history for complex cases","*Story ID:* US-05
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to view a customer's full account history, so that I can reconcile complex cases quickly.
+
+h3. Acceptance Criteria
+* History shows all payments, contacts and record changes in date order.
+* History loads within n seconds (n TBD) for accounts with up to m years of data (m TBD).
+* History can be filtered by event type and date range.
+
+h3. Business Value
+* Operational efficiency: faster resolution of complex cases.
+* Customer satisfaction: fewer unresolved cases.
+
+h3. Assumptions
+* Team leaders have read access to the full history.
+* Legacy history is migrated.
+
+*Dependencies:* US-03 (customer record)
+
+*Priority:* Medium - improves exception handling but does not block other stories.","Medium","US-05","Collections-Team-Leader"
+"Feature","16","1","US-06: Query data for financial reporting","*Story ID:* US-06
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want to query customer and payment data from the central database, so that I can produce financial reports without manual data gathering.
+
+h3. Acceptance Criteria
+* Standard reports for balances, collections and arrears run on demand.
+* Report totals match source ledger totals.
+* Reports run without affecting rep system performance.
+* Report access is limited to the Financial Partner role.
+
+h3. Business Value
+* Cost reduction: removes manual report compilation.
+* Revenue uplift: better visibility of collection performance.
+* Regulatory compliance: consistent financial figures.
+
+h3. Assumptions
+* Reporting requirements are agreed with the Financial Partner.
+* A reporting tool or read-only data view is available.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* High - needed to prove cost savings and revenue uplift.","High","US-06","Financial-Partner"
+"Feature","17","1","US-07: Provide details only once","*Story ID:* US-07
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want my details held once and shared across all reps, so that I do not have to repeat them each time I make contact.
+
+h3. Acceptance Criteria
+* Any rep can see my details at the start of contact.
+* Reps are not required to ask for details already on record.
+* Detail corrections made by one rep are visible to all reps immediately.
+
+h3. Business Value
+* Customer satisfaction: reduces repeated questions.
+* Operational efficiency: shorter calls.
+
+h3. Assumptions
+* Customer data is accurate after migration.
+
+*Dependencies:* US-03 (customer record)
+
+*Priority:* Low - benefit follows from US-03 rather than adding new capability.","Low","US-07","Customer"
+"Feature","18","2","US-08: Log case interactions with a standard form","*Story ID:* US-08
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want to log each customer interaction in one standard digital form, so that records are complete and consistent.
+
+h3. Acceptance Criteria
+* The form captures date, contact method, outcome code, promise details and next action.
+* Mandatory fields must be completed before the form can be saved.
+* Outcome codes are chosen from a fixed list.
+* A log saves within n seconds (n TBD) and is linked to the customer record.
+
+h3. Business Value
+* Cost reduction: removes manual and duplicate record keeping.
+* Revenue uplift: fewer mishandled accounts.
+* Regulatory compliance: consistent evidence of contact.
+
+h3. Assumptions
+* Outcome codes and mandatory fields are agreed across all teams.
+* Teams stop using their own workaround logs after go-live.
+
+*Dependencies:* US-01 (storage), US-03 (customer record)
+
+*Priority:* Very High - automates several steps and enables follow-ups, payments and reporting.","Highest","US-08","Collections-Representative"
+"Feature","19","2","US-09: Review team logs","*Story ID:* US-09
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to view and filter my team's logs, so that I can monitor case handling and quality.
+
+h3. Acceptance Criteria
+* Logs can be filtered by rep, outcome code and date range.
+* Results return within n seconds (n TBD) for a date range of up to m days (m TBD).
+* Team leaders see only their own team's logs.
+
+h3. Business Value
+* Operational efficiency: quicker oversight of workload.
+* Customer satisfaction: consistent handling across teams.
+
+h3. Assumptions
+* Team membership is maintained in the system.
+
+*Dependencies:* US-08 (case logs)
+
+*Priority:* Medium - supports management but does not block other work.","Medium","US-09","Collections-Team-Leader"
+"Feature","20","2","US-10: Export logs for audits","*Story ID:* US-10
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want to export case logs for a given customer or period, so that I can respond to audit requests quickly.
+
+h3. Acceptance Criteria
+* Logs export to CSV or PDF filtered by customer or date range.
+* Exports include all form fields and the audit trail for each entry.
+* A standard export of up to n records (n TBD) completes within m minutes (m TBD).
+
+h3. Business Value
+* Regulatory compliance: faster, more complete audit responses.
+* Cost reduction: less manual audit preparation.
+* Risk reduction: lower risk of failing audits through missing data.
+
+h3. Assumptions
+* Auditors accept the exported formats.
+
+*Dependencies:* US-04 (audit trail), US-08 (case logs)
+
+*Priority:* High - directly addresses current audit failures.","High","US-10","Compliance-Liaison"
+"Feature","21","2","US-11: Report on contact outcomes","*Story ID:* US-11
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want logged outcomes available as structured data, so that I can report on collection results by outcome.
+
+h3. Acceptance Criteria
+* Outcome codes are stored as discrete values, not free text.
+* A report shows the count and value of cases by outcome code.
+* Report totals reconcile to logged cases.
+
+h3. Business Value
+* Revenue uplift: identifies which outcomes lead to collections.
+* Cost reduction: removes manual outcome tracking.
+
+h3. Assumptions
+* Outcome codes map to financial reporting categories.
+
+*Dependencies:* US-06 (reporting access), US-08 (case logs)
+
+*Priority:* Medium - improves insight but is not foundational.","Medium","US-11","Financial-Partner"
+"Feature","22","3","US-12: Pay an outstanding balance online","*Story ID:* US-12
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to pay my outstanding balance by card in the portal, so that I can settle my account without calling a rep.
+
+h3. Acceptance Criteria
+* A verified customer can pay the full balance or a partial amount.
+* Payment amount cannot exceed the outstanding balance.
+* A successful payment updates the account balance immediately.
+* Card details are never stored on company systems.
+
+h3. Business Value
+* Cost reduction: removes rep time on payment calls.
+* Revenue uplift: easier payment increases collections.
+* Customer satisfaction: payment access outside working hours.
+
+h3. Assumptions
+* A third-party payment provider is contracted and integrated.
+* Customers have a card and internet access.
+* Payment refund and error policies are defined.
+
+*Dependencies:* US-01 (storage), US-19 (identity verification)
+
+*Priority:* Very High - core objective of the project and largest ROI.","Highest","US-12","Customer"
+"Feature","23","3","US-13: Receive payment confirmation","*Story ID:* US-13
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want an immediate confirmation of my payment, so that I know it succeeded.
+
+h3. Acceptance Criteria
+* A confirmation page shows amount, date and reference.
+* A confirmation email is sent immediately.
+* The confirmation matches the amount recorded on the account.
+
+h3. Business Value
+* Customer satisfaction: reassurance of payment.
+* Cost reduction: fewer incoming payment confirmation calls.
+
+h3. Assumptions
+* A valid customer email address is on record.
+* An email service is integrated.
+
+*Dependencies:* US-12 (payments)
+
+*Priority:* Medium - not essential to core process but builds customer trust.","Medium","US-13","Customer"
+"Feature","24","3","US-14: Recover from a failed payment","*Story ID:* US-14
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want a clear message and a safe retry if my payment fails, so that I am not charged twice or left unsure of the outcome.
+
+h3. Acceptance Criteria
+* A failed payment shows a message stating the reason category (e.g. declined, timeout).
+* Retrying does not create a duplicate charge.
+* The failed attempt is recorded on the account.
+* The customer is shown the rep contact route.
+
+h3. Business Value
+* Customer satisfaction: reduces frustration at failure.
+* Risk reduction: avoids double charges and disputes.
+* Revenue uplift: more failed payments are completed on retry.
+
+h3. Assumptions
+* The payment provider returns failure reason codes.
+* Duplicate protection is supported by the provider.
+
+*Dependencies:* US-12 (payments)
+
+*Priority:* Very High - high risk area in core process where errors cause legal and revenue issues.","Highest","US-14","Customer"
+"Feature","25","3","US-15: Log portal payments automatically","*Story ID:* US-15
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want portal payments recorded automatically on the account, so that I do not have to enter them manually.
+
+h3. Acceptance Criteria
+* A successful payment appears in the case log immediately.
+* The log entry includes amount, date, reference and channel.
+* No manual entry is needed for portal payments.
+
+h3. Business Value
+* Cost reduction: removes manual payment recording.
+* Operational efficiency: accurate balances for reps.
+* Revenue uplift: allows focusing on clients who haven't paid.
+
+h3. Assumptions
+* The payment provider sends confirmation callbacks reliably.
+
+*Dependencies:* US-08 (case logs), US-12 (payments)
+
+*Priority:* High - automates a key part of the process saving rep time.","High","US-15","Collections-Representative"
+"Feature","26","3","US-16: Reconcile portal payments","*Story ID:* US-16
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want a regular reconciliation of portal payments against provider settlements, so that I can confirm all money collected is accounted for.
+
+h3. Acceptance Criteria
+* A report, generated at an agreed frequency (TBD), lists payments in the system versus provider settlement.
+* Unmatched items are listed separately.
+
+h3. Business Value
+* Revenue uplift: unmatched payments are identified and recovered.
+* Regulatory compliance: accurate financial records.
+* Risk reduction: early detection of payment errors.
+
+h3. Assumptions
+* The provider supplies a settlement file or API.
+
+*Dependencies:* US-06 (reporting access), US-12 (payments), US-15 (payment posting)
+
+*Priority:* High - protects revenue on the highest-risk feature.","High","US-16","Financial-Partner"
+"Feature","27","3","US-17: Secure and log payment transactions","*Story ID:* US-17
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every payment transaction secured to card industry standards and logged, so that the company meets its legal obligations.
+
+h3. Acceptance Criteria
+* Card data is handled only by the certified payment provider.
+* Each transaction has an audit entry with customer, amount, time and result.
+* A compliance review confirms no card data is stored or logged.
+
+h3. Business Value
+* Regulatory compliance: meets payment security standards.
+* Risk reduction: reduces fraud and liability.
+
+h3. Assumptions
+* The payment provider is certified to PCI DSS.
+* Required standards are confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-12 (payments)
+
+*Priority:* High - legal exposure on the highest-risk feature.","High","US-17","Compliance-Liaison"
+"Feature","28","3","US-18: Reverse an erroneous payment","*Story ID:* US-18
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to approve a refund or reversal of an incorrect payment, so that errors are corrected quickly and controlled.
+
+h3. Acceptance Criteria
+* Only team leaders can approve reversals.
+* A reversal requires a reason code and is logged on the account.
+* The balance is corrected within a reasonable timeframe.
+* The customer is notified of the reversal.
+
+h3. Business Value
+* Customer satisfaction: errors are fixed fast.
+* Risk reduction: reduces legal exposure from payment errors.
+* Regulatory compliance: controlled and auditable refunds.
+
+h3. Assumptions
+* A refund and error policy is agreed.
+* The payment provider supports refunds via API.
+
+*Dependencies:* US-12 (payments), US-15 (payment posting)
+
+*Priority:* Medium - required for error handling but manual path does exist.","Medium","US-18","Collections-Team-Leader"
+"Feature","29","4","US-19: Verify identity to access the portal","*Story ID:* US-19
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to verify my identity securely, so that only I can access my account and make payments.
+
+h3. Acceptance Criteria
+* Access to account actions requires successful verification.
+* A successful verification completes quickly.
+* Unverified users cannot view or change any account data.
+
+h3. Business Value
+* Risk reduction: prevents fraud and unauthorised access.
+* Regulatory compliance: protects personal data.
+* Customer satisfaction: secure access to account.
+
+h3. Assumptions
+* Customer data used for verification is accurate after migration.
+* The level of check stringency is agreed with compliance.
+* A verification method is chosen (e.g. one-time code or knowledge-based check).
+
+*Dependencies:* US-01 (storage), US-02 (security)
+
+*Priority:* Very High - prerequisite for every self-service feature.","Highest","US-19","Customer"
+"Feature","30","4","US-20: Use an alternative route when verification fails","*Story ID:* US-20
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to be directed to a rep if verification fails, so that I can still resolve my account.
+
+h3. Acceptance Criteria
+* A failed verification shows the rep contact route.
+* The failure message does not reveal which data was incorrect.
+* The customer is not locked out of rep-assisted contact.
+
+h3. Business Value
+* Customer satisfaction: no dead-end for legitimate customers.
+* Revenue uplift: customers still reach a payment route.
+* Risk reduction: avoids information leakage.
+
+h3. Assumptions
+* Rep contact channels remain available.
+
+*Dependencies:* US-19 (identity verification)
+
+*Priority:* Very High - new process cannot leave customer at a dead end.","Highest","US-20","Customer"
+"Feature","31","4","US-21: Verify customers over the phone","*Story ID:* US-21
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want to enter a caller's details into the verification process, so that I can verify their identity over the phone before discussing the account.
+
+h3. Acceptance Criteria
+* The rep can enter the caller's verification details from the customer record screen.
+* The system returns a Verified or Not verified result immediately after submission.
+* Account details are not displayed to the rep for discussion until the result is Verified.
+* The result is shown without revealing which detail was incorrect.
+* Each phone verification attempt is logged with rep ID, customer ID, time and outcome.
+
+h3. Business Value
+* Risk reduction: prevents disclosure of account details to unverified callers.
+* Regulatory compliance: consistent identity checks across portal and phone channels.
+* Customer satisfaction: customers who fail or avoid the portal still have a secure route.
+* Operational efficiency: replaces ad hoc manual questioning with one standard check.
+
+h3. Assumptions
+* Verification details held for each customer are accurate after migration.
+* Phone verification uses the same rules as portal verification, as agreed with compliance.
+* Reps have been trained and permitted to run verification.
+
+*Dependencies:* US-03 (customer record), US-19 (identity verification)
+
+*Priority:* Very High - the main fallback when portal verification fails and a prerequisite for safe phone contact.","Highest","US-21","Collections-Representative"
+"Feature","32","4","US-22: Record every verification attempt","*Story ID:* US-22
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every verification attempt logged with its outcome, so that I can evidence access controls to auditors.
+
+h3. Acceptance Criteria
+* Each attempt logs customer ID, time, method and outcome.
+* Logs contain no full verification secrets.
+* Logs are retained for the required period and searchable by customer and date.
+
+h3. Business Value
+* Regulatory compliance: evidence of access control.
+* Risk reduction: supports fraud investigation.
+
+h3. Assumptions
+* Retention period is confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-19 (identity verification)
+
+*Priority:* High - high-risk feature requires traceability.","High","US-22","Compliance-Liaison"
+"Feature","33","4","US-23: Lock out repeated failed attempts","*Story ID:* US-23
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want accounts locked after repeated failed verification and alerts raised on unusual activity, so that brute-force and fraud attempts are stopped.
+
+h3. Acceptance Criteria
+* An account is locked after a number (TBD) of consecutive failed attempts.
+* A locked account can only be unlocked by a rep after manual verification.
+* An alert is raised if failed attempts exceed an agreed threshold within a defined time window (TBD).
+
+h3. Business Value
+* Risk reduction: reduces fraud and liability.
+* Regulatory compliance: demonstrates security controls.
+
+h3. Assumptions
+* The lockout limit and alert thresholds are agreed with compliance.
+* An alerting channel for IT exists.
+
+*Dependencies:* US-19 (identity verification)
+
+*Priority:* High - limits the liability identified for verification errors.","High","US-23","IT-Team-Member"
+"Feature","34","5","US-24: Check promised payments automatically","*Story ID:* US-24
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want the system to check whether each promised payment was received by its due date, so that I do not have to check manually.
+
+h3. Acceptance Criteria
+* Each promised payment is checked on its due date.
+* Results are set as Fulfilled, Partially fulfilled or Not fulfilled.
+* The result is written to the case log automatically.
+* Checks complete for all due promises within the due date.
+
+h3. Business Value
+* Cost reduction: removes manual payment checking.
+* Revenue uplift: failed payments are captured rather than missed.
+* Operational efficiency: reps focus on non-fulfilled cases.
+
+h3. Assumptions
+* Payments from all channels are recorded in the central database.
+* Promised payments are stored as structured data (amount and date).
+
+*Dependencies:* US-08 (case logs), US-15 (payment posting)
+
+*Priority:* High - highly relevant, low complexity and captures lost revenue.","High","US-24","Collections-Representative"
+"Feature","35","5","US-25: Flag unfulfilled promises on the account","*Story ID:* US-25
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want unfulfilled promises flagged on the account, so that I can act on them straight away.
+
+h3. Acceptance Criteria
+* A not fulfilled result flags the account.
+* The flag shows promised amount, due date and shortfall.
+* The flag clears automatically once the payment is received.
+
+h3. Business Value
+* Revenue uplift: faster follow up on missed payments.
+* Operational efficiency: clear prioritisation for reps.
+
+h3. Assumptions
+* Reps view flags in the standard case view.
+
+*Dependencies:* US-24 (promise check)
+
+*Priority:* High - turns check results into action.","High","US-25","Collections-Representative"
+"Feature","36","5","US-26: Report of unfulfilled promises","*Story ID:* US-26
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want a regular list of unfulfilled promises for my team, so that I can make sure each is followed up.
+
+h3. Acceptance Criteria
+* The report is generated at an agreed frequency and available by an agreed time (both TBD).
+* It lists customer, amount, due date and days overdue.
+
+h3. Business Value
+* Revenue uplift: fewer missed follow ups.
+* Operational efficiency: quick workload oversight.
+
+h3. Assumptions
+* None
+
+*Dependencies:* US-24 (promise check), US-25 (unfulfilled flag)
+
+*Priority:* Medium - ensures follow ups are not missed.","Medium","US-26","Collections-Team-Leader"
+"Feature","37","5","US-27: Report on failed payment value","*Story ID:* US-27
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want to see the count and value of failed and unfulfilled payments, so that I can quantify revenue recovered by the automated check.
+
+h3. Acceptance Criteria
+* Report shows count and value of each fulfilment result per reporting period (period TBD).
+* Totals reconcile to underlying payments.
+
+h3. Business Value
+* Revenue uplift: evidences recovered collections.
+
+h3. Assumptions
+* Failed payments are accessible from the payment provider.
+
+*Dependencies:* US-06 (reporting access), US-24 (promise check)
+
+*Priority:* Very Low - nice to have but does not impact delivery.","Lowest","US-27","Financial-Partner"
+"Feature","38","5","US-28: Be told about a missing payment","*Story ID:* US-28
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to be notified if my promised payment is not found, so that I can correct it before being treated as delinquent.
+
+h3. Acceptance Criteria
+* A notification is sent immediately upon a not fulfilled result.
+* It states the amount and date expected and how to contact a rep.
+* A customer can raise a query that suspends delinquent categorisation until reviewed.
+
+h3. Business Value
+* Customer satisfaction: avoids wrongful delinquency.
+* Revenue uplift: prompts payment.
+* Risk reduction: reduces disputes from wrong categorisation.
+
+h3. Assumptions
+* Valid contact details are on record.
+* An email service is available.
+
+*Dependencies:* US-24 (promise check)
+
+*Priority:* Medium - mitigates the risk of wrongly categorised customers.","Medium","US-28","Customer"
+"Feature","39","5","US-29: Monitor and retry the check","*Story ID:* US-29
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want the check job monitored and retried on failure, so that missed runs do not cause missed revenue.
+
+h3. Acceptance Criteria
+* Each run logs start, end and records processed.
+* A failed run is retried automatically up to (TBD) times.
+* An alert is sent if the job has not completed successfully by an agreed time (TBD).
+
+h3. Business Value
+* Risk reduction: prevents silent failures.
+* Operational efficiency: less manual checking of jobs.
+
+h3. Assumptions
+* There is an agreed on time for an automatic check to run before manually retrying.
+
+*Dependencies:* US-24 (promise check)
+
+*Priority:* Low - protects reliability but a manual check is possible with good logging.","Low","US-29","IT-Team-Member"
+"Feature","40","6","US-30: Schedule follow-ups automatically","*Story ID:* US-30
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want a follow-up scheduled automatically from my logged outcome, so that I never forget to follow up.
+
+h3. Acceptance Criteria
+* Saving a log with a follow-up outcome creates a follow-up with date and owner.
+* Default follow-up intervals are set per outcome code.
+* A rep can override the date, with the reason logged.
+
+h3. Business Value
+* Revenue uplift: fewer missed collections.
+* Cost reduction: removes manual diary management.
+* Operational efficiency: consistent follow-up timing.
+
+h3. Assumptions
+* Follow-up intervals per outcome are agreed with team leaders.
+
+*Dependencies:* US-08 (case logs)
+
+*Priority:* High - high ROI and removes a manual source of error.","High","US-30","Collections-Representative"
+"Feature","41","6","US-31: See today's follow-ups","*Story ID:* US-31
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want a list of my due follow-ups, so that I can work through them in order.
+
+h3. Acceptance Criteria
+* List shows all follow-ups due today and overdue, sorted by due date.
+* Each item links to the customer record.
+* Completing a follow-up removes it from the list.
+
+h3. Business Value
+* Operational efficiency: clear workload.
+* Revenue uplift: overdue items are visible.
+
+h3. Assumptions
+* Reps use the system as intended.
+
+*Dependencies:* US-30 (follow-ups)
+
+*Priority:* High - makes scheduling usable.","High","US-31","Collections-Representative"
+"Feature","42","6","US-32: Monitor overdue follow-ups","*Story ID:* US-32
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to see overdue follow-ups across my team, so that I can reassign or escalate them.
+
+h3. Acceptance Criteria
+* Overdue follow-ups list rep, customer and days overdue.
+* Team leader can reassign a follow-up to another rep.
+* Reassignment is logged.
+
+h3. Business Value
+* Revenue uplift: fewer missed collections.
+* Operational efficiency: workload balancing.
+
+h3. Assumptions
+* Team leaders have authority to reassign work.
+
+*Dependencies:* US-30 (follow-ups)
+
+*Priority:* Low - nice to have but does not impact delivery.","Low","US-32","Collections-Team-Leader"
+"Feature","43","6","US-33: Limit and evidence contact frequency","*Story ID:* US-33
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want follow-up contact frequency limited and its history kept, so that the company can demonstrate compliant collection practices.
+
+h3. Acceptance Criteria
+* The system warns when scheduling would exceed the agreed contact limit.
+* A rep cannot exceed the limit without a logged override reason.
+* The full follow-up history can be exported per customer.
+
+h3. Business Value
+* Regulatory compliance: avoids breaching contact rules.
+* Risk reduction: reduces complaints and penalties.
+
+h3. Assumptions
+* Applicable contact frequency rules are confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-30 (follow-ups)
+
+*Priority:* Medium - prevents regulatory breaches caused by incorrect scheduling.","Medium","US-33","Compliance-Liaison"
+"Feature","44","6","US-34: Be contacted at a preferred time","*Story ID:* US-34
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want follow-up contact at my preferred time and channel, so that I can respond when convenient.
+
+h3. Acceptance Criteria
+* The preferred time and channel can be recorded on the customer record.
+* Scheduled follow-ups default to the recorded preference.
+* Follow-ups outside the preferred window require a logged override.
+
+h3. Business Value
+* Customer satisfaction: respects availability.
+* Revenue uplift: higher contact success rate.
+
+h3. Assumptions
+* Preferences are captured by reps during logging.
+
+*Dependencies:* US-30 (follow-ups)
+
+*Priority:* Low - improves experience but not essential.","Low","US-34","Customer"
+"Feature","45","7","US-35: Submit a promise to pay","*Story ID:* US-35
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to promise a payment amount and date in the portal, so that I can arrange payment without calling a rep.
+
+h3. Acceptance Criteria
+* A verified customer can select an amount and a date within the permitted window.
+* Dates outside the permitted window cannot be selected.
+* The promise is saved to the account on submission.
+* No more than 1 active promise exists per account.
+
+h3. Business Value
+* Cost reduction: removes rep time on promise calls.
+* Revenue uplift: earlier commitment to pay.
+* Customer satisfaction: arranges payment at their convenience.
+
+h3. Assumptions
+* Policy for permitted amounts and date window is agreed.
+* No money is taken at the time of promise.
+* Customer can only choose permitted plans.
+
+*Dependencies:* US-01 (storage), US-19 (identity verification)
+
+*Priority:* High - a key manual pain point with low complexity.","High","US-35","Customer"
+"Feature","46","7","US-36: Confirm the promise","*Story ID:* US-36
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want confirmation of my promise to pay, so that I know the arrangement is recorded.
+
+h3. Acceptance Criteria
+* A confirmation page shows amount, date and reference.
+* A confirmation email is sent immediately.
+* The customer can view the active promise in the portal.
+
+h3. Business Value
+* Customer satisfaction: clarity of commitment.
+* Cost reduction: fewer queries on promise status.
+
+h3. Assumptions
+* A valid email address is on record.
+* Email service is active.
+
+*Dependencies:* US-35 (promise to pay)
+
+*Priority:* Medium - improves clarity but not essential for functionality.","Medium","US-36","Customer"
+"Feature","47","7","US-37: Record promises automatically","*Story ID:* US-37
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want customer promises recorded on the case and follow-ups paused until the due date, so that I do not chase customers who have committed to pay.
+
+h3. Acceptance Criteria
+* A promise appears in the case log immediately.
+* Scheduled follow-ups are paused until the promise due date.
+* Follow-ups resume automatically if the promise is unfulfilled.
+
+h3. Business Value
+* Cost reduction: fewer unnecessary contacts.
+* Customer satisfaction: avoids chasing committed customers.
+* Operational efficiency: reps focus on uncommitted cases.
+
+h3. Assumptions
+* None
+
+*Dependencies:* US-08 (case logs), US-30 (follow-ups), US-35 (promise to pay)
+
+*Priority:* High - gives the feature its rep time saving.","High","US-37","Collections-Representative"
+"Feature","48","7","US-38: Forecast cash from promises","*Story ID:* US-38
+*Stakeholder:* Financial Partner
+
+*Story:* As a Financial Partner, I want a report of promised amounts by date, so that I can forecast expected collections.
+
+h3. Acceptance Criteria
+* Report shows total promised amount over any period chosen.
+* Report compares past promised amounts with amounts actually received.
+* Report is refreshed when needed.
+* Report is filterable by time period.
+
+h3. Business Value
+* Revenue uplift: better cash flow planning.
+* Cost reduction: replaces manual forecasting.
+
+h3. Assumptions
+* Payment fulfilment data is available.
+
+*Dependencies:* US-06 (reporting access), US-35 (promise to pay)
+
+*Priority:* Very Low - useful insight but not foundational and possible to do manually.","Lowest","US-38","Financial-Partner"
+"Feature","49","7","US-39: Evidence promises for audit","*Story ID:* US-39
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want every promise stored with the verified identity and timestamp, so that arrangements can be evidenced in audits and disputes.
+
+h3. Acceptance Criteria
+* Each promise stores customer ID, verification result, timestamp, amount and date.
+* Promise records cannot be edited, only superseded with a new record.
+* Promises can be exported with the audit trail.
+
+h3. Business Value
+* Regulatory compliance: proof of customer agreement.
+* Risk reduction: supports dispute resolution.
+
+h3. Assumptions
+* Retention period is confirmed by compliance.
+
+*Dependencies:* US-04 (audit trail), US-19 (identity verification), US-35 (promise to pay)
+
+*Priority:* High - supports compliance on a low-risk feature.","High","US-39","Compliance-Liaison"
+"Feature","50","8","US-40: Provide a read-only data interface for the portal","*Story ID:* US-40
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want the portal to read account data through a read-only interface, so that viewing information cannot alter or expose other records.
+
+h3. Acceptance Criteria
+* The interface exposes read-only access to the verified customer's own data.
+* Requests for another customer's data are rejected and logged.
+* Write operations through this interface return an error.
+
+h3. Business Value
+* Risk reduction: prevents accidental changes and data leakage.
+* Regulatory compliance: enforces data access limits.
+
+h3. Assumptions
+* The portal and database are hosted in an environment that allows an access layer.
+
+*Dependencies:* US-01 (storage), US-02 (security)
+
+*Priority:* Medium - technical foundation for the account information feature.","Medium","US-40","IT-Team-Member"
+"Feature","51","8","US-41: View account information","*Story ID:* US-41
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to view my balance, due dates and payment history, so that I know what I owe without calling a rep.
+
+h3. Acceptance Criteria
+* Page shows current balance, due date, payments and active promise.
+* Data shown matches the central record at time of load.
+* The page loads quickly.
+* Only a verified customer can view the page.
+
+h3. Business Value
+* Cost reduction: fewer balance enquiry calls.
+* Customer satisfaction: transparency and self-sufficiency.
+
+h3. Assumptions
+* Customers have internet access.
+* Historical payment data is migrated.
+
+*Dependencies:* US-19 (identity verification), US-40 (data interface)
+
+*Priority:* Medium - eases portal use but is not required for payments.","Medium","US-41","Customer"
+"Feature","52","8","US-42: Verify displayed information and log access","*Story ID:* US-42
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want portal views of account data logged and checked for accuracy, so that incorrect displays can be detected and corrected.
+
+h3. Acceptance Criteria
+* Each account view is logged with customer ID and time.
+* A sample check, run at an agreed frequency (TBD), confirms displayed values match the database.
+* Discrepancies are reported to IT for correction.
+
+h3. Business Value
+* Regulatory compliance: limits legal risk from incorrect information.
+* Risk reduction: early detection of display errors.
+
+h3. Assumptions
+* Sampling procedure is agreed with compliance.
+
+*Dependencies:* US-04 (audit trail), US-41 (account info)
+
+*Priority:* Very Low - protects against a risk that is resolvable through human support.","Lowest","US-42","Compliance-Liaison"
+"Feature","53","9","US-43: Validate customer detail inputs","*Story ID:* US-43
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want submitted details validated before saving, so that the database holds only well-formed data.
+
+h3. Acceptance Criteria
+* Email, phone number and postcode formats are validated.
+* Invalid inputs are rejected with a field-level error message.
+* Validation rules are applied to both portal and rep entry.
+
+h3. Business Value
+* Cost reduction: fewer failed contacts caused by bad data.
+* Regulatory compliance: improved data accuracy.
+
+h3. Assumptions
+* Validation rules are agreed per field.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* Low - protects data quality for an optional feature.","Low","US-43","IT-Team-Member"
+"Feature","54","9","US-44: Update my contact details","*Story ID:* US-44
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to update my contact details in the portal, so that the company can reach me without a call to a rep.
+
+h3. Acceptance Criteria
+* A verified customer can edit phone, email and address.
+* Changes save to the central record immediately.
+* The customer sees a confirmation of the saved change.
+* Customers can edit only allowed fields.
+
+h3. Business Value
+* Cost reduction: reduces rep time on detail changes.
+* Customer satisfaction: self-service convenience.
+* Revenue uplift: accurate details improve contact success.
+
+h3. Assumptions
+* Policy on which fields customers may edit is agreed.
+
+*Dependencies:* US-19 (identity verification), US-43 (input validation)
+
+*Priority:* Low - low ROI, eases a rep pain point.","Low","US-44","Customer"
+"Feature","55","9","US-45: Be alerted to changes in my details","*Story ID:* US-45
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to be notified at my previous contact method when details change, so that I can spot unauthorised changes.
+
+h3. Acceptance Criteria
+* A notification is sent to the previous email or phone immediately.
+* The notification includes how to report an unauthorised change.
+
+h3. Business Value
+* Risk reduction: detects account takeover.
+* Customer satisfaction: increases trust in the portal.
+
+h3. Assumptions
+* Previous contact details were valid.
+
+*Dependencies:* US-44 (detail updates)
+
+*Priority:* Low - security enhancement on an optional feature.","Low","US-45","Customer"
+"Feature","56","9","US-46: See updated details without re-entry","*Story ID:* US-46
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want customer-made changes visible on the record straight away, so that I do not update details manually.
+
+h3. Acceptance Criteria
+* Portal changes appear on the customer record immediately.
+* The record marks the change as customer-made with a timestamp.
+* No manual re-entry is required.
+
+h3. Business Value
+* Cost reduction: removes manual detail updates.
+* Operational efficiency: reps work from current details.
+
+h3. Assumptions
+* The central database is the only data store reps use.
+
+*Dependencies:* US-03 (customer record), US-44 (detail updates)
+
+*Priority:* Low - largely delivered by the central record.","Low","US-46","Collections-Representative"
+"Feature","57","9","US-47: Audit customer-made changes","*Story ID:* US-47
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want customer-made changes to show before and after values, so that I can trace the source of any incorrect details.
+
+h3. Acceptance Criteria
+* Each change logs previous value, new value, time and channel.
+* Logs can be searched by customer and date.
+
+h3. Business Value
+* Regulatory compliance: traceability of data changes.
+* Risk reduction: supports investigation of incorrect details.
+
+h3. Assumptions
+* Audit trail supports channel identification.
+
+*Dependencies:* US-04 (audit trail), US-44 (detail updates)
+
+*Priority:* Low - extends the existing audit trail to the portal.","Low","US-47","Compliance-Liaison"
+"Feature","58","10","US-48: Receive a reminder before payment is due","*Story ID:* US-48
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want a reminder before my payment is due, so that I do not miss it.
+
+h3. Acceptance Criteria
+* A reminder is sent (TBD) days before the due date.
+* It includes amount, due date and a link to pay or contact a rep.
+* Customers with no payment due do not receive a reminder.
+* Reminders are sent to the correct customer.
+
+h3. Business Value
+* Revenue uplift: fewer missed payments.
+* Cost reduction: replaces manual reminder contact.
+* Customer satisfaction: helpful prompt.
+
+h3. Assumptions
+* An email service is contracted.
+* Valid email addresses are on record.
+* Reminder timing is agreed.
+
+*Dependencies:* US-01 (storage)
+
+*Priority:* Medium - modest ROI, low complexity.","Medium","US-48","Customer"
+"Feature","59","10","US-49: Manage reminder preferences","*Story ID:* US-49
+*Stakeholder:* Customer
+
+*Story:* As a Customer, I want to opt out of reminders or change how I receive them, so that I only get messages I want.
+
+h3. Acceptance Criteria
+* Every reminder has an unsubscribe or preferences link.
+* An opt-out takes effect within n hours (n TBD).
+* The preference is shown on the customer record.
+
+h3. Business Value
+* Customer satisfaction: control over communications.
+* Regulatory compliance: honours consent preferences.
+
+h3. Assumptions
+* Opt-out for reminders is permitted by policy.
+
+*Dependencies:* US-48 (reminders)
+
+*Priority:* Medium - consent requirement for sending reminders.","Medium","US-49","Customer"
+"Feature","60","10","US-50: Log reminders automatically","*Story ID:* US-50
+*Stakeholder:* Collections Representative
+
+*Story:* As a Collections Representative, I want each reminder logged on the account, so that I know what the customer has been sent.
+
+h3. Acceptance Criteria
+* Each sent reminder creates a log entry with date, channel and template.
+* Reminders show on the account history.
+* No manual logging is required.
+
+h3. Business Value
+* Operational efficiency: reps see contact history.
+* Customer satisfaction: avoids duplicate contact.
+
+h3. Assumptions
+* Reminder and case logs use the same customer ID.
+
+*Dependencies:* US-08 (case logs), US-48 (reminders)
+
+*Priority:* Low - convenience for reps.","Low","US-50","Collections-Representative"
+"Feature","61","10","US-51: Configure reminder timing","*Story ID:* US-51
+*Stakeholder:* Collections Team Leader
+
+*Story:* As a Collections Team Leader, I want to adjust when reminders are sent, so that timing can be tuned to improve payments.
+
+h3. Acceptance Criteria
+* Team leaders can set days before due date within an allowed range.
+* Changes apply to reminders scheduled after the change.
+* Changes are logged with user and time.
+
+h3. Business Value
+* Revenue uplift: allows tuning for higher payment rates.
+* Operational efficiency: no IT request needed.
+
+h3. Assumptions
+* Team leaders are authorised to change reminder settings.
+
+*Dependencies:* US-48 (reminders)
+
+*Priority:* Very Low - the default timing is sufficient at launch.","Lowest","US-51","Collections-Team-Leader"
+"Feature","62","10","US-52: Use approved reminder templates","*Story ID:* US-52
+*Stakeholder:* Compliance Liaison
+
+*Story:* As a Compliance Liaison, I want reminders to use approved templates and respect contact limits, so that messages are compliant.
+
+h3. Acceptance Criteria
+* Only approved templates can be sent.
+* Template changes require compliance approval and are version controlled.
+* Reminders count towards the contact frequency limit.
+
+h3. Business Value
+* Regulatory compliance: consistent, approved wording.
+* Risk reduction: avoids incorrect or non-compliant messages.
+
+h3. Assumptions
+* Compliance has approved the initial templates.
+
+*Dependencies:* US-33 (contact limits), US-48 (reminders)
+
+*Priority:* Medium - controls the risk of confusing or non-compliant reminders.","Medium","US-52","Compliance-Liaison"
+"Feature","63","10","US-53: Monitor reminder delivery","*Story ID:* US-53
+*Stakeholder:* IT Team Member
+
+*Story:* As an IT Team Member, I want reminder delivery monitored, so that failures and bounced emails are identified and fixed.
+
+h3. Acceptance Criteria
+* Each reminder records a delivery status (sent, delivered, bounced, failed).
+* An alert is raised if the failure rate exceeds an agreed threshold within a defined period (TBD).
+* Bounced addresses are flagged on the customer record.
+
+h3. Business Value
+* Revenue uplift: reminders actually reach customers.
+* Operational efficiency: problems are detected early.
+
+h3. Assumptions
+* The email provider returns delivery status.
+
+*Dependencies:* US-48 (reminders)
+
+*Priority:* Low - supports reliability of an optional feature.","Low","US-53","IT-Team-Member"

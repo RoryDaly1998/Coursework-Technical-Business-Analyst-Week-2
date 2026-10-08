@@ -11,8 +11,8 @@
 |----------|-------|
 | Very High | 9 |
 | High | 15 |
-| Medium | 15 |
-| Low | 10 |
+| Medium | 14 |
+| Low | 11 |
 | Very Low | 4 |
 
 
@@ -66,7 +66,7 @@
 | US-44 | 9. Self-Service Updating Details | Customer | Low | US-19, US-43 |
 | US-45 | 9. Self-Service Updating Details | Customer | Low | US-44 |
 | US-46 | 9. Self-Service Updating Details | Collections Representative | Low | US-03, US-44 |
-| US-47 | 9. Self-Service Updating Details | Compliance Liaison | Medium | US-04, US-44 |
+| US-47 | 9. Self-Service Updating Details | Compliance Liaison | Low | US-04, US-44 |
 | US-48 | 10. Automated Payment Reminders | Customer | Medium | US-01 |
 | US-49 | 10. Automated Payment Reminders | Customer | Medium | US-48 |
 | US-50 | 10. Automated Payment Reminders | Collections Representative | Low | US-08, US-48 |

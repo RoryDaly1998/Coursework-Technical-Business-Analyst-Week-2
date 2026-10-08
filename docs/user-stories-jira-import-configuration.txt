@@ -1,0 +1,61 @@
+{
+  "config.version": "2.0",
+  "config.project.from.csv": "false",
+  "config.encoding": "UTF-8",
+  "config.email.suffix": "@",
+  "config.file.name": "user-stories-jira-import.csv",
+  "config.field.mappings": {
+    "Issue Type": {
+      "jira.field": "issuetype",
+      "userChanged": "true",
+      "manualMapping": "true"
+    },
+    "Issue ID": {
+      "jira.field": "issue-id",
+      "userChanged": "true",
+      "manualMapping": "false"
+    },
+    "Parent": {
+      "jira.field": "parent",
+      "userChanged": "true",
+      "manualMapping": "false"
+    },
+    "Summary": {
+      "jira.field": "summary",
+      "userChanged": "false",
+      "manualMapping": "false"
+    },
+    "Description": {
+      "jira.field": "description",
+      "userChanged": "false",
+      "manualMapping": "false"
+    },
+    "Priority": {
+      "jira.field": "priority",
+      "userChanged": "false",
+      "manualMapping": "false"
+    },
+    "Labels": {
+      "jira.field": "labels",
+      "userChanged": "false",
+      "manualMapping": "false"
+    }
+  },
+  "config.csv.file.id": null,
+  "config.value.mappings": {
+    "Issue Type": {
+      "Epic": "10011",
+      "Feature": "10012"
+    }
+  },
+  "config.delimiter": ",",
+  "config.project": {
+    "project.type": null,
+    "project.key": "LTBSR",
+    "project.description": null,
+    "project.url": null,
+    "project.name": "Legacy Trust Bank - Smart Recovery",
+    "project.lead": "8a5bbfd9-669d-4f9c-89bc-55e11cf31f4b"
+  },
+  "config.date.format": "dd/MMM/yy h:mm a"
+}
