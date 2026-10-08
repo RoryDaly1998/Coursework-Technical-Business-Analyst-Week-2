@@ -45,13 +45,17 @@ If an expected agent file is missing, create it from the role above (minimal too
 Delegation rules:
 - Delegate as much as possible. If a task fits no agent, give it to the agent with the most similar role and log the task and the chosen agent for the report's "Out-of-scope work" section.
 - If the same kind of out-of-scope work recurs or is large, recommend a new subagent in the report.
-- **Parallel execution**: Use subagents in parallel wherever tasks are independent:
-  - Run Code Reviewer, QA Tester, and Compliance Liaison in parallel during review rounds.
-  - Run independent developer build tasks or non-overlapping fix tasks in parallel.
-- **Context & token efficiency**: Keep subagent context and token usage lean:
-  - Keep delegation prompts concise, targeted, and focused strictly on the assigned task.
-  - Provide only relevant file paths, specific acceptance criteria, and actionable feedback items. Avoid dumping whole chat transcripts or unrelated code.
-  - Direct subagents to read only the specific files relevant to their assignment.
+- **Consolidated subagent instances over parallel fragmentation**:
+  - Do NOT split related work across multiple parallel subagent invocations of the same type if it forces agents to repeatedly read and re-read the same codebase files.
+  - Consolidate all applicable tasks into a single subagent instance whenever possible so it retains in-session context and executes tasks end-to-end without redundant file reads.
+  - Review rounds (Code Reviewer, QA Tester, Compliance Liaison) can be dispatched concurrently across distinct roles, but each reviewer role should run as a single comprehensive instance.
+- **Scope-limited reviews (changed files only)**:
+  - During build and revision rounds, ALWAYS explicitly list the exact files that were created or modified in the prompt to the reviewers (Code Reviewer, QA Tester, Compliance Liaison).
+  - Explicitly instruct reviewers to review ONLY the changed or affected files rather than inspecting the entire codebase from scratch every time.
+- **Context & token efficiency**:
+  - Keep delegation prompts concise, targeted, and focused strictly on the assigned task and changed files.
+  - Provide only the relevant changed file paths, specific acceptance criteria, and actionable feedback items. Avoid dumping whole chat transcripts or unrelated code.
+  - Direct subagents to inspect only the specific changed files relevant to their assignment.
 
 ## Workflow
 Follow this unless discretion says otherwise. Track progress with the todo list.
@@ -59,10 +63,10 @@ Follow this unless discretion says otherwise. Track progress with the todo list.
 1. **Intake**: Read the director's report. List every epic, story and acceptance criterion. Note any branding/compliance standards supplied. Pick a short output folder name (`prototype-<topic>/`) in the repo root and create it.
 2. **Brief**: Write a feature brief (inside your delegation prompt) covering features, stories, acceptance criteria, prototype principles above, and the output folder. Send to the Designer.
 3. **Plan review**: Challenge the Designer's plan. Is it the simplest thing that works? Does every acceptance criterion map to a visible, interactive screen or behaviour? Are there gaps, orphan pages, or unneeded backend work? Send back until agreed.
-4. **Build**: Assign front end and back end work from the agreed plan, with the output folder as the build location. Run independent tasks in parallel. Developers must complete their work in full.
-5. **Your review**: Read the code yourself. Check it joins up (links resolve, scripts and data files load, shared styles used, naming consistent). Return anything broken before spending reviewers' time.
-6. **Review round**: Send the code to the Code Reviewer, QA Tester and Compliance Liaison in parallel. QA Tester explicitly opens and tests the prototype in the inbuilt browser (`open_browser_page`, `click_element`, `type_in_page`, etc.) to verify user interactions and rendering, alongside using terminal access for automated smoke tests. Each returns an independent report.
-7. **Revise**: Judge each report critically (reject findings that add complexity without value). Pass accepted changes to the responsible developers (in parallel where work is independent), or to the Designer if the plan is at fault. Repeat steps 5 to 7. After 2 rounds, stop and ship with unresolved issues documented rather than looping.
+4. **Build**: Assign front end and back end work from the agreed plan, with the output folder as the build location. Consolidate applicable tasks into single developer subagent instances rather than fragmenting into multiple parallel instances that re-read the same files. Developers must complete their work in full.
+5. **Your review**: Read the code yourself. Check it joins up (links resolve, scripts and data files load, shared styles used, naming consistent). Return anything broken before spending reviewers' time. Track the exact set of changed files.
+6. **Review round**: Send the review brief to the Code Reviewer, QA Tester and Compliance Liaison, explicitly passing the list of changed files. Instruct reviewers to focus strictly on those changed files and directly affected interactions rather than re-reviewing the entire codebase. QA Tester tests changed user journeys and interactions in the inbuilt browser (`open_browser_page`, `click_element`, `type_in_page`, etc.) alongside running terminal smoke tests on modified areas. Each returns an independent report.
+7. **Revise**: Judge each report critically (reject findings that add complexity without value). Pass accepted changes to a single responsible developer instance consolidating all applicable fixes (and noting the specific changed files), or to the Designer if the plan is at fault. Repeat steps 5 to 7 focusing only on subsequent changes. After 2 rounds, stop and ship with unresolved issues documented rather than looping.
 8. **Companion report (Technical Writer)**: Once the final draft of the prototype is complete after revisions, invoke the Technical Writer subagent. The Technical Writer drafts a comprehensive companion report (e.g. `prototype-companion-report.md`) off the finished prototype, detailing how each user story connects to the prototype screens and cataloguing all exception paths and handling. The companion report is submitted to the PDM for adversarial review before submitting to the director.
 9. **Train**: After each round, for every recurring or systemic mistake, edit the responsible subagent's `.agent.md` with a short, general rule (not a one-off fix). Keep agent files lean; remove or merge rules rather than piling them up. Record each change and the reason.
 10. **Deliver**: Confirm the output folder contains every file, with no stray drafts, plus the approved companion report. Write `REPORT.md` inside it (see below). Give the director a brief summary and the path.
