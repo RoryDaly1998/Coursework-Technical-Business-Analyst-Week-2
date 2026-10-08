@@ -63,6 +63,7 @@
 
   function badge(text, kind) {
     var k = kind === 'error' ? 'err' : kind;
+    if (!k && text === 'Demo only') { k = 'demo'; }
     return el('span', { class: 'badge' + (k ? ' badge--' + k : '') }, [text]);
   }
 
@@ -127,6 +128,7 @@
     var helpId = id + '-help';
     var errorId = id + '-error';
     var extra = def.attrs || {};
+    if (def.placeholder && !extra.placeholder) { extra.placeholder = def.placeholder; }
     var control;
     var wrap = el('div', { class: 'form-field' });
     var labelText = [def.label, def.required ? el('span', { class: 'form-field__req', 'aria-hidden': 'true' }, [' *']) : null];
@@ -268,7 +270,35 @@
       if (previous && previous.focus) { previous.focus(); }
     }
     function onKey(e) {
-      if (e.key === 'Escape') { close(); if (o.onDismiss) { o.onDismiss(); } }
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        close();
+        if (o.onDismiss) { o.onDismiss(); }
+        return;
+      }
+      if (e.key === 'Tab') {
+        var selector = 'a[href], button, input, select, textarea, [tabindex]';
+        var focusable = qsa(overlay, selector).filter(function (elem) {
+          return !elem.disabled && elem.getAttribute('tabindex') !== '-1' &&
+            (elem.offsetParent !== null || elem.offsetWidth > 0 || elem.offsetHeight > 0);
+        });
+        if (!focusable.length) {
+          e.preventDefault();
+          return;
+        }
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first || focusable.indexOf(document.activeElement) === -1) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last || focusable.indexOf(document.activeElement) === -1) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     }
 
     var actions = (o.actions && o.actions.length) ? o.actions : [{ label: 'Close' }];
@@ -335,6 +365,7 @@
         var on = d.id === id;
         buttons[d.id].classList.toggle('is-active', on);
         buttons[d.id].setAttribute('aria-selected', on ? 'true' : 'false');
+        buttons[d.id].setAttribute('tabindex', on ? '0' : '-1');
         if (on) { active = d; }
       });
       if (!active) { return; }
@@ -347,9 +378,34 @@
       }
     }
 
-    defs.forEach(function (d) {
-      buttons[d.id] = el('button', { type: 'button', class: 'tab', role: 'tab', onclick: function () { select(d.id); } }, [d.label]);
-      list.appendChild(buttons[d.id]);
+    defs.forEach(function (d, i) {
+      var btn = el('button', {
+        type: 'button',
+        class: 'tab',
+        role: 'tab',
+        tabindex: '-1',
+        'aria-selected': 'false',
+        onclick: function () { select(d.id); },
+        onkeydown: function (e) {
+          var targetIndex = -1;
+          if (e.key === 'ArrowRight') {
+            targetIndex = (i + 1) % defs.length;
+          } else if (e.key === 'ArrowLeft') {
+            targetIndex = (i - 1 + defs.length) % defs.length;
+          } else if (e.key === 'Home') {
+            targetIndex = 0;
+          } else if (e.key === 'End') {
+            targetIndex = defs.length - 1;
+          }
+          if (targetIndex >= 0) {
+            e.preventDefault();
+            select(defs[targetIndex].id);
+            buttons[defs[targetIndex].id].focus();
+          }
+        }
+      }, [d.label]);
+      buttons[d.id] = btn;
+      list.appendChild(btn);
     });
     wrap.appendChild(list);
     wrap.appendChild(panelEl);

@@ -46,7 +46,8 @@
  *   Services.reportAlert({type, severity, detail})           -> {ok, alert}
  *   Services.recordAccountView(customerId, displayed?)       -> {ok, view?, error?}
  *   Services.paymentCount(customerId)                        -> number (payments with status 'success')
- *   Services.setReminderPrefs(customerId, {optedOut, channel}) -> {ok, error?, reminderPrefs?}
+ *   Services.setReminderPrefs(customerId, {optedOut, channel}, caller?) -> {ok, error?, reminderPrefs?}
+ *   Services.updateReminderPrefs(customerId, {optedOut, channel}, caller?) -> alias for setReminderPrefs
  *   Services.raiseQuery(customerId, {expectedDate, expectedAmount}?) -> {ok, error?, query?, duplicate?}
  *   Services.resolveQuery(customerId, note?)                 -> {ok, error?, query?}  (rep or leader; lifts the delinquency hold)
  *   Services.paymentTotalSince(customerId, sinceIso, untilIso?) -> number (successful payments with at >= since and, if given, at <= until)
@@ -999,7 +1000,7 @@
   // ---------- preferences, queries, views ----------
 
   // Production: PUT /customers/{id}/reminder-preferences (works from the signed link in a reminder email).
-  function setReminderPrefs(customerId, prefs) {
+  function setReminderPrefs(customerId, prefs, caller) {
     var customer = findCustomer(customerId);
     if (!customer) { return { ok: false, error: 'Customer not found.' }; }
     var p = prefs && typeof prefs === 'object' ? prefs : {};
@@ -1008,6 +1009,11 @@
     if (p.optedOut !== undefined && typeof p.optedOut !== 'boolean') { return { ok: false, error: 'Opted out must be true or false.' }; }
     if (p.channel !== undefined && ['email', 'sms', 'both'].indexOf(p.channel) < 0) { return { ok: false, error: 'Choose email, SMS or both.' }; }
     if (p.optedOut === undefined && p.channel === undefined) { return { ok: false, error: 'No preference supplied.' }; }
+
+    var isStaff = Auth.role() !== 'customer';
+    if (p.optedOut === false && !isStaff && verified !== customer.id && caller !== 'portal-verified') {
+      return { ok: false, error: 'Identity verification is required to enable reminders.' };
+    }
 
     var current = extend({}, customer.reminderPrefs || {});
     var next = extend({}, current);
@@ -1220,6 +1226,7 @@
     setPreferredContact: setPreferredContact,
     resolveQuery: resolveQuery,
     setReminderPrefs: setReminderPrefs,
+    updateReminderPrefs: setReminderPrefs,
     raiseQuery: raiseQuery
   };
 

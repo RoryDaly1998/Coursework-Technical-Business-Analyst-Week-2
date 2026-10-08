@@ -107,7 +107,7 @@ Layout.ready(function (main) {
     var a = account.body;
     var stackEl = el('div', { class: 'stack' }, [
       el('div', { class: 'row' }, [
-        el('span', { class: 'muted' }, ['Hello ' + Portal.firstName(a) + '. Loaded at ' + Fmt.datetime(Clock.now()) + '.']),
+        el('span', { class: 'muted' }, ['Hello ' + Portal.firstName(a) + '.']),
         el('button', { type: 'button', class: 'btn btn--small', onclick: function () { window.location.reload(); } }, ['Refresh']),
         a.delinquencyHold ? UI.badge('Query open', 'warn') : null
       ]),

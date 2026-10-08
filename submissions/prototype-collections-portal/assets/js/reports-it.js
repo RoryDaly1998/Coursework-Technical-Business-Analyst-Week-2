@@ -199,8 +199,8 @@
       { key: 'pass', label: 'Result', format: function (v) { return v ? UI.badge('Pass', 'ok') : UI.badge('Fail', 'error'); } }
     ];
     var head = failed.length
-      ? el('div', { class: 'notice notice--error' }, [el('strong', null, ['Simulated check: ' + failed.length + ' of ' + checks.length + ' access checks failed. ']), 'Run at ' + Fmt.datetime(Clock.now()) + '.'])
-      : el('div', { class: 'notice notice--ok' }, [el('strong', null, ['Simulated check: all ' + checks.length + ' access checks passed. ']), roles.length + ' roles x ' + window.PAGES.length + ' pages, run at ' + Fmt.datetime(Clock.now()) + '.']);
+      ? el('div', { class: 'notice notice--error' }, [el('strong', null, ['Access test: ' + failed.length + ' of ' + checks.length + ' access checks failed. ']), 'Run at ' + Fmt.datetime(Clock.now()) + '.'])
+      : el('div', { class: 'notice notice--ok' }, [el('strong', null, ['Access test: all ' + checks.length + ' access checks passed. ']), roles.length + ' roles x ' + window.PAGES.length + ' pages, run at ' + Fmt.datetime(Clock.now()) + '.']);
     return el('div', { class: 'stack' }, [
       head,
       el('p', { class: 'muted' }, ['This compares the page registry with the agreed access list from the plan. It does not try real sign-ins.']),
@@ -217,21 +217,21 @@
     var rto = Number(Services.setting('recoveryTimeObjective', 0));
     var restoreOk = rto > 0 && SIM_RESTORE_HOURS <= rto;
     var encryption = UI.panel('Encryption', kv([
-      ['At rest', 'AES-256 on the database and backups (simulated)'],
-      ['In transit', 'TLS 1.2 or higher on every connection (simulated)'],
+      ['At rest', 'AES-256 on the database and backups'],
+      ['In transit', 'TLS 1.2 or higher on every connection'],
       ['Evidence date', Fmt.datetime(Clock.now())]
-    ]), { label: 'Simulated evidence', note: 'The hosting platform would encrypt storage and enforce TLS. IT would attach the platform\'s configuration report or certificate as evidence; this panel only shows what that evidence would say.' });
+    ]), { label: 'Demo evidence', note: 'The hosting platform would encrypt storage and enforce TLS. IT would attach the platform\'s configuration report or certificate as evidence; this panel only shows what that evidence would say.' });
     var backups = UI.panel('Backups and test restore', kv([
       ['Backup frequency', tbdSetting('backupFrequency')],
-      ['Last backup', Fmt.datetime(Clock.today() + 'T02:00') + ' (simulated)'],
+      ['Last backup', Fmt.datetime(Clock.today() + 'T02:00')],
       ['Recovery time objective', tbdSetting('recoveryTimeObjective', 'hours')],
-      ['Last test restore', 'Completed in 2 h 30 min (simulated)'],
+      ['Last test restore', 'Completed in 2 h 30 min'],
       ['Restore within objective', restoreOk ? UI.badge('Yes', 'ok') : UI.badge('No', 'error')]
-    ]), { label: 'Simulated evidence', note: 'A scheduled backup job would run at the agreed frequency and a periodic test restore would be timed against the recovery objective. Both results would be pulled from the backup tool\'s logs.' });
+    ]), { label: 'Demo evidence', note: 'A scheduled backup job would run at the agreed frequency and a periodic test restore would be timed against the recovery objective. Both results would be pulled from the backup tool\'s logs.' });
     var access = UI.panel('Role-based access', el('div', { class: 'stack' }, [
-      el('p', null, ['Press "Run access tests" to run a simulated check of every role against every page. It compares the page registry with the agreed access list from the plan, so a mistake in the registry shows as a failure.']),
+      el('p', null, ['Press "Run access tests" to run a check of every role against every page. It compares the page registry with the agreed access list from the plan, so a mistake in the registry shows as a failure.']),
       el('p', { class: 'muted' }, ['Denied attempts are logged and listed in the table below the buttons.'])
-    ]), { label: 'Simulated check', note: 'In production the same test would call the real access layer with a test account for each role, and run in the release pipeline.' });
+    ]), { label: 'Demo evidence', note: 'In production the same test would call the real access layer with a test account for each role, and run in the release pipeline.' });
     return el('div', { class: 'stack' }, [access, encryption, backups]);
   }
 
@@ -271,7 +271,7 @@
       ];
     },
     panel: function () { return evidencePanels(); },
-    actions: [{ label: 'Run access tests (simulated check)', run: function () { return accessTestOutput(); } }]
+    actions: [{ label: 'Run access tests', run: function () { return accessTestOutput(); } }]
   });
 
   // ---------- US-23 lockouts and alerts ----------

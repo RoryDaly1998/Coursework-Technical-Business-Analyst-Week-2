@@ -11,7 +11,7 @@
  * Staff.isUnlocked(customerId)              -> true once phone verification passed or an internal review was started
  * Staff.verificationResult(customerId)      -> 'Verified' | 'Not verified' (stored on promises made by a rep)
  * Staff.verificationPanel(customer, onChange) / Staff.accessBar(customer, onChange) / Staff.clearAccess(customerId)
- * Staff.markSearch(accountNo) / Staff.openedSeconds(accountNo)  -> elapsed time for "Opened in n s"
+ * Staff.markSearch(accountNo) / Staff.openedSeconds(accountNo)  -> deprecated no-op helpers (timing metadata removed)
  * Staff.userName(id), Staff.teamOf(userId), Staff.teamReps(team)
  *
  * Session state: sessionStorage 'cpp.staffAccess' = { customerId: {mode, userId} }. Tying it to the staff user means
@@ -164,17 +164,12 @@
     ]);
   }
 
-  function markSearch(accountNo) {
-    Store.session.set('staffSearchStart', { acct: String(accountNo), t: Date.now() });
-  }
+  // Deprecated: timing metadata display removed per director guidelines. Preserved as no-op for backward compatibility.
+  function markSearch(_accountNo) {}
 
-  // Seconds since the search was submitted; falls back to this page's load time when opened directly.
-  function openedSeconds(accountNo) {
-    var mark = Store.session.get('staffSearchStart');
-    Store.session.remove('staffSearchStart');
-    var ms = Math.round(window.performance && performance.now ? performance.now() : 0);
-    if (mark && mark.acct === String(accountNo) && Date.now() - mark.t < 60000) { ms = Date.now() - mark.t; }
-    return ms / 1000;
+  // Deprecated: timing metadata display removed per director guidelines. Returns 0 for backward compatibility.
+  function openedSeconds(_accountNo) {
+    return 0;
   }
 
   function userName(id) {

@@ -30,7 +30,8 @@
 
   window.PAGES = [
     // Hidden entries
-    { id: 'index', file: 'index.html', title: 'Collections Portal prototype', group: 'Admin', roles: ALL, needsVerified: false, stories: [], hideInNav: true },
+    { id: 'index', file: 'index.html', title: 'Home: Collections Portal', group: 'Admin', roles: ALL, needsVerified: false, stories: [], hideInNav: true },
+    { id: 'demo', file: 'demo.html', title: 'Demo Guide & Tools', group: 'Admin', roles: ALL, needsVerified: false, stories: [], hideInNav: true },
     { id: 'reports', file: 'reports.html', title: 'All reports', group: 'Reports', roles: ['leader', 'finance', 'compliance', 'it'], needsVerified: false, stories: [] },
 
     // Customer portal
@@ -40,7 +41,7 @@
     { id: 'portal-promise', file: 'portal-promise.html', title: 'Promise to pay', group: 'Customer', roles: ['customer'], needsVerified: true, stories: ['US-35', 'US-36'] },
     { id: 'portal-details', file: 'portal-details.html', title: 'Update my details', group: 'Customer', roles: ['customer'], needsVerified: true, stories: ['US-43', 'US-44', 'US-45'] },
     { id: 'portal-preferences', file: 'portal-preferences.html', title: 'Reminder preferences', group: 'Customer', roles: ['customer'], needsVerified: false, stories: ['US-49'] },
-    { id: 'outbox', file: 'outbox.html', title: 'Outbox (simulated messages)', group: 'Customer', roles: ['customer', 'rep', 'leader', 'it'], needsVerified: true, stories: ['US-13', 'US-28', 'US-36', 'US-45', 'US-48', 'US-49'] },
+    { id: 'outbox', file: 'outbox.html', title: 'Outbox', group: 'Customer', roles: ['customer', 'rep', 'leader', 'it'], needsVerified: true, stories: ['US-13', 'US-28', 'US-36', 'US-45', 'US-48', 'US-49'] },
 
     // Staff workspace
     { id: 'staff-search', file: 'staff-search.html', title: 'Customer search', group: 'Staff', roles: ['rep', 'leader'], needsVerified: false, stories: ['US-03'] },

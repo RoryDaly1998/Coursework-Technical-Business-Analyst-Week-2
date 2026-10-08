@@ -69,8 +69,8 @@ Layout.ready(function (main) {
     el('p', null, ['We need to check it is you before showing any account information or taking a payment.']),
     form,
     result,
-    el('p', { class: 'muted' }, ['Demo accounts and their details are listed on the ', el('a', { href: 'index.html' }, ['home page']), '. Account 100006 is already locked.']),
-    el('p', { class: 'muted' }, ['We use these details only to check who you are: ', el('a', { href: 'index.html#privacy' }, ['read the privacy notice']), '.'])
+    el('p', { class: 'muted' }, ['Demo accounts and their details are listed on the ', el('a', { href: 'demo.html' }, ['demo page']), '. Account 100006 is already locked.']),
+    el('p', { class: 'muted' }, ['We use these details only to check who you are: ', el('a', { href: 'demo.html#privacy' }, ['read the privacy notice']), '.'])
   ]), {
     note: ['Production would use a stronger method (for example a one-time code). The answers are checked on the server and are never stored: only the outcome is logged. ' +
       'The account locks after ', UI.tbd('Failed attempts before lockout', Services.setting('lockoutThreshold')), ' failed attempts and only a rep can unlock it after phone verification. ' +

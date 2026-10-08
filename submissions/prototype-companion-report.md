@@ -6,6 +6,16 @@ This companion document serves as the Technical Business Analyst (TBA) reference
 
 ### Prototype Architecture & Operating Principles
 - **Zero-Build & Zero-Install**: Built entirely with vanilla HTML5, CSS3, and ES5 JavaScript. Runs locally directly in modern browsers (Google Chrome, Microsoft Edge, Safari) by opening `index.html`. No Node.js runtime, build tools, or web servers are required.
+- **Dedicated Operational Home vs Demo Hub**:
+  - **Dedicated Home Page (`index.html`)**: Features functional operational authentication — Customer Sign In (account number, DOB, postcode) and New Customer Registration (auto-provisioning sequential accounts and audit records), alongside Staff Sign In (centralized identity selection and PIN authentication routing directly to the appropriate staff workspace).
+  - **Dedicated Demo Hub (`demo.html`)**: Dedicated evaluator and presenter hub housing end-to-end role walkthrough tabs, the pre-seeded test customer accounts matrix (100001–100009), the interactive prototype sitemap, and global reset tools. Directly accessible from any screen via the **"Demo Guide & Sitemap"** button in the top demo bar.
+- **Corporate Branding & Standards**:
+  - **Navy Blue Primary Palette (`#0b2545`)**: Applied to headers, primary action buttons, active navigation items, active tab indicators, and table headers.
+  - **Contrasting Orange Demo Bar (`#d35400`)**: Prominently highlights presenter controls (role switcher, simulated clock, reset, and demo hub link).
+  - **True Black Body Text (`#000000`)**: Guarantees maximum legibility across all forms, tables, notices, and documentation.
+  - **Demo-Only Element Signage**: Any demo-specific control or temporary presentation helper is distinctly styled with a dashed container (`.demo-only`) and badged with `<span class="badge badge--demo">Demo only</span>`.
+  - **Removal of Latency & Simulated Markers**: Artificial load-time metadata (e.g. "Opened in X s") and redundant markers like "(simulated message)" have been completely eliminated.
+- **WAI-ARIA Accessibility**: Tab components implement arrow key navigation (`ArrowLeft`, `ArrowRight`, `Home`, `End`) with roving `tabindex` and `aria-selected` state management; modal dialogs implement `Escape` key dismissal, focus trapping, and focus restoration to trigger elements.
 - **Local State Persistence**: All data operations run against an in-memory and `localStorage`-backed store (`Store` in `assets/js/core.js`), pre-seeded with 9 realistic customer personas and historical activity (`data/seed-customers.js`, `data/seed-activity.js`, `data/seed-config.js`).
 - **Simulated Clock**: An advanceable demo clock (`Clock`) enables immediate demonstration of time-based features (e.g. reminder lead times, overdue follow-ups, and fulfilment check windows) without waiting days.
 - **Role-Based Access Control (RBAC)**: A global header switcher simulates six distinct stakeholder personas, enforcing strict page and data segregation:
@@ -18,7 +28,10 @@ This companion document serves as the Technical Business Analyst (TBA) reference
 
 ### Quick-Start Instructions
 1. Navigate to `submissions/prototype-collections-portal/` and open `index.html` in your browser.
-2. Observe the global header at the top of every screen:
+2. Observe the dedicated Home Page: sign in as an existing customer, register a new customer, or sign in as a staff member.
+3. Access the demo hub anytime: click **"Demo Guide & Sitemap"** in the orange demo bar at the top of any page to open `demo.html`.
+4. Observe the global header at the top of every screen:
+   - **Demo Guide & Sitemap Button**: Quick access to walkthroughs, sitemap, and seed account credentials.
    - **Role Selector**: Switch dynamically between Customer, Collections Rep, Team Leader, Finance, Compliance, and IT.
    - **Staff User Selector**: When in staff roles, switch between specific users and teams (e.g. Sam Patel [Team A], Jo Okafor [Team A], Lee Chen [Team B], Priya Nair [Team Leader]).
    - **Demo Date**: Shows current simulated date; click **"Advance day"** to simulate passing time.
@@ -470,14 +483,15 @@ EPIC 5: AUTOMATED PAYMENT FULFILLMENT CHECK (US-24 to US-29)
 - **Stakeholder**: IT Team Member | **Priority**: Low
 - **Screen Location**: `jobs.html` (IT role)
 - **How to Demo**:
-  1. In **IT** role on `jobs.html`, check "Simulate data source timeout on attempt 1".
-  2. Click **Run fulfilment check now**.
-  3. Observe attempt table: Attempt 1 logs status `retried` (Data source timeout). System automatically executes Attempt 2, which logs status `success`.
-  4. If all retries fail, job logs `failed` and triggers an urgent IT alert for deadline breach.
+  1. In **IT** role on `jobs.html`, locate the **Fulfilment check (promises to pay)** panel.
+  2. To demo automatic retry on failure: select "Fail once, then succeed on the automatic retry" and click **Run fulfilment check**. Observe Attempt 1 logs status `retried` (Data source timeout) and Attempt 2 succeeds.
+  3. To demo retries running out: select "Fail every attempt" and click **Run fulfilment check**. Observe the run fails after all retries and raises an IT alert.
+  4. To demo deadline breach monitoring: select **"Simulate past deadline (07:00, triggers missed-deadline alert)"** and click **Run fulfilment check**.
+  5. Observe the high-severity alert (`job-deadline-missed`) generated immediately in the Job alerts panel, notifying on-call IT that the run exceeded the 07:00 cutoff.
 - **Acceptance Criteria Verification**:
   - *Logs start, end, records processed*: Detailed attempt-level audit table.
   - *Automatic retries up to N times*: Retries up to configured retry limit (2 retries).
-  - *Alert sent if job fails by deadline*: High-severity alert generated on exhausted retries.
+  - *Alert sent if job fails by deadline*: High-severity alert generated on exhausted retries or when run passes the 07:00 deadline cutoff.
 
 ```
 ========================================================================================
@@ -749,14 +763,16 @@ EPIC 10: AUTOMATED PAYMENT REMINDERS (US-48 to US-53)
 - **Screen Location**: `jobs.html` (IT role) & `outbox.html` (Customer role)
 - **How to Demo**:
   1. In **IT** role, open `jobs.html`.
-  2. Click **Run reminder job now**.
+  2. Click **Run reminder job**.
   3. Reminders are dispatched for accounts whose payment is due in 3 days (e.g. Account `100001`).
-  4. Accounts with £0 balance (e.g. Account `100007`) or opted out (Account `100008`) are skipped.
-  5. Switch to **Customer** role (`100001`) -> `outbox.html`: view reminder message containing balance due, due date, pay link, and unsubscribe link.
+  4. Accounts with £0 balance (e.g. Account `100007`) or opted out (Account `100008`) are skipped with clear reasons.
+  5. Re-run demonstration: If a customer opts out after their reminder was initially sent, re-running the job evaluates their current preference and explicitly displays them in the **Skipped** table with reason `"Opted out of reminders"`.
+  6. Switch to **Customer** role (`100001`) -> `outbox.html`: view reminder message containing balance due, due date, pay link, and unsubscribe link.
 - **Acceptance Criteria Verification**:
   - *Sent N days before due date*: Dispatched based on configured lead time (default: 3 days).
   - *Includes amount, due date, pay link, rep contact*: Template populates all links.
   - *Customers with zero balance do not receive*: Skipped with recorded reason.
+  - *Opted-out customers excluded and audited*: Explicitly captured on initial runs and subsequent re-runs.
   - *Sent to correct customer*: Verified recipient mapping.
 
 ### US-49: Manage reminder preferences
@@ -766,11 +782,13 @@ EPIC 10: AUTOMATED PAYMENT REMINDERS (US-48 to US-53)
   1. In `outbox.html`, open a reminder message and click the tokenised preferences link (`portal-preferences.html?t=...`).
   2. Page opens without requiring sign-in (identifying customer via secure token).
   3. Customer checks "Stop sending me payment reminder messages" and saves.
-  4. Opt-out takes immediate effect (`optedOut: true`). Unauthenticated users cannot re-enable reminders without full sign-in.
-  5. Customer record in staff view displays "Reminders opted out" badge.
+  4. Opt-out takes immediate effect (`optedOut: true`).
+  5. Verification enforcement on opt-in: If an unauthenticated user unchecks the opt-out box and attempts to turn reminders back on, the service-layer guard (`Services.setReminderPrefs`) blocks the request with an authentication error: *"Identity verification is required to enable reminders."*
+  6. Customer record in staff view displays "Reminders opted out" badge.
 - **Acceptance Criteria Verification**:
   - *Every reminder has unsubscribe/preferences link*: Tokenised link included in message footer.
   - *Opt-out takes effect immediately*: Saved instantly to customer record.
+  - *Re-enabling reminders gated by authentication*: Service-layer check stops unverified callers re-enabling notifications.
   - *Preference shown on customer record*: Displayed in staff record header.
 
 ### US-50: Log reminders automatically
@@ -866,7 +884,9 @@ The prototype demonstrates 24 distinct exception and unhappy paths, ensuring tha
 To conduct a live demonstration for executive stakeholders or assessors, follow these four scripted journeys:
 
 ### Script A: Customer Self-Service & Recovery Journey
-1. **Sign In**: Open `index.html` as **Customer**. Enter Account `100001`, DOB `1988-04-12`, Postcode `M14 5QT`. Arrive on `portal-account.html`.
+1. **Sign In or Sign Up**: Open `index.html`.
+   - *Existing Customer*: Select **Customer Sign In**, enter Account `100001`, DOB `1988-04-12`, Postcode `M14 5QT`. Click **Sign In to My Account** to arrive on `portal-account.html`.
+   - *New Customer*: Select **New Customer Registration**, complete name, address, contact details, initial balance, and consent checkbox. Click **Register & Sign In** to auto-provision account `100010` and sign in immediately.
 2. **Account Review**: View balance (£420.00), due date, and payment history.
 3. **Card Payment with Failure & Recovery**:
    - Go to **Make a payment** (`portal-pay.html`).
@@ -883,8 +903,8 @@ To conduct a live demonstration for executive stakeholders or assessors, follow 
    - Go to **My messages** (`outbox.html`). View confirmation emails for payment and promise.
 
 ### Script B: Collections Rep Case Handling & Exception Journey
-1. **Search & Phone Verification**:
-   - Switch role to **Collections rep** (Sam Patel).
+1. **Staff Sign In & Verification**:
+   - Open `index.html`. Under **Staff Workspace**, select Sam Patel (Collections Rep, Team A) and click **Staff Sign In** (navigates directly to `staff-search.html`).
    - Enter `100006` (Fatima Rahman) on `staff-search.html`.
    - Notice record is locked ("Account locked"). Verification gate is active.
    - Enter caller's DOB (`1975-02-08`) and Postcode (`G12 8QQ`). Click **Verify caller**.

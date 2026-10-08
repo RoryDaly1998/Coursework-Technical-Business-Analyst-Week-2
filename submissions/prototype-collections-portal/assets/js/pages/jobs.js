@@ -150,17 +150,22 @@ Layout.ready(function (main) {
       options: [
         { value: '', label: 'No failure (normal run)' },
         { value: '1', label: 'Fail once, then succeed on the automatic retry' },
-        { value: 'all', label: 'Fail every attempt (retries run out and an alert is raised)' }
+        { value: 'all', label: 'Fail every attempt (retries run out and an alert is raised)' },
+        { value: 'deadline', label: 'Simulate past deadline (07:00, triggers missed-deadline alert)' }
       ],
-      help: 'Demo control for the monitoring story. A failed run is retried automatically up to the retry limit.'
+      help: el('span', null, [
+        el('span', { class: 'badge badge--demo' }, ['Demo only']),
+        'Demo control for the monitoring story. A failed run is retried automatically up to the retry limit.'
+      ])
     }));
     form.appendChild(el('div', { class: 'row' }, [el('button', { type: 'submit', class: 'btn btn--primary' }, ['Run fulfilment check'])]));
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var v = UI.readForm(form).simulate;
       var failure = v === 'all' ? true : (v === '1' ? 1 : false);
+      var deadline = v === 'deadline';
       try {
-        renderFulfilment(Jobs.runFulfilmentCheck({ simulateFailure: failure }));
+        renderFulfilment(Jobs.runFulfilmentCheck({ simulateFailure: failure, simulatePastDeadline: deadline }));
       } catch (err) {
         fulfilOut.textContent = '';
         fulfilOut.appendChild(el('div', { class: 'notice notice--error' }, ['The fulfilment check could not run: ' + err.message]));
@@ -304,7 +309,7 @@ Layout.ready(function (main) {
   }
 
   function renderAlerts() {
-    var rows = Store.filter('alerts', function (a) { return a.type === 'job-failed' || a.type === 'reminder-failure-rate'; }).sort(function (a, b) {
+    var rows = Store.filter('alerts', function (a) { return a.type === 'job-failed' || a.type === 'job-deadline-missed' || a.type === 'reminder-failure-rate'; }).sort(function (a, b) {
       var s = String(b.at).localeCompare(String(a.at));
       return s !== 0 ? s : numId(b.id) - numId(a.id);
     });

@@ -20,7 +20,7 @@ Layout.ready(function (main) {
   function isVerified() { return !!customer && verifiedId === customer.id; }
 
   function privacyLine() {
-    return el('p', { class: 'muted' }, ['We use your details only to manage your account and send the messages you see here: ', el('a', { href: 'index.html#privacy' }, ['read the privacy notice']), '.']);
+    return el('p', { class: 'muted' }, ['We use your details only to manage your account and send the messages you see here: ', el('a', { href: 'demo.html#privacy' }, ['read the privacy notice']), '.']);
   }
 
   function backLink() {
@@ -54,9 +54,12 @@ Layout.ready(function (main) {
     main.appendChild(el('div', { class: 'stack' }, [
       UI.panel('Open this page from a reminder message', el('div', { class: 'stack' }, [
         el('p', null, ['Reminder preferences are opened from the link at the bottom of each reminder message, so no sign-in is needed. This page was opened without that link.']),
-        el('details', null, [
-          el('summary', null, ['Demo helper: stands in for the link in a reminder email']),
-          el('div', { class: 'demo-control' }, [el('span', null, ['Open the link from the reminder sent to']), select])
+        el('div', { class: 'demo-only' }, [
+          el('span', { class: 'badge badge--demo' }, ['Demo only']),
+          el('details', null, [
+            el('summary', null, ['Demo helper: stands in for the link in a reminder email']),
+            el('div', { class: 'demo-control', style: 'margin-top: .5rem;' }, [el('span', null, ['Open the link from the reminder sent to ']), select])
+          ])
         ]),
         el('p', null, ['Or ', el('a', { href: 'portal-verify.html' }, ['verify your identity']), ' to manage preferences from your account.']),
         privacyLine()
@@ -92,9 +95,13 @@ Layout.ready(function (main) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var v = UI.readForm(form);
-      // Without sign-in a visitor can only switch reminders off, never back on.
-      var optedOut = verified ? !!v.optedOut : (!!prefs.optedOut || !!v.optedOut);
-      var res = Services.setReminderPrefs(c.id, { optedOut: optedOut, channel: v.channel || channel });
+      var payload = { channel: v.channel || channel };
+      if (v.optedOut) {
+        payload.optedOut = true;
+      } else if (prefs.optedOut || verified) {
+        payload.optedOut = false;
+      }
+      var res = Services.setReminderPrefs(c.id, payload, verified ? 'portal-verified' : null);
       if (!res.ok) { UI.showErrors(form, { _form: res.error }); return; }
       render({ optedOut: !!res.reminderPrefs.optedOut });
     });

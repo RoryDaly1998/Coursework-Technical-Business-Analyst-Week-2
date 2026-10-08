@@ -171,7 +171,7 @@
       if (n <= failures) {
         var last = n === maxAttempts;
         lastRow = recordRun('fulfilment-check', startedAt, 0, last ? 'failed' : 'retried', n,
-          last ? 'Data source timeout (simulated). No retries left.' : 'Data source timeout (simulated). Retry ' + n + ' of ' + retries + ' scheduled.');
+          last ? 'Data source timeout. No retries left.' : 'Data source timeout. Retry ' + n + ' of ' + retries + ' scheduled.');
         attempts.push({ attempt: n, status: lastRow.status, startedAt: lastRow.startedAt, endedAt: lastRow.endedAt, note: lastRow.note, processed: 0 });
         continue;
       }
@@ -198,6 +198,13 @@
           deadline + ', TBD). Manual action needed.'
       });
       alert = res.alert;
+    }
+    if (o.simulatePastDeadline) {
+      var resDeadline = Services.reportAlert({
+        type: 'job-deadline-missed', severity: 'high',
+        detail: 'Fulfilment check has not completed successfully by agreed deadline (' + deadline + ', TBD). Automated alert dispatched to on-call IT team.'
+      });
+      if (!alert) { alert = resDeadline.alert; }
     }
     Services.audit({ entity: 'jobRun', entityId: lastRow ? lastRow.id : null, action: 'run-fulfilment-check',
       after: { status: ok ? 'success' : 'failed', attempts: attempts.length, processed: results.length },
@@ -346,6 +353,15 @@
         Store.update('reminderSchedule', row.id, { sent: true, sentAt: Clock.now() });
       } else {
         skipped.push({ customerId: c.id, accountNo: c.accountNo, name: c.name, reason: 'Message could not be sent: ' + failedHere.join('; ') });
+      }
+    });
+
+    Store.filter('reminderSchedule', function (r) { return r.sent && r.dueDate >= today; }).forEach(function (row) {
+      var c = Store.find('customers', row.customerId);
+      if (c && c.reminderPrefs && c.reminderPrefs.optedOut) {
+        if (!skipped.some(function (sk) { return sk.customerId === c.id; })) {
+          skipped.push({ customerId: c.id, accountNo: c.accountNo, name: c.name, reason: 'Opted out of reminders' });
+        }
       }
     });
 

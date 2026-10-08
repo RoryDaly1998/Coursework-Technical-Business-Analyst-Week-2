@@ -14,9 +14,6 @@ Layout.ready(function (main) {
   var isRep = Auth.role() === 'rep';
   var activeTab = 'summary';
   var tabsNode = null;
-  var openedHolder = null;
-  var openedNode = null;
-  var first = true;
 
   var TYPE_LABELS = {
     interaction: 'Contact', payment: 'Payment', promise: 'Promise', fulfilment: 'Fulfilment', reminder: 'Reminder',
@@ -29,9 +26,6 @@ Layout.ready(function (main) {
   var host = el('div', { class: 'stack' });
   main.appendChild(host);
   draw();
-  openedNode = el('span', { class: 'muted' }, ['Opened in ' + Staff.openedSeconds(acct).toFixed(2) + ' s (target ', UI.tbd('Record open time target', 'n seconds'), ')']);
-  openedHolder.appendChild(openedNode);
-  first = false;
 
   // ---------- helpers ----------
 
@@ -103,7 +97,6 @@ Layout.ready(function (main) {
   }
 
   function headerPanel(c, unlocked) {
-    openedHolder = el('span', null, [first ? '' : openedNode]);
     var badges = [c.locked ? UI.badge('Account locked', 'err') : UI.badge('Not locked', 'ok')];
     if (unlocked) {
       badges.push(' ', UI.badge('Team ' + c.team));
@@ -123,8 +116,7 @@ Layout.ready(function (main) {
         unlocked ? [el('dt', null, ['Name']), el('dd', null, [c.name])] : null,
         el('dt', null, ['Status']), el('dd', null, badges)
       ]),
-      el('div', { class: 'row' }, links),
-      el('div', null, [openedHolder])
+      el('div', { class: 'row' }, links)
     ]));
   }
 
@@ -381,9 +373,8 @@ Layout.ready(function (main) {
     var filters = { type: '', from: '', to: '' };
     var form = null;
 
-    // Builds the list and the timing line; filters apply only for the leader.
+    // Builds the list; filters apply only for the leader.
     function run() {
-      var t0 = window.performance && performance.now ? performance.now() : Date.now();
       var all = buildEvents(c);
       var rows = all.filter(function (e) {
         if (filters.type && e.type !== filters.type) { return false; }
@@ -392,13 +383,7 @@ Layout.ready(function (main) {
         return true;
       });
       renderEvents(results, rows, all.length ? 'No events match the filters.' : 'No history yet for this customer.');
-      var ms = Math.max(1, Math.round((window.performance && performance.now ? performance.now() : Date.now()) - t0));
-      meta.textContent = '';
-      meta.appendChild(document.createTextNode(rows.length + ' of ' + all.length + ' events, newest first. Loaded in ' + ms + ' ms (target '));
-      meta.appendChild(UI.tbd('History load-time target', 'n seconds'));
-      meta.appendChild(document.createTextNode(' for up to '));
-      meta.appendChild(UI.tbd('Years of history covered', 'm years'));
-      meta.appendChild(document.createTextNode(' of data).'));
+      meta.textContent = rows.length + ' of ' + all.length + ' events, newest first.';
     }
 
     if (isLeader) {

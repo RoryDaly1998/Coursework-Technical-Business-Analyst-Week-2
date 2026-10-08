@@ -47,7 +47,7 @@ Layout.ready(function (main) {
         cardInput('card-expiry', 'Expiry date', 'MM/YY'),
         cardInput('card-security', 'Security code', '3 digits', true)
       ])
-    ]), { label: 'Simulated provider form' });
+    ]), { label: 'Payment provider form' });
   }
 
   // The card boxes are never read; they are only emptied after each attempt.

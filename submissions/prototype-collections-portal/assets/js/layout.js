@@ -73,7 +73,10 @@
       return el('option', { value: r.id, selected: r.id === role }, [r.label]);
     }));
 
-    var controls = [el('label', { class: 'demo-control' }, [el('span', null, ['Role (stub login, not security)']), roleSelect])];
+    var controls = [
+      el('a', { class: 'btn btn--small', href: 'demo.html' }, ['Demo Guide & Sitemap']),
+      el('label', { class: 'demo-control' }, [el('span', null, ['Role (stub login, not security)']), roleSelect])
+    ];
 
     var staff = Auth.usersForRole(role);
     if (staff.length > 1) {
@@ -168,7 +171,7 @@
         el('strong', null, ['Shared with: ']), 'payment, email and SMS providers. ',
         el('strong', null, ['Kept for: ']), 'retention period still to be decided (TBD). ',
         el('strong', null, ['Your data rights: ']), 'access, correction, erasure and objection. ',
-        el('a', { href: 'index.html#privacy' }, ['Read the full notice'])
+        el('a', { href: 'demo.html#privacy' }, ['Read the full notice'])
       ])
     ];
     if (!Store.persistent()) {

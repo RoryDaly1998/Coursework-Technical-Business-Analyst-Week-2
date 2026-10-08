@@ -69,7 +69,7 @@ Layout.ready(function (main) {
       el('p', null, ['You can change your phone number, email address and address here. Changes save straight away.']),
       el('div', { class: 'notice notice--info' }, ['Whenever a detail changes we tell the previous email address or phone number, so you can report a change you did not make.']),
       form,
-      el('p', { class: 'muted' }, ['We use these details only to contact you about your account: ', el('a', { href: 'index.html#privacy' }, ['read the privacy notice']), '.'])
+      el('p', { class: 'muted' }, ['We use these details only to contact you about your account: ', el('a', { href: 'demo.html#privacy' }, ['read the privacy notice']), '.'])
     ]), { note: 'Edits are validated on the server using the same rules the reps use, and only fields on the customer\'s editable list can be changed. Each change is audited with the old and new value. Production would also ask for a one-time code sent to the current email or phone before saving an email or phone change.' }));
 
     parts.push(UI.panel('Details you cannot change here', el('div', { class: 'stack' }, [
