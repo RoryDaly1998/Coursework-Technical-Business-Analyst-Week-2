@@ -6,11 +6,11 @@ An interactive wireframe prototype of the Phase 1 collections system. Built with
 
 The prototype comprises **19 pages and 17 reports** across three main operational areas:
 
-- **Dedicated Home Page (`index.html`)**: Features functional operational authentication — customer sign-in (account number, DOB, postcode) and customer self-registration (auto-incrementing account numbers, schema validation, and audit recording), alongside staff-only authentication routing directly to the appropriate staff workspace.
-- **Dedicated Demo Hub (`demo.html`)**: Evaluator and presenter hub housing end-to-end role walkthrough tabs, the pre-seeded test customer accounts matrix (100001–100009), the prototype sitemap, privacy details, and global demo data reset controls. Directly accessible from every screen via the **"Demo Guide & Sitemap"** button in the top orange demo bar.
-- **Customer portal** (6 pages plus message viewer): verify identity, view the account, pay (full or part), make a promise to pay, update contact details, and manage reminder preferences.
-- **Staff workspace** (4 pages): search by account number, customer record (with phone verification gate), standard interaction log form, and follow-up queues. Team leaders also have reversal approval, reminder timing configuration, and team reporting.
-- **Oversight** (finance, compliance, and IT): 17 reports (balances, reconciliation, audit trail, verification log, lockouts, delivery and more), template approval, contact-limit setting, background-job execution console, and a read-only data interface demo.
+- **Dedicated Home Page (`index.html`)**: Features functional operational authentication — customer sign-in (account ID and password, e.g. `100001` / `demo123`) and customer self-registration (without outstanding balance input; auto-provisioning sequential accounts and audit records), alongside staff-only authentication routing directly to the appropriate staff workspace.
+- **Dedicated Demo Hub (`demo.html`)**: Evaluator and presenter hub housing end-to-end role walkthrough tabs, the pre-seeded test customer accounts matrix (100001–100009), and the prototype sitemap. Directly accessible from every screen via the **"Demo Guide & Sitemap"** button in the top orange demo bar.
+- **Customer portal** (6 pages plus message viewer): verify identity with account ID and password, view the account, pay (full or part), make a promise to pay, update contact details, and manage reminder preferences.
+- **Staff workspace** (4 pages): clean search by account number (without extraneous demo panels or redundant second-system notices), customer record (with caller phone verification gate), standard interaction log form, and follow-up queues. Team leaders also have reversal approval, reminder timing configuration, and team reporting.
+- **Oversight** (finance, compliance, and IT): 17 reports (balances, reconciliation, audit trail, verification log, lockouts, delivery and more), template approval, contact-limit setting, background-job execution console, message delivery telemetry (outbox), and a read-only data interface demo.
 
 One header control switches between six roles: Customer, Collections Representative, Team Leader, Financial Partner, Compliance Liaison, and IT Team Member. Each role sees only its own authorised navigation and pages.
 
@@ -33,60 +33,74 @@ All "n seconds" and "TBD" values in the stories appear as visibly labelled place
 
 ## 3. How to use it
 
-1. Open `prototype-collections-portal/index.html` by opening it directly in Google Chrome, Microsoft Edge, or Safari (`file://` protocol). There is no installation and no server required.
-2. The **Home Page (`index.html`)** presents two operational entry gates:
-   - **Customer Portal**: Sign in with an existing account (e.g. `100001`, `1988-04-12`, `M14 5QT`) or use **New Customer Registration** to create a fresh customer record with starting arrears and GDPR consent.
+1. Open `submissions/prototype-collections-portal/index.html` directly in Google Chrome, Microsoft Edge, or Safari (`file://` protocol). There is no installation and no server required.
+2. The **Home Page (`index.html`)** presents two clean operational entry gates:
+   - **Customer Portal**: Sign in with an existing account (e.g. Account number `100001` and password `demo123`) or use **New Customer Registration** to create a fresh customer record (without inputting an outstanding balance).
    - **Staff Workspace**: Sign in with any provisioned staff persona (Collections Rep, Team Leader, Finance, Compliance, IT) and PIN (`demo123`).
 3. Click **"Demo Guide & Sitemap"** in the top orange demo bar to open `demo.html` for complete test credentials (accounts 100001 to 100009), role walkthrough scripts, and full sitemap links.
-4. Use the "Role" selector in the demo bar to switch role at any time. "Advance day" advances simulated time to demonstrate time-driven features. "Reset demo data" restores starting state.
+4. Use the "Role" selector in the demo bar to switch role at any time. "Advance day" advances simulated time to demonstrate time-driven features.
 
 **Suggested walkthrough**
 
-1. On `index.html`, register a new customer or sign in as `100001`. On `portal-account.html`, view balance, make a partial payment on `portal-pay.html`, and arrange a promise to pay on `portal-promise.html`. View notifications in `outbox.html`.
+1. On `index.html`, register a new customer or sign in as `100001` with password `demo123`. On `portal-account.html`, view balance, make a partial payment on `portal-pay.html`, and arrange a promise to pay on `portal-promise.html`. View notifications in `outbox.html`.
 2. Open `demo.html` via the orange demo bar to inspect the sitemap and test accounts.
-3. Under Staff Workspace on `index.html` (or via the header role selector), sign in as Collections Rep. Search `100001`, verify caller by phone, and inspect payment and promise history. Log an interaction on `staff-log.html` to generate an automated follow-up.
-4. Switch to IT. On `jobs.html`, run the fulfilment check (test normal run, retry exhaustion, and missed deadline simulation), then run the reminder job.
-5. Switch to Team Leader. Approve a payment reversal on `staff-approvals.html`, adjust reminder timing on `reminders-config.html`, and view team logs and unfulfilled promises reports.
+3. Under Staff Workspace on `index.html` (or via the header role selector), sign in as Collections Rep. Search `100001`, verify caller by phone (DOB `1988-04-12`, Postcode `M14 5QT`), and inspect payment and promise history. Log an interaction on `staff-log.html` to generate an automated follow-up.
+4. Switch to IT. On `jobs.html`, run the fulfilment check (test normal run, retry exhaustion, and missed deadline simulation), then run the reminder job. Access `outbox.html` to observe delivery telemetry.
+5. Switch to Team Leader. Approve a payment reversal on `staff-approvals.html`, adjust reminder timing on `reminders-config.html` (observing "Already scheduled" panel), and view team logs and unfulfilled promises reports.
 6. Switch to Finance and Compliance. Inspect reconciliation, the immutable audit trail, template approval, and display sampling.
-7. As Customer, simulate 3 failed verification attempts on `portal-verify.html`. Switch to Rep, verify by phone, and click **Unlock account**.
+7. As Customer, simulate 3 failed verification attempts on `portal-verify.html` using an incorrect password. Switch to Rep, verify by phone, and click **Unlock account**.
 
 ## 4. Errors and issues
 
-**Found and fixed in the review round (Code Reviewer, QA Tester, Compliance Liaison, and terminal smoke tests)**
-- **Dedicated Home Page & Demo Hub**: Created dedicated `index.html` with Customer Sign In, Customer Registration, and Staff-only login. Moved evaluator walkthroughs, sitemap, and seed credentials to `demo.html` linked permanently from the demo bar.
-- **Corporate Styling & Director Rules**: Replaced dark grey with Navy Blue (`#0b2545`) for headers, primary buttons, active tabs, and table headers. Implemented contrasting orange (`#d35400`) demo control bar. Set body text to true black (`#000`).
-- **Demo-Only Element Signage**: Created `.demo-only` containers and `badge--demo` badges clearly labelling demo tools and test forms.
-- **Removed Timing Metadata & Simulated Markers**: Eliminated "Opened in X s" and "Loaded in X ms" labels. Removed all "(simulated message)" and "(simulated)" markers across outbox, reports, and job logs.
-- **Contract & Schema Fixes in Home Page**: Aligned customer sign-in to `Services.verify` API shape and structured customer registration objects to conform strictly to `CUSTOMER_TYPES` schema in `services.js`.
-- **US-29 Missed Deadline Alert**: Implemented explicit option on `jobs.html` to simulate passing the 07:00 cutoff, successfully dispatching high-severity alert `job-deadline-missed` to IT on-call.
-- **Reminder Re-Run Skip Logic**: Added scan over sent schedule rows during `runReminders()` so customers who opt out after initial dispatch are explicitly reported under Skipped as "Opted out of reminders".
-- **Service-Level Reminder Opt-In Guard**: Updated `Services.setReminderPrefs` / `updateReminderPrefs` to block unauthenticated callers from turning reminders back on, enforcing verification at the service layer.
-- **Accessibility Enhancements**: Upgraded `UI.tabs` with full WAI-ARIA tablist arrow key navigation (`ArrowLeft`, `ArrowRight`, `Home`, `End`) and roving `tabindex`. Upgraded `UI.modal` with `Escape` key dismissal and Tab focus trapping.
-- **Compliance & Privacy Upgrades**: Added GDPR data processing explanation and consent checkbox to the customer registration form. Wrapped unauthenticated recipient picker on `portal-preferences.html` in `.demo-only` with `badge--demo`. Updated privacy links across the prototype to point to `demo.html#privacy`.
+**Found and fixed in the single review round (Code Reviewer, QA Tester, Compliance Liaison, and automated testing)**
+- **16 Director-Requested Refinements**:
+  1. Removed 'how this would work in production' note from demo page.
+  2. Removed data rights, privacy notice, and reset demo data sections and jumps from demo page.
+  3. Removed demo data only notice and placeholder privacy notice footer from all pages.
+  4. Removed outstanding balance input field from customer self-registration form.
+  5. Updated customer sign in to use Account ID and Password across `index.html` and `portal-verify.html` (DOB and postcode inputs eliminated; reserved exclusively for staff phone verification of callers).
+  6. Cleaned up top bar role selector label to read "Role" (removed "(stub login, not security)").
+  7. Removed grouping metadata tags ('SHARED', 'REPORTS', 'STAFF', 'CUSTOMER', 'ADMIN') from the site navigation bar.
+  8. Removed the reviewer and evaluator hub banner from the home page.
+  9. Removed the demo page link located below the verify button on the access page (`portal-verify.html`).
+  10. Removed postcode from the non-editable details panel on `portal-details.html` (remains editable under contact details).
+  11. Removed "Nothing is really sent in this prototype" / "nothing is really sent to you" disclaimers from `outbox.html`.
+  12. Removed the "One record, no second system" notice panel from collections rep customer search (`staff-search.html`).
+  13. Removed the demo accounts inventory panel from customer search (`staff-search.html`).
+  14. Restricted outbox view exclusively to Customer (own messages) and IT (delivery telemetry) roles; removed outbox links from `staff-record.html` and `staff-approvals.html`; unauthorized staff attempts receive "Access denied".
+  15. Removed the "Everything needed for a standard case is on this record..." notice from customer records (`staff-record.html`).
+  16. Updated reminder configuration panel heading from "Already scheduled (these keep their timing)" to "Already scheduled".
+- **Code Reviewer & Liaison Remediations**:
+  - Redacted plaintext passwords from `Services.ownRecord` customer API JSON responses (`delete out.password`).
+  - Separated authentication gating logic in `Services.verify`: required non-empty password verification for `portal` logins, while maintaining DOB and postcode matching for `phone` caller verification.
+  - Added `password: 'string'` to the `CUSTOMER_TYPES` schema definition.
+  - Added Password column (`demo123`) to the demo test accounts table in `demo.js` and aligned customer walkthrough copy to password verification.
+  - Purged dead rep/leader branches, hidden message counts, and outdated commentary from `outbox.js`.
+  - Removed lingering anchor links pointing to deleted `#privacy` sections.
 
 **Still open**
-- Role switching remains a client-side prototype convenience labelled "stub login, not security".
-- Automated access tests compare registered roles against planned permissions client-side rather than testing a remote OAuth/SAML token authority.
-- Fictional personal data in audit trail rows and compliance exports is unmasked (using standard reserved `@example.com` domains and non-geographic telephone numbers).
+- Role switching remains a client-side prototype convenience in the top demo bar.
+- Client-side mock store stores demo passwords in plaintext in local storage (standard for client-side wireframes; production architectures require salted hashing via external IDP).
+- Creditor ledger integration: public customer signup provisions a default balance of £250.00 without connecting to a real external core-banking ledger.
 
 ## 5. Out-of-scope work
 
-- Terminal smoke testing and automated integrity checks were run directly by the QA Tester subagent.
+- Automated browser-driven UI smoke testing was conducted by the QA Tester subagent.
 - No backend (Python) work was required; all state management, scheduling, and validation run purely in client-side JavaScript.
 
 ## 6. Subagent changes
 
-- **Designer**: Added rules enforcing director branding (navy blue `#0b2545`, orange `#d35400` demo bar, black text), demo-only styling rules, removal of open-time metadata and simulated markers, and the requirement for a dedicated operational home page paired with a demo hub.
-- **Frontend Developer**: Added strict styling rules for navy blue `#0b2545`, orange demo bar, black text, `.demo-only` containers, prohibition of page open metadata, and service-level verification enforcement.
-- **Compliance Liaison**: Added explicit checklist items auditing director styling rules (colours, text contrast, demo badges, no timing metadata, no simulated markers, dedicated home page).
+- **Designer**: Enforced clean operational navigation without metadata grouping headers, streamlined search without demo hints, and dedicated password credentials for customer portal.
+- **Frontend Developer**: Enforced account ID and password authentication for portal sign-in, removed balance fields from registration, and restricted outbox accessibility to Customer and IT roles only.
+- **Compliance Liaison**: Maintained auditing of authentication gating, data redaction in API responses, and strict role segregation.
 
 ## 7. Workflow variations
 
-- Per the Director's explicit instruction (*"Just do the one review round and then do revisions, then output"*), **exactly one comprehensive review round** was executed comprising Code Reviewer, QA Tester, and Compliance Liaison.
-- All defects identified during the review round (broken verify API call, schema alignment, privacy consent on registration, demo-only styling on recipient picker, and text contrast) were fully remediated by developers in a single revision pass.
-- The Technical Writer updated `submissions/prototype-companion-report.md` to document the new architecture, styling, and story traceability.
+- Per the Director's explicit instruction (*"Only have 1 review round"*), **exactly one review round** was executed across Code Reviewer, QA Tester, and Compliance Liaison.
+- Remediation fixes identified during the review round (password redaction in API serialization, method-specific authentication gating, and outbox dead code pruning) were completed in a single consolidated developer pass.
+- The Technical Writer updated `submissions/prototype-companion-report.md` to align with the revised prototype.
 
 ## 8. Compliance and branding
 
-- **Branding and standards**: Fully compliant with Director rules. Primary brand colour is Navy Blue (`#0b2545`); demo bar is contrasting Orange (`#d35400`); body text is true black (`#000`); demo-only elements are visibly highlighted and badged; no page load latency metadata or simulated message tags are displayed.
-- **Compliance findings**: All customer data is gated behind authentication/verification. Customer self-registration includes explicit GDPR data protection notice and consent confirmation. Unauthenticated opt-out is supported via opaque tokens, while re-enabling reminders requires authenticated session verification. Spreadsheet exports sanitize formula injection. Fictional data uses reserved domains and prefixes throughout.
+- **Branding and standards**: No custom branding standards were supplied by the director for this round. Top bar and navigation were streamlined to remove metadata clutter.
+- **Compliance findings**: All customer data remains gated behind account ID and password authentication. Phone verification preserves caller verification using date of birth and postcode. Outbox access is strictly segregated so that collections staff cannot browse customer outboxes without case context, while IT accesses delivery telemetry only. API serialization strictly strips plaintext credentials. Global footers and demo disclaimers were removed per explicit director instruction.

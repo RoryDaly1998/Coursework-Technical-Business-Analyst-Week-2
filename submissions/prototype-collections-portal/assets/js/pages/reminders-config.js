@@ -132,7 +132,7 @@ Layout.ready(function (main) {
       empty: 'No reminders are waiting in the schedule.'
     });
     existingMount.textContent = '';
-    existingMount.appendChild(UI.panel('Already scheduled (these keep their timing)', t1));
+    existingMount.appendChild(UI.panel('Already scheduled', t1));
 
     var preview = Jobs.previewSchedule(days);
     var t2 = el('div');

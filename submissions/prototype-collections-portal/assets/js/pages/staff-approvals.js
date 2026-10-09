@@ -187,7 +187,6 @@ Layout.ready(function (main) {
         ['Customer notification', msg ? 'Sent by ' + msg.channel + ' (' + msg.status + '): ' + msg.subject : 'Not found']
       ]),
       el('div', { class: 'row' }, [
-        el('a', { class: 'btn', href: 'outbox.html?acct=' + acct }, ['View the customer notification in the outbox']),
         el('a', { class: 'btn', href: 'staff-record.html?acct=' + acct }, ['Open the customer record'])
       ])
     ])));

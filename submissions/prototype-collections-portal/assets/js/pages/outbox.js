@@ -1,4 +1,4 @@
-/* outbox: simulated mailbox. A verified customer sees only their own messages. Rep and leader see a customer's messages only once that record is unlocked for them; IT sees masked addresses, status, kind and template only. US-13, US-28, US-36, US-45, US-48, US-49. */
+/* outbox: simulated mailbox. Accessible to verified customers (own messages) and IT role (delivery telemetry). US-13, US-28, US-36, US-45, US-48, US-49. */
 Layout.ready(function (main) {
   'use strict';
   var el = UI.el;
@@ -75,9 +75,7 @@ Layout.ready(function (main) {
       ]),
       el('dl', { class: 'kv' }, [
         el('dt', null, ['Sent']), el('dd', null, [Fmt.datetime(m.at)]),
-        el('dt', null, ['To']), el('dd', null, [m.to || 'No address on record']),
-        isStaff ? el('dt', null, ['Customer']) : null,
-        isStaff ? el('dd', null, [c ? c.name + ' (account ' + c.accountNo + ')' : m.customerId]) : null
+        el('dt', null, ['To']), el('dd', null, [m.to || 'No address on record'])
       ]),
       el('p', null, [m.body]),
       undelivered ? el('div', { class: 'notice notice--warn' }, [m.status === 'bounced' ? 'This message bounced: the address does not accept mail.' : 'This message could not be delivered.']) : null,
@@ -99,37 +97,12 @@ Layout.ready(function (main) {
 
   var listHolder = el('div', { class: 'stack' });
 
-  // Hidden-message counts per customer for rep and leader (records not unlocked for the current user).
-  function hiddenPanel(hidden) {
-    var ids = Object.keys(hidden);
-    return el('div', { class: 'stack' }, ids.map(function (id) {
-      var c = Store.find('customers', id);
-      var n = hidden[id];
-      return el('div', { class: 'notice notice--warn' }, [
-        el('strong', null, ['Account ' + (c ? c.accountNo : id) + ': ']),
-        n + (n === 1 ? ' message' : ' messages') + ' hidden until the caller is verified on the customer record. ',
-        c ? el('a', { href: Staff.recordHref(c.accountNo) }, ['Open the customer record']) : null
-      ]);
-    }));
-  }
-
   function renderList() {
     var rows = visibleMessages();
-    var hidden = {};
-    var hiddenCount = 0;
-    if (role === 'rep' || role === 'leader') {
-      rows = rows.filter(function (m) {
-        if (Staff.isUnlocked(m.customerId)) { return true; }
-        hidden[m.customerId] = (hidden[m.customerId] || 0) + 1;
-        hiddenCount++;
-        return false;
-      });
-    }
     listHolder.textContent = '';
-    listHolder.appendChild(el('p', { class: 'muted', 'aria-live': 'polite' }, [rows.length + (rows.length === 1 ? ' message' : ' messages') + (hiddenCount ? ' shown, ' + hiddenCount + ' hidden' : '')]));
-    if (hiddenCount) { listHolder.appendChild(hiddenPanel(hidden)); }
+    listHolder.appendChild(el('p', { class: 'muted', 'aria-live': 'polite' }, [rows.length + (rows.length === 1 ? ' message' : ' messages')]));
     if (!rows.length) {
-      if (!hiddenCount) { listHolder.appendChild(UI.emptyState(isStaff ? 'No messages for this selection.' : 'You have no messages yet. Confirmations and reminders will appear here.')); }
+      listHolder.appendChild(UI.emptyState(isStaff ? 'No messages for this selection.' : 'You have no messages yet. Confirmations and reminders will appear here.'));
       return;
     }
     rows.forEach(function (m) { listHolder.appendChild(messageCard(m)); });
@@ -138,10 +111,8 @@ Layout.ready(function (main) {
   var parts = [];
   parts.push(el('div', { class: 'notice notice--info' }, [
     isIT
-      ? 'IT sees delivery details only: masked address, status, kind and template. The message text is not shown. Nothing is really sent in this prototype.'
-      : isStaff
-        ? 'A customer\'s messages show here only after their record is unlocked for you (caller verified or internal review). Nothing is really sent in this prototype. Links inside a message open customer portal pages, so they are shown as plain text for staff.'
-        : 'These are the messages we have sent to you. Nothing is really sent in this prototype.'
+      ? 'IT sees delivery details only: masked address, status, kind and template. The message text is not shown.'
+      : 'These are the messages we have sent to you.'
   ]));
 
   if (isStaff) {
@@ -155,7 +126,7 @@ Layout.ready(function (main) {
   }
 
   parts.push(listHolder);
-  parts.push(UI.howItWorks('Messages go out through an email and SMS provider, which reports delivery back (delivered, bounced, failed). A customer can only ever read messages addressed to them; staff access follows their role and, for reps and leaders, the verified-caller check on the record.'));
+  parts.push(UI.howItWorks('Messages go out through an email and SMS provider, which reports delivery back (delivered, bounced, failed). A customer can only ever read messages addressed to them; IT sees delivery status and telemetry, while staff roles manage cases through the customer record.'));
   main.appendChild(el('div', { class: 'stack' }, parts));
   renderList();
 });

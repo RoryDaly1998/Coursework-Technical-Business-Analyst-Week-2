@@ -107,7 +107,6 @@ Layout.ready(function (main) {
     var links = [
       isRep ? el('a', { class: 'btn btn--primary', href: Staff.logHref(c.accountNo) }, ['Log an interaction']) : null,
       el('a', { class: 'btn', href: 'staff-followups.html' }, ['Follow-ups']),
-      unlocked ? el('a', { class: 'btn', href: 'outbox.html?acct=' + encodeURIComponent(c.accountNo) }, ['Customer messages']) : null,
       el('a', { class: 'btn', href: 'staff-search.html' }, ['New search'])
     ];
     return UI.panel('Account ' + c.accountNo, el('div', { class: 'stack' }, [
@@ -257,7 +256,6 @@ Layout.ready(function (main) {
     else { fuHost.appendChild(Staff.restricted('followups', '')); }
 
     box.appendChild(el('div', { class: 'stack' }, [
-      el('div', { class: 'notice notice--info' }, ['Everything needed for a standard case is on this record, so no second system is needed. Details are shown from the start of contact: do not ask the customer to repeat them.']),
       cards,
       el('div', { class: 'grid grid--2' }, [
         UI.panel('Contact details', contactHost),

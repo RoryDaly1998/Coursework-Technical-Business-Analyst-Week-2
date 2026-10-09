@@ -4,17 +4,6 @@
 
   var el = UI.el;
 
-  function buildEvaluatorHub() {
-    var box = el('div', { class: 'demo-only' }, [
-      el('span', { class: 'badge badge--demo' }, ['Demo only']),
-      el('strong', null, ['Reviewer & Evaluator Hub: ']),
-      'Looking for pre-seeded test accounts, role walkthroughs, or the prototype sitemap? Open the ',
-      el('a', { href: 'demo.html' }, [el('strong', null, ['Demo Guide & Sitemap'])]),
-      ' or use the orange demo bar above.'
-    ]);
-    return box;
-  }
-
   function buildCustomerSignIn() {
     var form = el('form', { class: 'stack', novalidate: true });
     var msgHolder = el('div', { 'aria-live': 'polite' });
@@ -24,21 +13,15 @@
       placeholder: 'e.g. 100001', required: true,
       help: 'Found on your collection notice or statement.'
     });
-    var dobField = UI.field({
-      name: 'dob', label: 'Date of birth', type: 'text',
-      placeholder: 'YYYY-MM-DD', required: true,
-      help: 'Format: YYYY-MM-DD (e.g. 1988-04-12)'
-    });
-    var postcodeField = UI.field({
-      name: 'postcode', label: 'Postcode', type: 'text',
-      placeholder: 'e.g. M14 5QT', required: true,
-      help: 'Your current residential postcode'
+    var passwordField = UI.field({
+      name: 'password', label: 'Password', type: 'password',
+      placeholder: 'Enter your password', required: true,
+      help: 'Enter your password (demo: demo123)'
     });
 
     form.appendChild(msgHolder);
     form.appendChild(acctField);
-    form.appendChild(dobField);
-    form.appendChild(postcodeField);
+    form.appendChild(passwordField);
     form.appendChild(el('div', { class: 'row' }, [
       el('button', { type: 'submit', class: 'btn btn--primary' }, ['Sign In to My Account'])
     ]));
@@ -48,17 +31,16 @@
       msgHolder.textContent = '';
       var vals = UI.readForm(form);
       var acct = vals.accountNo ? vals.accountNo.trim() : '';
-      var dob = vals.dob ? vals.dob.trim() : '';
-      var postcode = vals.postcode ? vals.postcode.trim() : '';
+      var password = vals.password ? vals.password.trim() : '';
 
-      if (!acct || !dob || !postcode) {
+      if (!acct || !password) {
         msgHolder.appendChild(el('div', { class: 'notice notice--error', role: 'alert' }, [
-          'Please enter your account number, date of birth and postcode.'
+          'Please enter your account number and password.'
         ]));
         return;
       }
 
-      var res = Services.verify(acct, { dob: dob, postcode: postcode }, { method: 'portal' });
+      var res = Services.verify(acct, { password: password }, { method: 'portal' });
 
       if (res.result === 'Verified' && res.customerId) {
         Auth.setRole('customer');
@@ -66,7 +48,7 @@
         window.location.href = 'portal-account.html';
       } else {
         msgHolder.appendChild(el('div', { class: 'notice notice--error', role: 'alert' }, [
-          'We could not verify those details. Please check your account number, date of birth and postcode.'
+          'We could not verify those details. Please check your account number and password.'
         ]));
       }
     });
@@ -83,33 +65,36 @@
 
     var nameField = UI.field({ name: 'name', label: 'Full name', type: 'text', placeholder: 'e.g. Alex Hartley', required: true });
     var dobField = UI.field({ name: 'dob', label: 'Date of birth', type: 'text', placeholder: 'YYYY-MM-DD (e.g. 1990-05-15)', required: true });
+    var passwordField = UI.field({
+      name: 'password', label: 'Password', type: 'password',
+      placeholder: 'Create a password (demo: demo123)', required: true,
+      help: 'Create a password for your account (demo: demo123)'
+    });
     var line1Field = UI.field({ name: 'line1', label: 'Address line 1', type: 'text', placeholder: 'e.g. 12 High Street', required: true });
     var cityField = UI.field({ name: 'city', label: 'Town or city', type: 'text', placeholder: 'e.g. Manchester', required: true });
     var postcodeField = UI.field({ name: 'postcode', label: 'Postcode', type: 'text', placeholder: 'e.g. M14 5QT', required: true });
     var phoneField = UI.field({ name: 'phone', label: 'Phone number', type: 'text', placeholder: 'e.g. 07700 900123', required: true });
     var emailField = UI.field({ name: 'email', label: 'Email address', type: 'email', placeholder: 'e.g. alex@example.com', required: true });
-    var balanceField = UI.field({ name: 'balance', label: 'Initial outstanding balance (£)', type: 'text', value: '250.00', required: true });
     var consentField = UI.field({
       name: 'consent', label: 'I agree to the processing of my contact and repayment details to manage my account.',
       type: 'checkbox', required: true,
-      help: 'We handle your personal data in accordance with our data protection policy (see demo.html#privacy).'
+      help: 'We handle your personal data in accordance with our data protection policy.'
     });
 
     var privacyNote = el('div', { class: 'notice notice--info' }, [
       el('strong', null, ['Data protection: ']),
-      'We use your details to manage your repayment account under UK GDPR. You can exercise your rights of access, correction, erasure and objection at any time. ',
-      el('a', { href: 'demo.html#privacy' }, ['Read the privacy notice'])
+      'We use your details to manage your repayment account under UK GDPR. You can exercise your rights of access, correction, erasure and objection at any time.'
     ]);
 
     form.appendChild(msgHolder);
     form.appendChild(nameField);
     form.appendChild(dobField);
+    form.appendChild(passwordField);
     form.appendChild(line1Field);
     form.appendChild(cityField);
     form.appendChild(postcodeField);
     form.appendChild(phoneField);
     form.appendChild(emailField);
-    form.appendChild(balanceField);
     form.appendChild(privacyNote);
     form.appendChild(consentField);
     form.appendChild(el('div', { class: 'row' }, [
@@ -125,6 +110,7 @@
       if (!vals.name || !vals.name.trim()) { errors.name = 'Enter your full name.'; }
       var dobErr = Validate.date(vals.dob);
       if (dobErr) { errors.dob = dobErr; }
+      if (!vals.password || !vals.password.trim()) { errors.password = 'Enter a password.'; }
       if (!vals.line1 || !vals.line1.trim()) { errors.line1 = 'Enter your address line 1.'; }
       if (!vals.city || !vals.city.trim()) { errors.city = 'Enter your town or city.'; }
       var postErr = Validate.postcode(vals.postcode);
@@ -133,8 +119,6 @@
       if (phoneErr) { errors.phone = phoneErr; }
       var emailErr = Validate.email(vals.email);
       if (emailErr) { errors.email = emailErr; }
-      var balErr = Validate.amount(vals.balance);
-      if (balErr) { errors.balance = balErr; }
       if (!vals.consent) { errors.consent = 'You must confirm agreement to proceed.'; }
 
       if (Object.keys(errors).length > 0) {
@@ -149,12 +133,13 @@
         if (!isNaN(num) && num > maxAcct) { maxAcct = num; }
       });
       var newAcctNo = String(maxAcct + 1);
-      var balNum = parseFloat(vals.balance.replace(/[\u00a3,]/g, '')) || 250.00;
+      var balNum = 250.00;
 
       var newCust = {
         accountNo: newAcctNo,
         name: vals.name.trim(),
         dob: vals.dob.trim(),
+        password: vals.password.trim() || 'demo123',
         postcode: vals.postcode.trim().toUpperCase(),
         address: {
           line1: vals.line1.trim(),
@@ -261,7 +246,6 @@
 
   Layout.ready(function (main) {
     main.appendChild(el('div', { class: 'stack' }, [
-      buildEvaluatorHub(),
       el('div', { class: 'grid grid--2' }, [
         buildCustomerPanel(),
         buildStaffPanel()

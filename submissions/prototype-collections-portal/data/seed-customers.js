@@ -2,7 +2,7 @@
 window.SEED_CUSTOMERS = [
   {
     id: 'C-1001', accountNo: '100001', name: 'Alex Hartley', dob: '1988-04-12', postcode: 'M14 5QT',
-    email: 'alex.hartley@example.com', phone: '07700900101',
+    email: 'alex.hartley@example.com', phone: '07700900101', password: 'demo123',
     address: { line1: '14 Elm Road', city: 'Manchester', postcode: 'M14 5QT' },
     balance: 420.00, originalBalance: 650.00, dueDate: '+3d', team: 'A', locked: false, failedAttempts: 0,
     preferred: { channel: 'email', from: '09:00', to: '17:00' },
@@ -13,7 +13,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1002', accountNo: '100002', name: 'Maya Thompson', dob: '1979-09-23', postcode: 'B15 2TT',
-    email: 'maya.thompson@example.com', phone: '07700900102',
+    email: 'maya.thompson@example.com', phone: '07700900102', password: 'demo123',
     address: { line1: '8 Orchard Close', city: 'Birmingham', postcode: 'B15 2TT' },
     balance: 350.00, originalBalance: 500.00, dueDate: '+14d', team: 'A', locked: false, failedAttempts: 0,
     preferred: { channel: 'email', from: '10:00', to: '16:00' },
@@ -24,7 +24,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1003', accountNo: '100003', name: 'Daniel Okoye', dob: '1992-01-30', postcode: 'LS6 1AB',
-    email: 'daniel.okoye@example.com', phone: '07700900103',
+    email: 'daniel.okoye@example.com', phone: '07700900103', password: 'demo123',
     address: { line1: '27 Parkside Terrace', city: 'Leeds', postcode: 'LS6 1AB' },
     balance: 560.00, originalBalance: 800.00, dueDate: '+21d', team: 'A', locked: false, failedAttempts: 0,
     preferred: { channel: 'phone', from: '17:00', to: '20:00' },
@@ -35,7 +35,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1004', accountNo: '100004', name: 'Chloe Bennett', dob: '1985-11-05', postcode: 'BS8 3NP',
-    email: 'chloe.bennett@example.com', phone: '07700900104',
+    email: 'chloe.bennett@example.com', phone: '07700900104', password: 'demo123',
     address: { line1: '3 Kingsley Mews', city: 'Bristol', postcode: 'BS8 3NP' },
     balance: 390.00, originalBalance: 500.00, dueDate: '+9d', team: 'A', locked: false, failedAttempts: 0,
     preferred: { channel: 'email', from: '09:00', to: '12:00' },
@@ -46,7 +46,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1005', accountNo: '100005', name: 'Jamie Carter', dob: '1990-07-19', postcode: 'NE4 6XY',
-    email: 'jamie.carter@example.com', phone: '07700900105',
+    email: 'jamie.carter@example.com', phone: '07700900105', password: 'demo123',
     address: { line1: '52 Ridley Street', city: 'Newcastle', postcode: 'NE4 6XY' },
     balance: 240.00, originalBalance: 300.00, dueDate: '+3d', team: 'A', locked: false, failedAttempts: 0,
     preferred: { channel: 'sms', from: '12:00', to: '18:00' },
@@ -57,7 +57,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1006', accountNo: '100006', name: 'Fatima Rahman', dob: '1975-02-08', postcode: 'G12 8QQ',
-    email: 'fatima.rahman@example.com', phone: '07700900106',
+    email: 'fatima.rahman@example.com', phone: '07700900106', password: 'demo123',
     address: { line1: '19 Hillhead Road', city: 'Glasgow', postcode: 'G12 8QQ' },
     balance: 700.00, originalBalance: 700.00, dueDate: '+5d', team: 'A', locked: true, failedAttempts: 3,
     preferred: { channel: 'phone', from: '09:00', to: '13:00' },
@@ -68,7 +68,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1007', accountNo: '100007', name: 'Oliver Grant', dob: '1969-12-17', postcode: 'CF10 2EP',
-    email: 'oliver.grant@example.com', phone: '07700900107',
+    email: 'oliver.grant@example.com', phone: '07700900107', password: 'demo123',
     address: { line1: '5 Bute Lane', city: 'Cardiff', postcode: 'CF10 2EP' },
     balance: 0.00, originalBalance: 380.00, dueDate: '+3d', team: 'A', locked: false, failedAttempts: 0,
     preferred: { channel: 'email', from: '09:00', to: '17:00' },
@@ -79,7 +79,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1008', accountNo: '100008', name: 'Sophie Walker', dob: '1983-06-26', postcode: 'SE15 4RT',
-    email: 'sophie.walker@example.com', phone: '07700900108',
+    email: 'sophie.walker@example.com', phone: '07700900108', password: 'demo123',
     address: { line1: '41 Rye Court', city: 'London', postcode: 'SE15 4RT' },
     balance: 450.00, originalBalance: 450.00, dueDate: '+3d', team: 'A', locked: false, failedAttempts: 0,
     preferred: { channel: 'phone', from: '14:00', to: '18:00' },
@@ -90,7 +90,7 @@ window.SEED_CUSTOMERS = [
   },
   {
     id: 'C-1009', accountNo: '100009', name: 'Callum Murray', dob: '1994-10-03', postcode: 'EH6 5JD',
-    email: 'callum.murray@example.com', phone: '07700900109',
+    email: 'callum.murray@example.com', phone: '07700900109', password: 'demo123',
     address: { line1: '12 Seafield Road', city: 'Edinburgh', postcode: 'EH6 5JD' },
     balance: 400.00, originalBalance: 520.00, dueDate: '+3d', team: 'B', locked: false, failedAttempts: 0,
     preferred: { channel: 'sms', from: '09:00', to: '12:00' },

@@ -20,7 +20,7 @@ Layout.ready(function (main) {
   function isVerified() { return !!customer && verifiedId === customer.id; }
 
   function privacyLine() {
-    return el('p', { class: 'muted' }, ['We use your details only to manage your account and send the messages you see here: ', el('a', { href: 'demo.html#privacy' }, ['read the privacy notice']), '.']);
+    return el('p', { class: 'muted' }, ['We use your details only to manage your account and send the messages you see here.']);
   }
 
   function backLink() {

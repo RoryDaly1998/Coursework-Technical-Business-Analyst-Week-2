@@ -7,11 +7,13 @@ This companion document serves as the Technical Business Analyst (TBA) reference
 ### Prototype Architecture & Operating Principles
 - **Zero-Build & Zero-Install**: Built entirely with vanilla HTML5, CSS3, and ES5 JavaScript. Runs locally directly in modern browsers (Google Chrome, Microsoft Edge, Safari) by opening `index.html`. No Node.js runtime, build tools, or web servers are required.
 - **Dedicated Operational Home vs Demo Hub**:
-  - **Dedicated Home Page (`index.html`)**: Features functional operational authentication — Customer Sign In (account number, DOB, postcode) and New Customer Registration (auto-provisioning sequential accounts and audit records), alongside Staff Sign In (centralized identity selection and PIN authentication routing directly to the appropriate staff workspace).
-  - **Dedicated Demo Hub (`demo.html`)**: Dedicated evaluator and presenter hub housing end-to-end role walkthrough tabs, the pre-seeded test customer accounts matrix (100001–100009), the interactive prototype sitemap, and global reset tools. Directly accessible from any screen via the **"Demo Guide & Sitemap"** button in the top demo bar.
+  - **Dedicated Home Page (`index.html`)**: Features functional operational authentication — Customer Sign In (Account ID and Password [demo: `demo123`]) and New Customer Registration (auto-provisioning sequential accounts and audit records, excluding the field for existing outstanding balance and defaulting to a standard initial balance of £250.00), alongside Staff Sign In (centralized identity selection and PIN authentication routing directly to the appropriate staff workspace). The home page contains no reviewer or evaluator hub banner, maintaining a clean operational landing page.
+  - **Dedicated Demo Hub (`demo.html`)**: Dedicated evaluator and presenter hub housing end-to-end role walkthrough tabs, the pre-seeded test customer accounts matrix (100001–100009) with verification credentials, the interactive prototype sitemap, and browser persistence guidance. Directly accessible from any screen via the **"Demo Guide & Sitemap"** button in the top demo bar. To ensure focus on wireframe evaluation, `demo.html` excludes the "how this would work in production" note, the privacy notice and data rights sections, and the reset demo data panel (which is globally accessible via the header demo bar).
 - **Corporate Branding & Standards**:
   - **Navy Blue Primary Palette (`#0b2545`)**: Applied to headers, primary action buttons, active navigation items, active tab indicators, and table headers.
-  - **Contrasting Orange Demo Bar (`#d35400`)**: Prominently highlights presenter controls (role switcher, simulated clock, reset, and demo hub link).
+  - **Contrasting Orange Demo Bar (`#d35400`)**: Prominently highlights presenter controls. The role selector label is simply **"Role"** (with "(stub login, not security)" removed), alongside the staff user selector, simulated clock, story tags toggle, reset demo data button, and demo hub link.
+  - **Clean Direct Site Navigation**: Site navigation displays clean direct links without grouping metadata labels ("SHARED", "REPORTS", "STAFF", "CUSTOMER", "ADMIN"), providing an uncluttered, intuitive menu for each authenticated persona.
+  - **Clean Footers Across All 19 Pages**: Footers across all 19 prototype pages have no "Demo data only" warning or placeholder privacy notice, rendering cleanly and only surfacing a technical notification if browser storage is blocked.
   - **True Black Body Text (`#000000`)**: Guarantees maximum legibility across all forms, tables, notices, and documentation.
   - **Demo-Only Element Signage**: Any demo-specific control or temporary presentation helper is distinctly styled with a dashed container (`.demo-only`) and badged with `<span class="badge badge--demo">Demo only</span>`.
   - **Removal of Latency & Simulated Markers**: Artificial load-time metadata (e.g. "Opened in X s") and redundant markers like "(simulated message)" have been completely eliminated.
@@ -19,20 +21,21 @@ This companion document serves as the Technical Business Analyst (TBA) reference
 - **Local State Persistence**: All data operations run against an in-memory and `localStorage`-backed store (`Store` in `assets/js/core.js`), pre-seeded with 9 realistic customer personas and historical activity (`data/seed-customers.js`, `data/seed-activity.js`, `data/seed-config.js`).
 - **Simulated Clock**: An advanceable demo clock (`Clock`) enables immediate demonstration of time-based features (e.g. reminder lead times, overdue follow-ups, and fulfilment check windows) without waiting days.
 - **Role-Based Access Control (RBAC)**: A global header switcher simulates six distinct stakeholder personas, enforcing strict page and data segregation:
-  1. **Customer**: Self-service portal (verification, account review, card payments, promises to pay, contact detail updates, reminder preferences, message outbox).
-  2. **Collections Representative (Rep)**: Staff workspace (customer search, single customer record with phone verification gate, standard interaction log, follow-up queues).
-  3. **Collections Team Leader**: Operational management (overdue follow-up reassignment, payment reversal approvals, reminder timing configuration, team interaction logs, unfulfilled promises report).
+  1. **Customer**: Self-service portal (verification via Account ID and Password, account review, card payments, promises to pay, contact detail updates, reminder preferences, and message outbox for own messages).
+  2. **Collections Representative (Rep)**: Staff workspace (customer search, single customer record with caller phone verification gate using DOB and postcode, standard interaction log, follow-up queues). *Note: Reps do not have access to Outbox or links to it; case communications are reviewed directly on the customer record.*
+  3. **Collections Team Leader**: Operational management (overdue follow-up reassignment, payment reversal approvals, reminder timing configuration, team interaction logs, unfulfilled promises report). *Note: Team Leaders do not have access to Outbox or links to it.*
   4. **Financial Partner**: Financial governance and reporting (balances and arrears, outcome code value breakdown, provider payment reconciliation, promise fulfilment value, promise cash flow forecast).
   5. **Compliance Liaison**: Regulatory compliance and audit trails (immutable audit trail, case log exports, verification logs, payment audit, display sampling checks, follow-up history, template approvals, contact frequency limits).
-  6. **IT Team Member**: Platform health and security (data migration exceptions, security and backup status, lockout and spike alerts, reminder delivery monitoring, scheduled job execution console, read-only API console).
+  6. **IT Team Member**: Platform health and security (data migration exceptions, security and backup status, lockout and spike alerts, reminder delivery monitoring, scheduled job execution console, read-only API console, and outbox delivery telemetry [masked recipient addresses and delivery status without message text]).
+- **Strict Outbox Role Restriction**: Outbox (`outbox.html`) is strictly restricted to Customer (viewing own sent messages) and IT (inspecting delivery telemetry and message status) roles. Collections Rep and Team Leader roles do not have access to Outbox or links to it. Furthermore, on `outbox.html`, the informational banner cleanly states "These are the messages we have sent to you." (or delivery telemetry note for IT), and no longer states "Nothing is really sent in this prototype" or "nothing is really sent to you".
 
 ### Quick-Start Instructions
 1. Navigate to `submissions/prototype-collections-portal/` and open `index.html` in your browser.
-2. Observe the dedicated Home Page: sign in as an existing customer, register a new customer, or sign in as a staff member.
+2. Observe the dedicated Home Page: sign in as an existing customer (using Account ID and password `demo123`), register a new customer (auto-provisioned with standard £250.00 initial balance), or sign in as a staff member.
 3. Access the demo hub anytime: click **"Demo Guide & Sitemap"** in the orange demo bar at the top of any page to open `demo.html`.
 4. Observe the global header at the top of every screen:
    - **Demo Guide & Sitemap Button**: Quick access to walkthroughs, sitemap, and seed account credentials.
-   - **Role Selector**: Switch dynamically between Customer, Collections Rep, Team Leader, Finance, Compliance, and IT.
+   - **Role Selector**: Simply labeled **"Role"**; switch dynamically between Customer, Collections Rep, Team Leader, Finance, Compliance, and IT.
    - **Staff User Selector**: When in staff roles, switch between specific users and teams (e.g. Sam Patel [Team A], Jo Okafor [Team A], Lee Chen [Team B], Priya Nair [Team Leader]).
    - **Demo Date**: Shows current simulated date; click **"Advance day"** to simulate passing time.
    - **Story Tags Toggle**: Check the **"Story tags"** box to highlight visual badges (e.g. `US-12`, `US-19`) over corresponding UI elements.
@@ -42,19 +45,23 @@ This companion document serves as the Technical Business Analyst (TBA) reference
 
 ## 2. Seed Accounts & Test Personas Matrix
 
-The prototype includes 9 seed customer accounts (`100001` through `100009`), each pre-configured to demonstrate specific happy and exception paths:
+The prototype includes 9 seed customer accounts (`100001` through `100009`), each pre-configured to demonstrate specific happy and exception paths.
 
-| Account | Customer Name | Balance | Status / Test Focus | Verification Credentials (DOB / Postcode) |
-|---|---|---|---|---|
-| `100001` | Alex Hartley | £420.00 | **Happy Path Baseline**: Reliable payer, £130 promise fulfilled, eligible for payments, promises, detail edits. | `1988-04-12` / `M14 5QT` |
-| `100002` | Maya Thompson | £350.00 | **Promise Paid**: Active promise £150 due today; paid £150 3 days ago. Scheduled check marks Fulfilled. | `1979-09-23` / `B15 2TT` |
-| `100003` | Daniel Okoye | £560.00 | **Partially Fulfilled**: Active promise £200 due today; paid £80. Fulfilment check marks Partially fulfilled (£120 shortfall). Has display discrepancy in sampling check. | `1992-01-30` / `LS6 1AB` |
-| `100004` | Chloe Bennett | £390.00 | **Not Fulfilled**: Active promise £120 due today; £0 paid. Fulfilment check marks Not fulfilled (£120 shortfall), triggers missing payment notice. | `1985-11-05` / `BS8 3NP` |
-| `100005` | Jamie Carter | £240.00 | **Delinquency Hold & Bounced Email**: Email bounced; card timeout charge query open; collection activity on hold. | `1990-07-19` / `NE4 6XY` |
-| `100006` | Fatima Rahman | £700.00 | **Locked Account**: Locked after 3 failed portal verification attempts; requires Rep phone verification to unlock. | `1975-02-08` / `G12 8QQ` |
-| `100007` | Oliver Grant | £0.00 | **Reversal & Customer Edit**: Paid in full; earlier duplicate payment reversed by Team Leader; customer updated phone in portal. | `1969-12-17` / `CF10 2EP` |
-| `100008` | Sophie Walker | £450.00 | **Contact Limit & Unfulfilled Flag**: Prior promise failed (£90 shortfall flag); 3 contacts in last 7 days (triggers contact limit override prompt). Opted out of reminders. | `1983-06-26` / `SE15 4RT` |
-| `100009` | Callum Murray | £400.00 | **Team B & Channel Preferences**: Assigned to Team B (Lee Chen); prefers SMS between 09:00 and 12:00. Part-paid earlier promise. | `1994-10-03` / `EH6 5JD` |
+> **Authentication Dual-Gate Specification**:
+> - **Customer Self-Service Portal Sign In & Verification (`index.html`, `portal-verify.html`)**: Requires **Account Number** and **Password** (default demo password for all accounts: `demo123`).
+> - **Staff Phone Caller Verification (`staff-record.html`)**: When a customer calls in, the Collections Representative verifies the caller using **Date of Birth (DOB)** and **Postcode** before customer account details unlock.
+
+| Account | Customer Name | Balance | Status / Test Focus | Customer Portal Login (Password) | Rep Phone Verification (DOB / Postcode) |
+|---|---|---|---|---|---|
+| `100001` | Alex Hartley | £420.00 | **Happy Path Baseline**: Reliable payer, £130 promise fulfilled, eligible for payments, promises, detail edits. | `demo123` | `1988-04-12` / `M14 5QT` |
+| `100002` | Maya Thompson | £350.00 | **Promise Paid**: Active promise £150 due today; paid £150 3 days ago. Scheduled check marks Fulfilled. | `demo123` | `1979-09-23` / `B15 2TT` |
+| `100003` | Daniel Okoye | £560.00 | **Partially Fulfilled**: Active promise £200 due today; paid £80. Fulfilment check marks Partially fulfilled (£120 shortfall). Has display discrepancy in sampling check. | `demo123` | `1992-01-30` / `LS6 1AB` |
+| `100004` | Chloe Bennett | £390.00 | **Not Fulfilled**: Active promise £120 due today; £0 paid. Fulfilment check marks Not fulfilled (£120 shortfall), triggers missing payment notice. | `demo123` | `1985-11-05` / `BS8 3NP` |
+| `100005` | Jamie Carter | £240.00 | **Delinquency Hold & Bounced Email**: Email bounced; card timeout charge query open; collection activity on hold. | `demo123` | `1990-07-19` / `NE4 6XY` |
+| `100006` | Fatima Rahman | £700.00 | **Locked Account**: Locked after 3 failed portal verification attempts; requires Rep phone verification to unlock. | `demo123` | `1975-02-08` / `G12 8QQ` |
+| `100007` | Oliver Grant | £0.00 | **Reversal & Customer Edit**: Paid in full; earlier duplicate payment reversed by Team Leader; customer updated phone in portal. | `demo123` | `1969-12-17` / `CF10 2EP` |
+| `100008` | Sophie Walker | £450.00 | **Contact Limit & Unfulfilled Flag**: Prior promise failed (£90 shortfall flag); 3 contacts in last 7 days (triggers contact limit override prompt). Opted out of reminders. | `demo123` | `1983-06-26` / `SE15 4RT` |
+| `100009` | Callum Murray | £400.00 | **Team B & Channel Preferences**: Assigned to Team B (Lee Chen); prefers SMS between 09:00 and 12:00. Part-paid earlier promise. | `demo123` | `1994-10-03` / `EH6 5JD` |
 
 ---
 
@@ -102,10 +109,12 @@ EPIC 1: CENTRALISED CUSTOMER DETAIL STORAGE (US-01 to US-07)
 - **Screen Location**: `staff-search.html` and `staff-record.html?acct=100001` (Rep role)
 - **How to Demo**:
   1. Switch role to **Collections rep**.
-  2. Enter account `100001` on `staff-search.html` and submit.
-  3. The record opens in one step (open time tracked and displayed against target).
-  4. Perform phone verification (DOB: `1988-04-12`, Postcode: `M14 5QT`) to unlock details.
-  5. View contact details, balance (£420.00), case history, and open follow-ups on one unified screen.
+  2. On `staff-search.html`, observe the clean, focused search interface (the former "One record, no second system" notice and demo accounts list have been removed).
+  3. Enter account `100001` and submit.
+  4. The record opens in one step (open time tracked and displayed against target).
+  5. On `staff-record.html`, observe that the redundant notice ("Everything needed for a standard case is on this record...") has been removed, providing a streamlined operational workspace.
+  6. Perform phone verification of the caller (DOB: `1988-04-12`, Postcode: `M14 5QT`) to unlock account details.
+  7. View contact details, balance (£420.00), case history, and open follow-ups on one unified screen.
 - **Acceptance Criteria Verification**:
   - *Opens within target time by account number*: Instant single-step transition; displays measured open time.
   - *Shows contact details, balance, history, and open follow-ups*: All present on the single record layout.
@@ -252,16 +261,18 @@ EPIC 3: SELF-SERVICE PAYMENTS (US-12 to US-18)
 
 ### US-13: Receive payment confirmation
 - **Stakeholder**: Customer | **Priority**: Medium
-- **Screen Location**: `portal-pay.html` (Confirmation view) & `outbox.html`
+- **Screen Location**: `portal-pay.html` (Confirmation view) & `outbox.html` (Customer and IT roles only)
 - **How to Demo**:
   1. Complete successful payment on `portal-pay.html`.
   2. On-screen confirmation panel appears displaying amount, date, reference (`PR-100014`), and updated balance.
-  3. Click "See it in My messages" to open `outbox.html`.
-  4. Review email notification (`TPL-3`: Payment confirmation) matching payment reference and amount.
+  3. Click "See it in My messages" to open `outbox.html` (accessible only to Customer and IT roles; Rep and Team Leader roles have no access).
+  4. On `outbox.html`, observe that the notice cleanly states "These are the messages we have sent to you." (the notice no longer contains disclaimer wording such as "Nothing is really sent in this prototype" or "nothing is really sent to you").
+  5. Review email notification (`TPL-3`: Payment confirmation) matching payment reference and amount.
 - **Acceptance Criteria Verification**:
   - *Confirmation page shows amount, date, reference*: Rendered in primary status panel.
   - *Confirmation email sent immediately*: Dispatched to simulated outbox in real time.
   - *Matches amount recorded on account*: Verified against payment ledger entry.
+  - *Strict role segregation*: Outbox access is strictly limited to Customer and IT roles.
 
 ### US-14: Recover from a failed payment
 - **Stakeholder**: Customer | **Priority**: Very High
@@ -344,20 +355,22 @@ EPIC 4: AUTOMATED IDENTITY VERIFICATION (US-19 to US-23)
 - **How to Demo**:
   1. In **Customer** role (unverified), try navigating directly to `portal-account.html` or `portal-pay.html`.
   2. System enforces verification gate and redirects to `portal-verify.html`.
-  3. Enter Account `100001`, DOB `1988-04-12`, and Postcode `M14 5QT`.
-  4. Submit form: instantly verified and redirected to `portal-account.html`.
+  3. Enter Account `100001` and Password `demo123`.
+  4. Observe that the access page (`portal-verify.html`) contains no link to `demo.html` under the "Verify and continue" button, maintaining a realistic authentication form.
+  5. Submit form: instantly verified and redirected to `portal-account.html`.
 - **Acceptance Criteria Verification**:
   - *Account actions require verification*: Role guard blocks access until verified.
   - *Verification completes quickly*: Instant evaluation on submit.
   - *Unverified users cannot view/change account data*: Gated at layout and service layers.
+  - *Dedicated credentials*: Uses account number and password (while date of birth and postcode remain reserved for staff phone verification of callers).
 
 ### US-20: Use an alternative route when verification fails
 - **Stakeholder**: Customer | **Priority**: Very High
 - **Screen Location**: `portal-verify.html` (Customer role)
 - **How to Demo**:
-  1. On `portal-verify.html`, enter Account `100001` with an incorrect postcode (e.g. `SW1A 1AA`).
+  1. On `portal-verify.html`, enter Account `100001` with an incorrect password (e.g. `wrongpass`).
   2. System displays generic error: "We could not verify you with the details entered."
-  3. Does not reveal whether DOB, postcode, or account number was incorrect.
+  3. Does not reveal whether password or account number was incorrect, nor whether the account exists or is locked.
   4. Rep contact panel is displayed immediately below with telephone `0800 000 000` and opening hours.
 - **Acceptance Criteria Verification**:
   - *Failed verification shows rep contact route*: Direct phone support prominently offered.
@@ -370,7 +383,7 @@ EPIC 4: AUTOMATED IDENTITY VERIFICATION (US-19 to US-23)
 - **How to Demo**:
   1. Switch role to **Collections rep** and open account `100001`.
   2. Notice the customer record is locked behind an amber gate: "Account details are locked. Verify the caller below before discussing this account."
-  3. Rep enters caller's DOB and Postcode in the phone verification panel.
+  3. Rep enters caller's DOB (`1988-04-12`) and Postcode (`M14 5QT`) in the phone verification panel.
   4. Click **Verify caller**: system returns "Verified" immediately, unlocks the tabs, and logs the attempt.
   5. If wrong details entered, returns "Not verified" without leaking which detail was wrong.
 - **Acceptance Criteria Verification**:
@@ -387,21 +400,21 @@ EPIC 4: AUTOMATED IDENTITY VERIFICATION (US-19 to US-23)
   1. In **Compliance** role, open **Verification log**.
   2. Table lists all verification attempts across both portal and phone channels.
   3. Each entry shows: Timestamp, Account number, Customer ID, Method (portal/phone), Actor ID (Rep ID or portal), and Outcome (Verified, Not verified, Locked).
-  4. Raw verification answers (DOB, Postcode) are excluded from the log.
+  4. Raw verification secrets (customer portal passwords, caller DOB and Postcode) are excluded from the log.
 - **Acceptance Criteria Verification**:
   - *Logs customer, time, method, outcome*: All metadata fields captured.
-  - *Contains no full verification secrets*: Answers scrubbed before logging.
+  - *Contains no full verification secrets*: Answers and passwords scrubbed before logging.
   - *Searchable by customer and date*: Complete filter bar provided.
 
 ### US-23: Lock out repeated failed attempts
 - **Stakeholder**: IT Team Member | **Priority**: High
 - **Screen Location**: `portal-verify.html`, `staff-record.html`, and `reports.html?r=lockouts-alerts`
 - **How to Demo**:
-  1. On `portal-verify.html`, enter Account `100001` and submit wrong details 3 consecutive times.
+  1. On `portal-verify.html`, enter Account `100001` and submit wrong password 3 consecutive times.
   2. On 3rd attempt, account locks (`locked: true`). Portal continues showing generic error (no lock reveal).
   3. Switch to **IT** role -> **Lockouts and alerts**: view new alert (`ALT-3`) indicating account locked.
   4. Switch to **Rep** role and open account `100001`: red banner indicates "Account locked".
-  5. Rep verifies caller by phone with correct credentials, then clicks **Unlock account**.
+  5. Rep verifies caller by phone with correct credentials (DOB and Postcode), then clicks **Unlock account**.
 - **Acceptance Criteria Verification**:
   - *Locked after N consecutive failed attempts*: Enforced at threshold of 3 attempts.
   - *Only rep/leader can unlock after manual verification*: Unlock button disabled until phone verification passes.
@@ -706,27 +719,28 @@ EPIC 9: SELF-SERVICE UPDATING DETAILS (US-43 to US-47)
 - **Screen Location**: `portal-details.html` (Customer role, Account `100001`)
 - **How to Demo**:
   1. Verify as Customer `100001` on `portal-details.html`.
-  2. Editable fields are active: Phone, Email, Address line 1, Town/city, Postcode.
-  3. Non-editable fields (Name, Account number, DOB) are locked in a read-only panel.
-  4. Edit email to `alex.new@example.com` and submit.
+  2. Editable fields are active in the contact form: Phone, Email, Address line 1, Town/city, and Postcode.
+  3. Observe that postcode has been removed from "Details you cannot change here" because it is an editable address field in the form above; non-editable fields locked in the read-only panel are strictly Name, Account number, and Date of birth.
+  4. Edit email to `alex.new@example.com` or update address/postcode and submit.
   5. Green confirmation panel confirms update saved at current timestamp.
 - **Acceptance Criteria Verification**:
-  - *Edit phone, email, address*: Form inputs provided for permitted fields.
+  - *Edit phone, email, address*: Form inputs provided for permitted fields (including postcode within the address form).
   - *Changes save to central record immediately*: Instant local persistence.
   - *Confirmation of saved change*: Prominent success banner.
-  - *Can edit only allowed fields*: Core identifiers locked.
+  - *Can edit only allowed fields*: Core identifiers locked (Name, Account number, DOB).
 
 ### US-45: Be alerted to changes in my details
 - **Stakeholder**: Customer | **Priority**: Low
-- **Screen Location**: `portal-details.html` & `outbox.html`
+- **Screen Location**: `portal-details.html` & `outbox.html` (Customer and IT roles only)
 - **How to Demo**:
   1. Update email address as Customer `100001`.
   2. Green banner notes that a security notice was sent to the *previous* email address (`alex.hartley@example.com`).
-  3. Open `outbox.html`: inspect security message (`TPL-6`: Details changed).
+  3. Open `outbox.html` (accessible only to Customer and IT roles): inspect security message (`TPL-6`: Details changed).
   4. Notice says: "The email address on your account was changed. If you did not make this change, call 0800 000 000 immediately." New value is not disclosed.
 - **Acceptance Criteria Verification**:
   - *Notification sent to previous contact immediately*: Dispatched to prior address.
   - *Includes how to report unauthorised change*: Rep fraud telephone provided.
+  - *Role access*: Strictly restricted to Customer and IT.
 
 ### US-46: See updated details without re-entry
 - **Stakeholder**: Collections Representative | **Priority**: Low
@@ -760,14 +774,14 @@ EPIC 10: AUTOMATED PAYMENT REMINDERS (US-48 to US-53)
 
 ### US-48: Receive a reminder before payment is due
 - **Stakeholder**: Customer | **Priority**: Medium
-- **Screen Location**: `jobs.html` (IT role) & `outbox.html` (Customer role)
+- **Screen Location**: `jobs.html` (IT role) & `outbox.html` (Customer role, or IT delivery telemetry)
 - **How to Demo**:
   1. In **IT** role, open `jobs.html`.
   2. Click **Run reminder job**.
   3. Reminders are dispatched for accounts whose payment is due in 3 days (e.g. Account `100001`).
   4. Accounts with £0 balance (e.g. Account `100007`) or opted out (Account `100008`) are skipped with clear reasons.
   5. Re-run demonstration: If a customer opts out after their reminder was initially sent, re-running the job evaluates their current preference and explicitly displays them in the **Skipped** table with reason `"Opted out of reminders"`.
-  6. Switch to **Customer** role (`100001`) -> `outbox.html`: view reminder message containing balance due, due date, pay link, and unsubscribe link.
+  6. Switch to **Customer** role (`100001`) -> `outbox.html` (or inspect delivery telemetry in IT role): view reminder message containing balance due, due date, pay link, and unsubscribe link. (Note: Collections Rep and Team Leader roles have no access to Outbox).
 - **Acceptance Criteria Verification**:
   - *Sent N days before due date*: Dispatched based on configured lead time (default: 3 days).
   - *Includes amount, due date, pay link, rep contact*: Template populates all links.
@@ -812,6 +826,7 @@ EPIC 10: AUTOMATED PAYMENT REMINDERS (US-48 to US-53)
   2. Current timing is displayed: 3 days before due date (allowed: 1 to 14 days).
   3. Change value to `5` and click **Save timing**.
   4. System saves setting, writes an audit record with before/after values, and confirms that newly scheduled reminders will use 5 days while existing scheduled reminders retain 3 days.
+  5. Inspect the table panel headed **"Already scheduled"** (without "(these keep their timing)"), which explicitly lists pre-existing reminders retaining their original schedule.
 - **Acceptance Criteria Verification**:
   - *Set days before due date within allowed range*: Number field validated between 1 and 14.
   - *Changes apply to reminders scheduled after change*: Preserves existing schedule timing.
@@ -852,11 +867,11 @@ The prototype demonstrates 24 distinct exception and unhappy paths, ensuring tha
 
 | Exception ID | Category | Trigger Condition / Scenario | User-Facing Experience | System & Service Behavior | Security / Compliance Guardrail | Resolution / Recovery Route |
 |---|---|---|---|---|---|---|
-| **EP-01** | Verification | Customer enters mismatched DOB, postcode, or non-existent account number on `portal-verify.html`. | Displays generic alert: *"We could not verify you with the details entered."* Form clears sensitive fields. | Verification logged as `Not verified`. Failed attempt counter incremented. Spike monitor evaluated. | Anti-harvesting: does not reveal which detail was wrong, whether account exists, or whether it is locked. | Customer checks statement details or calls Rep via on-screen telephone (`0800 000 000`). |
-| **EP-02** | Lockout | Customer fails portal verification 3 consecutive times (`lockoutThreshold`). | Identical generic failure message displayed on portal. | Account marked `locked: true`. Audit event logged. IT alert (`ALT-3`) generated. | Brute-force deterrence: portal conceals lock state; subsequent portal attempts blocked even if credentials are correct. | Unlocked only by a Collections Rep/Leader after passing phone verification. |
+| **EP-01** | Verification | Customer enters incorrect password or non-existent account number on `portal-verify.html`. | Displays generic alert: *"We could not verify you with the details entered."* Form clears password field. | Verification logged as `Not verified`. Failed attempt counter incremented. Spike monitor evaluated. | Anti-harvesting: does not reveal whether password was incorrect, whether account exists, or whether it is locked. | Customer checks account credentials or calls Rep via on-screen telephone (`0800 000 000`). |
+| **EP-02** | Lockout | Customer fails portal verification 3 consecutive times (`lockoutThreshold`). | Identical generic failure message displayed on portal. | Account marked `locked: true`. Audit event logged. IT alert (`ALT-3`) generated. | Brute-force deterrence: portal conceals lock state; subsequent portal attempts blocked even if credentials are correct. | Unlocked only by a Collections Rep/Leader after passing phone verification (DOB and Postcode). |
 | **EP-03** | Threat Detection | 5+ failed portal verification attempts occur across any accounts within 10 minutes. | No user disruption (portal shows standard error). | `checkFailureSpike()` triggers high-severity security alert (`failed-verification-spike`). | Automated threat monitoring and rate alerting for SecOps / IT on-call. | IT reviews alert log in `reports.html?r=lockouts-alerts`. |
-| **EP-04** | Staff ID Gate | Caller fails phone verification questions when speaking to Collections Rep. | Rep interface displays amber "Not verified" badge. Customer record tabs remain hidden. | Verification attempt logged as `Not verified` with Rep ID and timestamp. | Zero data disclosure: Rep cannot view or discuss balance, contact details, or history with unverified caller. | Rep asks caller to retrieve utility bill/statement or routes to senior supervisor. |
-| **EP-05** | Account Unlock | Rep attempts to click "Unlock account" for locked customer without phone verification. | Button disabled or service returns error: *"Verify the caller by phone before unlocking."* | Rejects unlock transaction; preserves lock status. | Maker-checker / identity prerequisite: prevents accidental or social-engineered unlocks. | Rep conducts phone verification check; once verified, "Unlock account" button activates and clears lock. |
+| **EP-04** | Staff ID Gate | Caller fails phone verification questions (DOB / Postcode) when speaking to Collections Rep. | Rep interface displays amber "Not verified" badge. Customer record tabs remain hidden. | Verification attempt logged as `Not verified` with Rep ID and timestamp. | Zero data disclosure: Rep cannot view or discuss balance, contact details, or history with unverified caller. | Rep asks caller to retrieve utility bill/statement or routes to senior supervisor. |
+| **EP-05** | Account Unlock | Rep attempts to click "Unlock account" for locked customer without phone verification. | Button disabled or service returns error: *"Verify the caller by phone before unlocking."* | Rejects unlock transaction; preserves lock status. | Maker-checker / identity prerequisite: prevents accidental or social-engineered unlocks. | Rep conducts phone verification check (DOB and Postcode); once verified, "Unlock account" button activates and clears lock. |
 | **EP-06** | Payments | Customer card payment is declined by card issuer (simulated via "Decline" option). | Error banner: *"Payment of £X.XX failed. Reason: Card declined."* Shows payment reference and attempt count. | Failed payment logged with `status: failed`, `reasonCategory: 'Card declined'`. Key cached in session. | Double-charge prevention: Retry button binds same `idempotencyKey`. | Customer clicks "Retry payment" with same amount, or clicks "Cancel" to select a different amount. |
 | **EP-07** | Payments | Payment gateway timeout occurs before confirmation (simulated via "Timeout [not charged]"). | Error banner: *"Payment failed. Reason: Provider timeout."* Clear guidance that money was not taken. | Failed record stored with `status: failed`, `providerCharged: false`. | Safe retry: Reuses identical idempotency token so gateway treats retry as single transaction. | Customer retries payment safely or contacts rep via support route. |
 | **EP-08** | Payments | Gateway times out after funds debited at provider (simulated via "Timeout but charged"). | Error banner initially indicates provider timeout. | Stored with `status: failed` but flags `providerCharged: true`. | Idempotent replay: On retry, system detects provider charged and reclaims existing charge without debiting again. | Customer clicks "Retry payment": succeeds instantly, balance drops once, notice confirms no double-charge. |

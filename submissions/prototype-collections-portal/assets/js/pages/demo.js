@@ -28,15 +28,15 @@
   // Each step: [pageId or null, text, stories]. Pages are opened by the role the step belongs to.
   var WALKTHROUGH = {
     customer: [
-      ['portal-verify', 'Open Verify identity. First enter a wrong date of birth for account 100001: the message is generic, offers the rep contact route and never says which detail was wrong. An unknown or locked account gets the same message.', 'US-19, US-20'],
-      ['portal-verify', 'Verify as account 100001 using the date of birth and postcode from the demo logins table below.', 'US-19'],
+      ['portal-verify', 'Open Verify identity. First enter a wrong password for account 100001: the message is generic, offers the rep contact route and never says which detail was wrong. An unknown or locked account gets the same message.', 'US-19, US-20'],
+      ['portal-verify', 'Verify as account 100001 using the password demo123 from the demo logins table below.', 'US-19'],
       ['portal-account', 'On My account check the balance, due date and payments. Use "Raise a query" to report a missing payment.', 'US-28, US-41'],
       ['portal-pay', 'Make a payment: try an amount above the balance (blocked), then pay part of it. Use the demo provider-result control to simulate Decline and retry, then Timeout-but-charged and retry: no duplicate payment appears.', 'US-12, US-13, US-14'],
       ['portal-promise', 'Promise to pay: choose a permitted plan and a date inside the window. A second promise replaces the first.', 'US-35, US-36'],
       ['portal-details', 'Update details: an invalid email or postcode shows a field error; a valid change saves immediately.', 'US-43, US-44'],
       ['outbox', 'Open the Outbox for the payment, promise and change messages (the change notice goes to the previous contact details).', 'US-13, US-36, US-45'],
       ['portal-preferences', 'Open a reminder message in the Outbox and follow its preferences link to opt out without logging in. Turning reminders back on needs you to sign in first.', 'US-49'],
-      ['portal-verify', 'Lockout: enter three wrong attempts for another account (demo threshold 3). The message stays the same and the contact route stays available, because the lock shows to staff only (the rep record shows the Locked badge). Account 100006 starts locked. Use Reset demo data afterwards.', 'US-20, US-23']
+      ['portal-verify', 'Lockout: enter three wrong password attempts for another account (demo threshold 3). The message stays the same and the contact route stays available, because the lock shows to staff only (the rep record shows the Locked badge). Account 100006 starts locked. Use Reset demo data afterwards.', 'US-20, US-23']
     ],
     rep: [
       ['staff-search', 'Search for account 100001 (any of 100001 to 100009). Use the staff user selector in the header to switch between reps.', 'US-03'],
@@ -52,7 +52,7 @@
     leader: [
       ['staff-search', 'Open a customer record as a leader. The History tab shows event-type and date filters, and fields hidden from reps (date of birth, internal notes, ledger reference) are visible.', 'US-05'],
       ['staff-followups', 'Follow-ups shows the team\'s overdue items. Reassign one to another rep; a follow-up entry is logged.', 'US-32'],
-      ['staff-approvals', 'Approvals: pick a payment, choose the required reason code and approve. The balance is corrected, a reversal is logged and the customer message appears in the Outbox once the customer record is unlocked for you.', 'US-18'],
+      ['staff-approvals', 'Approvals: pick a payment, choose the required reason code and approve. The balance is corrected and a reversal is logged.', 'US-18'],
       ['reminders-config', 'Reminder timing: change days-before within the allowed range. Existing scheduled reminders keep their timing; new ones use the new value.', 'US-51'],
       ['report-team-logs', 'Team interaction logs: filter by rep, outcome code and date. Only your team\'s logs are listed.', 'US-09'],
       ['report-unfulfilled-promises', 'Unfulfilled promises: run the IT fulfilment check first so there is data to show.', 'US-26'],
@@ -85,35 +85,6 @@
       ['api-demo', 'Read-only data interface: read your own record (200), another customer\'s (403) and attempt a write (405).', 'US-40']
     ]
   };
-
-  // Built on demand so the retention value is read after the store is ready. Placeholder headings are marked for review.
-  function privacyRows() {
-    return [
-      ['What this is', 'This is a prototype. It uses made-up people and accounts only. This demo stores fictional data in your browser\'s local storage and sends nothing to anyone. Reset demo data clears it.'],
-      ['Who is responsible (controller) [PLACEHOLDER]', 'PLACEHOLDER: the organisation that decides why and how personal data is used would be named here, with the contact details of its data protection lead.'],
-      ['Why data is used and lawful basis [PLACEHOLDER]', 'PLACEHOLDER: the purposes (running the account, collecting repayments fairly, meeting legal and regulatory duties, keeping a record that can be checked later) and the lawful basis for each, to be confirmed by the organisation\'s data protection lead.'],
-      ['What a live service would collect', 'Only what is needed to manage a customer\'s account and repayments: identity and contact details, balance and payment history, and a record of contacts and agreements.'],
-      ['Who it is shared with', 'The payment provider (card payments; only a token is kept here), the email provider and the SMS provider (sending messages and reporting delivery). PLACEHOLDER: the final list of providers and any other recipients.'],
-      ['Who could see it', 'Only people whose role needs it. Every page checks the role, and refused attempts are logged.'],
-      ['Card details', 'The portal never stores card numbers. In production card details would be entered on the payment provider\'s own form, and only a token would be kept.'],
-      ['How long it is kept', ['Only as long as needed. The retention period is still to be decided: ', UI.tbd('Audit and log retention', Services.setting('retentionYears')), ' years. [PLACEHOLDER]']],
-      ['Automated decisions', 'None in this prototype. No decision about a customer is made only by automated means. Account lockout and reminder timing follow fixed settings, and a rep reviews any query a customer raises.'],
-      ['Wording', 'This is placeholder wording for the prototype. A live service would use a notice approved by the organisation\'s data protection lead.']
-    ];
-  }
-
-  function buildRights() {
-    return UI.panel('Your data rights', el('div', { class: 'stack' }, [
-      el('ul', null, [
-        el('li', null, [el('strong', null, ['Access: ']), 'ask to see the personal data held about you.']),
-        el('li', null, [el('strong', null, ['Correction: ']), 'ask for wrong data to be corrected (you can change your phone, email and address in the portal).']),
-        el('li', null, [el('strong', null, ['Erasure: ']), 'ask for your data to be erased where the law allows.']),
-        el('li', null, [el('strong', null, ['Objection: ']), 'object to how your data is used.'])
-      ]),
-      el('p', null, [el('strong', null, ['How to ask [PLACEHOLDER]: ']), 'PLACEHOLDER: the data protection contact (email and postal address) will be added here. Until then, speak to a collections rep on ' + Services.REP_CONTACT_PHONE + ' (demo number).']),
-      el('p', { class: 'muted' }, ['You can also complain to the data protection regulator.'])
-    ]));
-  }
 
   // Builds a titled panel with an anchor id.
   function section(id, title, body, opts) {
@@ -174,13 +145,14 @@
     UI.table(mount, {
       columns: [
         { key: 'accountNo', label: 'Account number', format: function (v) { return el('span', { class: 'mono' }, [v]); } },
+        { key: 'password', label: 'Password', format: function (v) { return el('span', { class: 'mono' }, [v || 'demo123']); } },
         { key: 'name', label: 'Name' },
         { key: 'dob', label: 'Date of birth', format: function (v) { return Fmt.date(v) + ' (' + v + ')'; } },
         { key: 'postcode', label: 'Postcode', format: function (v) { return el('span', { class: 'mono' }, [v]); } },
         { key: 'purpose', label: 'Purpose' }
       ],
       rows: customers.map(function (c) {
-        return { accountNo: c.accountNo, name: c.name, dob: c.dob, postcode: c.postcode, purpose: PURPOSES[c.accountNo] || '' };
+        return { accountNo: c.accountNo, password: c.password || 'demo123', name: c.name, dob: c.dob, postcode: c.postcode, purpose: PURPOSES[c.accountNo] || '' };
       }),
       empty: 'No customers found. The seed data files have not loaded.'
     });
@@ -189,7 +161,7 @@
         el('span', { class: 'badge badge--demo' }, ['Demo only']),
         'A real portal would never show these credentials. They are provided here solely so reviewers and testers can verify accounts.'
       ]),
-      el('p', null, ['Customer verification uses account number, date of birth and postcode. A rep\'s phone verification of a caller uses the same three details.']),
+      el('p', null, ['Customer verification uses account number and password (demo: demo123). A rep\'s phone verification of a caller uses date of birth and postcode.']),
       mount
     ]);
   }
@@ -219,13 +191,6 @@
     ]);
   }
 
-  function buildPrivacy() {
-    var dl = el('dl', { class: 'kv' }, privacyRows().reduce(function (acc, row) {
-      return acc.concat([el('dt', null, [row[0]]), el('dd', null, [row[1]])]);
-    }, []));
-    return el('div', { class: 'stack' }, [dl, buildRights()]);
-  }
-
   function buildBrowserNotes() {
     return el('div', { class: 'stack' }, [
       el('p', null, ['This prototype runs by opening the files directly from disk (a file:// address). There is no server and no install.']),
@@ -237,42 +202,23 @@
     ]);
   }
 
-  function buildReset() {
-    return el('div', { class: 'demo-only stack' }, [
-      el('p', null, [
-        el('span', { class: 'badge badge--demo' }, ['Demo only']),
-        'Return all demo data, the demo date and the signed-in role to their starting values.'
-      ]),
-      el('div', null, [el('button', {
-        type: 'button', class: 'btn btn--danger', onclick: function () {
-          UI.confirm('Reset all demo data and start again?', { title: 'Reset demo data', confirmLabel: 'Reset', danger: true })
-            .then(function (ok) { if (ok) { Store.reset(); } });
-        }
-      }, ['Reset demo data'])])
-    ]);
-  }
-
   Layout.ready(function (main) {
     var jumps = [
       ['roles', 'Choose a role'],
       ['walkthrough', 'Demo walkthrough'],
       ['logins', 'Demo logins'],
       ['sitemap', 'Site map'],
-      ['privacy', 'Privacy notice'],
-      ['browser', 'Browser notes'],
-      ['reset', 'Reset']
+      ['browser', 'Browser notes']
     ];
 
     main.appendChild(el('div', { class: 'stack' }, [
-      el('p', null, ['A wireframe prototype of the Phase 1 collections portal. Choose a role to start, review suggested test journeys, inspect test accounts, or reset data. All data is fictional.']),
+      el('p', null, ['A wireframe prototype of the Phase 1 collections portal. Choose a role to start, review suggested test journeys, or inspect test accounts. All data is fictional.']),
       el('ul', { class: 'index-jump' }, jumps.map(function (j) { return el('li', null, [el('a', { class: 'btn btn--small', href: '#' + j[0] }, [j[1]])]); })),
-      section('roles', 'Choose a role', buildRoleCards(), { note: 'A real service would sign people in with their own credentials. Here the role switcher stands in for login.' }),
+      section('roles', 'Choose a role', buildRoleCards()),
       section('walkthrough', 'Suggested demo walkthrough', buildWalkthrough()),
       section('logins', 'Demo test accounts & credentials', buildLogins()),
       section('sitemap', 'Prototype site map', buildSiteMap()),
-      section('privacy', 'Privacy and data protection notice', buildPrivacy()),
-      section('browser', 'Browser persistence notes', buildBrowserNotes()),
-      section('reset', 'Reset demo data', buildReset())
+      section('browser', 'Browser persistence notes', buildBrowserNotes())
     ]));
 
     // Content is built after load, so jump to any #anchor manually.

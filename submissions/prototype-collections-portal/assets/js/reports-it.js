@@ -15,8 +15,8 @@
   // Agreed access per role (PLAN.md section 6). Deliberately separate from PAGES so the access test can fail.
   var EXPECTED_ACCESS = {
     customer: ['index', 'portal-verify', 'portal-account', 'portal-pay', 'portal-promise', 'portal-details', 'portal-preferences', 'outbox'],
-    rep: ['index', 'staff-search', 'staff-record', 'staff-log', 'staff-followups', 'outbox'],
-    leader: ['index', 'reports', 'staff-search', 'staff-record', 'staff-followups', 'staff-approvals', 'reminders-config', 'outbox', 'report-team-logs', 'report-unfulfilled-promises'],
+    rep: ['index', 'staff-search', 'staff-record', 'staff-log', 'staff-followups'],
+    leader: ['index', 'reports', 'staff-search', 'staff-record', 'staff-followups', 'staff-approvals', 'reminders-config', 'report-team-logs', 'report-unfulfilled-promises'],
     finance: ['index', 'reports', 'report-balances-arrears', 'report-outcomes', 'report-reconciliation', 'report-fulfilment-value', 'report-promise-forecast'],
     compliance: ['index', 'reports', 'report-audit-trail', 'report-log-export', 'report-verification-log', 'report-payment-audit', 'report-display-sampling', 'report-followup-history', 'compliance-settings'],
     it: ['index', 'reports', 'report-migration-exceptions', 'report-security-status', 'report-lockouts-alerts', 'report-reminder-delivery', 'jobs', 'api-demo', 'outbox']

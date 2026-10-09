@@ -75,7 +75,7 @@
 
     var controls = [
       el('a', { class: 'btn btn--small', href: 'demo.html' }, ['Demo Guide & Sitemap']),
-      el('label', { class: 'demo-control' }, [el('span', null, ['Role (stub login, not security)']), roleSelect])
+      el('label', { class: 'demo-control' }, [el('span', null, ['Role']), roleSelect])
     ];
 
     var staff = Auth.usersForRole(role);
@@ -147,10 +147,7 @@
 
     nav.appendChild(el('a', { href: 'index.html', class: pageId === 'index' ? 'is-active' : null, 'aria-current': pageId === 'index' ? 'page' : null }, ['Home']));
     groups.forEach(function (g) {
-      // Customer-group pages seen by staff (the shared outbox) are labelled "Shared".
-      var label = g === 'Customer' && role !== 'customer' ? 'Shared' : g;
       var wrap = el('div', { class: 'app-nav__group' });
-      if (groups.length > 1) { wrap.appendChild(el('span', { class: 'app-nav__label' }, [label])); }
       pages.filter(function (p) { return p.group === g; }).forEach(function (p) {
         var active = p.id === pageId;
         wrap.appendChild(el('a', { href: p.file, class: active ? 'is-active' : null, 'aria-current': active ? 'page' : null }, [p.title]));
@@ -161,19 +158,7 @@
   }
 
   function buildFooter() {
-    var children = [
-      el('div', { class: 'notice notice--warn' }, [el('strong', null, ['Demo data only. ']), 'Every person, account and payment here is fictional. Nothing is sent to anyone.']),
-      el('p', { class: 'app-footer__privacy' }, [
-        el('strong', null, ['Privacy notice (PLACEHOLDER wording): ']),
-        'this demo stores fictional data in this browser\'s local storage only and sends nothing to anyone. ',
-        el('strong', null, ['Who is responsible: ']), '[PLACEHOLDER: controller to be named]. ',
-        el('strong', null, ['Why data is used and lawful basis: ']), '[PLACEHOLDER]. ',
-        el('strong', null, ['Shared with: ']), 'payment, email and SMS providers. ',
-        el('strong', null, ['Kept for: ']), 'retention period still to be decided (TBD). ',
-        el('strong', null, ['Your data rights: ']), 'access, correction, erasure and objection. ',
-        el('a', { href: 'demo.html#privacy' }, ['Read the full notice'])
-      ])
-    ];
+    var children = [];
     if (!Store.persistent()) {
       children.push(el('div', { class: 'notice notice--error' }, ['This browser is blocking storage, so changes will be lost when you move to another page.']));
     }

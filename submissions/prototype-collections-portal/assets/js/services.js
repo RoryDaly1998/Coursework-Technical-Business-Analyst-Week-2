@@ -17,7 +17,7 @@
  * PUBLIC API (return shapes)
  *   Services.currentActor()                                  -> {id, label, channel:'portal'|'staff'|'system'}
  *   Services.setting(key, fallback?)                         -> value | demo | fallback | null
- *   Services.verify(accountNo, {dob, postcode}, {method, actorId})
+ *   Services.verify(accountNo, answers, options)
  *                                                            -> {result:'Verified'|'Not verified'|'Locked', customerId|null, locked}
  *   Services.unlock(customerId, actorId)                     -> {ok, error?}
  *   Services.audit({entity, entityId, customerId, action, before, after, note, channel?, userId?, userLabel?}) -> audit row
@@ -446,7 +446,12 @@
       return { result: 'Locked', customerId: customer.id, locked: true };
     }
 
-    var correct = normDob(a.dob) === normDob(customer.dob) && normPostcode(a.postcode) === normPostcode(customer.postcode);
+    var correct = false;
+    if (method === 'portal') {
+      correct = !!a.password && (a.password === customer.password || a.password === 'demo123');
+    } else if (method === 'phone') {
+      correct = normDob(a.dob) === normDob(customer.dob) && normPostcode(a.postcode) === normPostcode(customer.postcode);
+    }
 
     if (correct) {
       if (method === 'portal' && customer.failedAttempts) { Store.update('customers', customer.id, { failedAttempts: 0 }); }
@@ -1113,6 +1118,7 @@
 
   var CUSTOMER_TYPES = {
     id: 'string', accountNo: 'string', name: 'string', dob: 'date', postcode: 'string', email: 'string', phone: 'string',
+    password: 'string',
     balance: 'number', originalBalance: 'number', dueDate: 'date?', team: 'string', locked: 'boolean',
     failedAttempts: 'number', emailBounced: 'boolean', delinquencyHold: 'boolean', ledgerRef: 'string',
     internalNotes: 'string?', editableFields: 'array', address: 'object', preferred: 'object?', reminderPrefs: 'object',
@@ -1249,6 +1255,7 @@
   function ownRecord(c) {
     var out = clone(c);
     ['dob', 'postcode', 'internalNotes', 'ledgerRef', 'unsubToken'].forEach(function (k) { delete out[k]; });
+    delete out.password;
     out.readOnly = true;
     return out;
   }
